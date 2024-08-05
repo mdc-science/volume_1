@@ -32,15 +32,15 @@ The reaction catalyzed by catalase is a dismutation (a type of redox reaction in
 \text{compound I} + \text{H}_2\text{O}_2 \rightarrow \text{catalase-Fe(III)} + \text{H}_2\text{O} + \text{O}_2
 \]
 
-Measuring catalase activity is crucial in research investigating antioxidant systems and cellular responses to oxidative stress. This is illustrated by observations that inhibition of catalase activity or expression induces oxidative stress ([Bagnyukova et al. 2005](https://doi.org/10.1016/j.brainres.2005.06.002)) or increases sensitivity to other stressors ([Ho et al. 2004](https://doi.org/10.1074/jbc.m404800200)). Additionally, cells particularly resistant to oxidative stressors show overexpression of catalase ([Spitz et al. 1992](https://doi.org/10.1016/0003-9861(92)90071-4)).
+Measuring catalase activity is crucial in research investigating antioxidant systems and cellular responses to oxidative stress. This is illustrated by observations that inhibition of catalase activity or expression induces oxidative stress [@bagnyukova_catalase_2005] or increases sensitivity to other stressors [@ho_mice_2004]. Additionally, cells particularly resistant to oxidative stressors show overexpression of catalase [@spitz_mechanisms_1992].
 
-There are various methods to determine catalase activity, for example, by measuring the production of O~2~ with an O~2~ sensor, measuring the consumption of H~2~O~2~ with a fluorescent probe molecule, or directly measuring the consumption of H~2~O~2~ by spectrophotometry. The method for determining catalase activity described in this protocol is one of the most popular and is based on the decomposition of hydrogen peroxide by catalase and the consequent decrease in absorbance at `r wl` nm ([Aebi 1984](https://doi.org/10.1016/S0076-6879(84)05016-3)). The procedure involves adding the sample to a buffered reaction medium containing hydrogen peroxide and measuring the decrease in absorbance over time using a spectrophotometer. Enzyme activity is then calculated based on the rate of decrease in absorbance, which is directly proportional to the amount of hydrogen peroxide decomposed. In this protocol, in addition to serving as the substrate for the enzyme, H~2~O~2~ acts as the indicator molecule (i.e., the molecule that generates the analytical signal recorded in the assay).
+There are various methods to determine catalase activity, for example, by measuring the production of O~2~ with an O~2~ sensor, measuring the consumption of H~2~O~2~ with a fluorescent probe molecule, or directly measuring the consumption of H~2~O~2~ by spectrophotometry. The method for determining catalase activity described in this protocol is one of the most popular and is based on the decomposition of hydrogen peroxide by catalase and the consequent decrease in absorbance at `r wl` nm [@aebi_catalase_1984]. The procedure involves adding the sample to a buffered reaction medium containing hydrogen peroxide and measuring the decrease in absorbance over time using a spectrophotometer. Enzyme activity is then calculated based on the rate of decrease in absorbance, which is directly proportional to the amount of hydrogen peroxide decomposed. In this protocol, in addition to serving as the substrate for the enzyme, H~2~O~2~ acts as the indicator molecule (i.e., the molecule that generates the analytical signal recorded in the assay).
 
 \newpage
 
 ## Quick Reference Protocol {#cat-quick-ref}
 
-This section provides a quick reference with stock and final concentrations of the reagents (Table \@ref(tab:cat-tab-conc)), volumes to be pipetted (Table \@ref(tab:cat-tab-vol)), and equipment settings for the readings. The complete protocol is detailed in the next [section](\@ref(#cat_detailed_protocol)).
+This section provides a quick reference with stock and final concentrations of the reagents (Table \@ref(tab:cat-tab-conc)), volumes to be pipetted (Table \@ref(tab:cat-tab-vol)), and equipment settings for the readings. The complete protocol is detailed in the next sections.
 
 (ref:cat-tab-conc) Stock and final concentrations of reagents used in the protocol.
 
@@ -62,7 +62,7 @@ kbl(df_conc, caption = '(ref:cat-tab-conc)', booktabs = T, align = align_vec) %>
   row_spec(0, bold = TRUE)
 ```
 
-```{r cat-tab-volx, results = 'asis'}
+```{r cat-tab-vol, results = 'asis'}
 # Read volumes for each assay type
 df_vol <- read_csv(here('data', protocol, 'summary_vol.csv')) 
 # Specify alignment for table columns
@@ -92,8 +92,11 @@ kbl(df_vol, caption = '(ref:cat-tab-vol)', booktabs = T, align = align_vec) %>%
 
 ## Material {#cat_detailed_protocol}
 ### Reagents
-* Hydrogen Peroxide (H~2~O~2~) (200 mM): Dinâmica (Indaiatuba, Brazil) Cod. 1857
-* Phosphate Buffer (KPi) (500 mM pH 7.2) + EDTA (5 mM): Sigma-Aldrich (St. Louis, MO) P0662, P3786, and EDS
+* Hydrogen Peroxide (H~2~O~2~) (200 mM) (Cod. 1857, Dinâmica, Indaiatuba, Brazil)
+* Phosphate Buffer (KPi) (500 mM pH 7.2) + EDTA (5 mM): 
+    - Potassium phosphate monobasic (P0662, Sigma-Aldrich, St. Louis, MO)
+    - Potassium phosphate dibasic (P3786, Sigma-Aldrich)
+    - Ethylenediaminetetraacetic acid (EDS, Sigma-Aldrich)
 
 :::{.greybox data-latex='[frametitle = Note]'}
 _The manufacturers and codes listed above are those used to produce the examples shown in this protocol, but similar reagents from other manufacturers can be substituted. Always check the purity and molecular weight of the reagent._
@@ -452,7 +455,7 @@ Converting:
 
 
 :::{.greybox data-latex='[frametitle = Note]'}
-_Catalase does not follow the usual pattern of Michaelis-Menten kinetics. It is not possible to saturate the enzyme with substrate within a feasible concentration range, and catalase is inactivated by its own substrate at concentrations of H~2~O~2~ above 100 mM ([Aebi 1984](https://doi.org/10.1016/S0076-6879(84)05016-3)). Therefore, some authors recommend not using the International Unit to express catalase activity, but rather the rate constant of a first-order reaction (\( k \), [Aebi 1984](https://doi.org/10.1016/S0076-6879(84)05016-3), [Weydert and Cullen 2010](https://doi.org/10.1038/nprot.2009.197))._
+_Catalase does not follow the usual pattern of Michaelis-Menten kinetics. It is not possible to saturate the enzyme with substrate within a feasible concentration range, and catalase is inactivated (oxidized) by its own substrate at concentrations of H~2~O~2~ above 100 mM. Therefore, some authors recommend not using the International Unit to express catalase activity, but rather the rate constant of a first-order reaction (\( k \)._
 :::
 
 ### Example Calculation
