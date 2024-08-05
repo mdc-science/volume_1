@@ -535,11 +535,12 @@ Lastly, to standardize the comparison of enzymatic activity across different sam
 \[ \text{Activity (U/mg prot.) in tissue} = \left( \frac{`r round(tissue_act, digits = 2)`}{`r tissue_ptn`} \right)\]
 \[ \text{Activity (U/mg prot.) in tissue} = `r round(act_mg_ptn, digits = 2)` \]
 
-*Note: To normalize enzymatic activity, it is necessary to quantify the protein concentration in the sample using another method (e.g., Bradford assay, BCA, Qubit™, etc.). Quantification should be done using the same homogenate used to measure activity. Refer to protocol CA.002 for protein quantification using the Bradford method.*
-
+:::{.greybox data-latex='[frametitle = Note]'} 
+_To normalize enzymatic activity, it is necessary to quantify the protein concentration in the sample using another method (e.g., Bradford assay, BCA, Qubit™, etc.). Quantification should be done using the same homogenate used to measure activity._
+:::
 
 ## 3-Amino-1,2,4-Triazole
-To ensure that the consumption of H~2~O~2~ observed in the assay is specifically caused by catalase activity, it is recommended to verify the ability of 3-amino-1,2,4-triazole (ATZ) to reduce the rate of H~2~O~2~ consumption caused by the sample. ATZ is an irreversible inhibitor of catalase and is used at a concentration of 20 mM with an exposure time of 0.5 to 2.0 hours to abolish catalase activity ([Margoliash and Novogrodsky, 1958](https://doi.org/10.1042%2Fbj0680468); [Watanabe and Forman, 2003](https...
+To ensure that the consumption of H~2~O~2~ observed in the assay is specifically caused by catalase activity, it is recommended to verify the ability of 3-amino-1,2,4-triazole (ATZ) to reduce the rate of H~2~O~2~ consumption caused by the sample. ATZ is an irreversible inhibitor of catalase and is used at a concentration of 20 mM with an exposure time of 0.5 to 2.0 hours to abolish catalase activity [@margoliash_study_1958; @margoliash_irreversible_1960; @watanabe_autoxidation_2003]. Since ATZ acts on Compound I (see [Introduction](#intro)), and not directly on catalase, H~2~O~2~ should be added to the medium where the sample is incubated with ATZ so that Compound I is formed and inhibition occurs.
 
 ### Catalase Inhibition by ATZ *in vitro*
 The following result illustrates the effect of incubating a sample with ATZ in the absence and presence of H~2~O~2~. Aliquots of rat liver homogenate were diluted in PBS (resulting in a catalase activity of 40.61 U/mL) and incubated at 22°C for 2.5 hours under three conditions: in the absence of any inhibitor (control), in the presence of 20 mM ATZ (ATZ), and in the presence of 20 mM ATZ + 4 mM H~2~O~2~ (ATZ + H~2~O~2~) (Figure \@ref(fig:cat-fig-inhibitor)). As the catalase present in the sample consumes H~2~O~2~ over time, the reaction medium of the ATZ + H~2~O~2~ treatment was supplemented with H~2~O~2~ at 0.5-hour intervals to maintain a concentration of 4 mM during the incubation. For the control and ATZ groups, the same volumes of PBS were added to ensure the same dilution factor between treatments.
@@ -568,6 +569,31 @@ p6
 ```
 
 In the control treatment, catalase activity remained stable throughout the period, oscillating between -0.050 and -0.052 Abs/min. In the ATZ treatment, catalase activity gradually declined, but after 2.5 hours, the inhibition was only 41.3% relative to the initial activity. In the sample treated with ATZ + H~2~O~2~, the activity dropped exponentially, being only 1.5% of the control treatment and the initial activity before the start of the treatment ([Figure 4](#fig-inhibitor)). Therefore, for this sample, all consumption of H~2~O~2~ can be attributed to catalase activity.
+
+## Troubleshooting
+
+It has been reported that for some species there is a delay for the onset of h2o2 consumption. 
+
+When optimizing the assay or assessing no a sample for the first time it is better to use longer total reading time to better understand what is going on and diagnose potential problems.
+
+```{r cat-troubleshooting, results = 'asis'}
+options(knitr.kable.NA = '')
+# Calculate the volume needed for each reagent
+df_trouble <- read_csv(here('data', protocol, 'troubleshooting.csv'))
+
+# Specify alignment for table columns
+align_vec <- c('l', rep('l', ncol(df_trouble) - 1))
+
+# Output the concentrations table
+kbl(df_trouble, caption = 'caption', booktabs = T, align = align_vec) %>%
+  kable_styling(latex_options = c('striped', 'condensed', 'hold_position'),
+                bootstrap_options = c('striped', 'hover', 'condensed'), 
+                full_width = F,  font_size = 7) %>%
+  row_spec(0, bold = TRUE) %>%
+  column_spec(1, width = "15em") %>%  # adjust width as needed
+  column_spec(2, width = "10em") %>% # adjust width as needed
+  column_spec(3, width = "15em")     # adjust width as needed
+```
 
 ## Additional Comments {#cat_additional_comments}
 
@@ -655,20 +681,3 @@ knitr::include_graphics(here('images', protocol, 'parafilm_droplet.png'))
 	+ To prepare dilutions from stock solutions: $C_1 \cdot V_1 = C_2 \cdot V_2$
 	+ To prepare a new solution from volume and concentration or mass and concentration: $\text{Mass (g)} = \text{Concentration (M)} \cdot \text{Volume (L)} \cdot \text{Molecular Weight (g/mol)}$
 	+ Lambert-Beer Law: $A = \varepsilon \cdot C \cdot l$, where \( A \) is absorbance; \( \varepsilon \) is the molar absorption coefficient (M^-1^ cm^-1^); \( C \) is the concentration of the solution (M); \( l \) is the path length of the optical path (cm).
-
-## References
-Aebi H. 1984. Catalase in vitro. *Methods in Enzymology* 105 121–126. https://doi.org/10.1016/S0076-6879(84)05016-3
-
-Bagnyukova, T.V., Vasylkiv, O.Yu., Storey, K.B., Lushchak, V.I., 2005. Catalase inhibition by amino triazole induces oxidative stress in goldfish brain. *Brain Research* 1052, 180–186. https://doi.org/10.1016/j.brainres.2005.06.002
-
-Ho, Y.-S., Xiong, Y., Ma, W., Spector, A., Ho, D.S., 2004. Mice Lacking Catalase Develop Normally but Show Differential Sensitivity to Oxidant Tissue Injury. *Journal of Biological Chemistry* 279, 32804–32812. https://doi.org/10.1074/jbc.M404800200
-
-Margoliash, E., Novogrodsky, A., 1958. A study of the inhibition of catalase by 3-amino-1:2:4-triazole. *Biochemical Journal* 68, 468–475. https://doi.org/10.1042/bj0680468
-
-Robinson, P.K., 2015. Enzymes: principles and biotechnological applications. *Essays in Biochemistry* 59, 1–41. https://doi.org/10.1042/bse0590001
-
-Spitz, D.R., Adams, D.T., Sherman, C.M., Roberts, R.J., 1992. Mechanisms of cellular resistance to hydrogen peroxide, hyperoxia, and 4-hydroxy-2-nonenal toxicity: The significance of increased catalase activity in H~2~O~2~-resistant fibroblasts. *Archives of Biochemistry and Biophysics* 292, 221–227. https://doi.org/10.1016/0003-9861(92)90071-4
-
-Watanabe, N., Forman, H.J., 2003. Autoxidation of extracellular hydroquinones is a causative event for the cytotoxicity of menadione and DMNQ in A549-S cells. *Archives of Biochemistry and Biophysics* 411, 145–157. https://doi.org/10.1016/S0003-9861(02)00716-6
-
-Weydert, C.J., Cullen, J.J., 2010. Measurement of superoxide dismutase, catalase and glutathione peroxidase in cultured cells and tissue. *Nature Protocols* 5, 51–66. https://doi.org/10.1038/nprot.2009.197
