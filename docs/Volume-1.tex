@@ -457,7 +457,140 @@ Volume 1 - The Dismutators
 
 \chapter{Spectrophotometry Fundamentals}\label{spectrophotometry-fundamentals}
 
-\section{\texorpdfstring{Cuvette \emph{versus} microplates}{Cuvette versus microplates}}\label{cuvette-versus-microplates}
+\begin{Summary}
+Some text for this block.
+
+\end{Summary}
+
+\toc{1}
+
+\newpage
+
+\section{Spectrophotometry}\label{spectrophotometry}
+
+Spectroscopic methods are those that rely on the interaction between matter and electromagnetic radiation. They encompasses several techniques used to measure how electromagnetic radiation is absorbed, emitted, or scattered by substances. By investigating these interactions, valuable insights into the composition, structure, and properties of different materials are made available.
+
+Wavelength (\(\lambda\)) is defined as the distance between successive peaks of a wave. It is typically measured in meters (m), centimeters (cm), or nanometers (nm). Wavelength is a crucial parameter in spectroscopy as it determines the energy and type of electromagnetic radiation. The electromagnetic spectrum is classified based on wavelength into different regions, each associated with specific types of electromagnetic radiation:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Gamma Rays}: Wavelengths less than \(0.01 \, \text{nm}\)
+\item
+  \textbf{X-rays}: Wavelengths between \(0.01 \, \text{nm}\) and \(10 \, \text{nm}\)
+\item
+  \textbf{Ultraviolet (UV)}: Wavelengths between \(10 \, \text{nm}\) and \(400 \, \text{nm}\)
+\item
+  \textbf{Visible Light}: Wavelengths between \(400 \, \text{nm}\) and \(700 \, \text{nm}\)
+\item
+  \textbf{Infrared (IR)}: Wavelengths between \(700 \, \text{nm}\) and \(1 \, \text{mm}\)
+\item
+  \textbf{Microwaves}: Wavelengths between \(1 \, \text{mm}\) and \(1 \, \text{m}\)
+\item
+  \textbf{Radio Waves}: Wavelengths greater than \(1 \, \text{m}\)
+\end{itemize}
+
+\scriptsize
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{Volume-1_files/figure-latex/fig-electromagnetic-rad-1} 
+
+}
+
+\caption{(ref:fig-electromagnetic-rad)}\label{fig:fig-electromagnetic-rad}
+\end{figure}
+
+\normalsize
+
+Different regions of the electromagnetic spectrum are utilized in various spectroscopic techniques based on the type of information required and the nature of the sample being analyzed.
+
+Spectrophotometry is a subset of spectroscopy that focuses on measuring the amount of light absorbed by a sample at specific wavelengths. This technique is widely used in biology, chemistry, and various other areas of science and industry to quantify the concentration of substances, monitor chemical reactions, and study molecular interactions. Measuring how much light a sample absorbs (at a given or a set of wavelengths) provides qualitative and quantitative information. The amount of light absorbed by a sample is quantified as absorbance, which is defined as the \enquote{logarithm of the ratio of incident to transmitted radiant power through a sample} \autocite{gold_iupac_2019}.
+
+\subsection{How a Typical Spectrophotometer Functions}\label{how-a-typical-spectrophotometer-functions}
+
+A spectrophotometer is an instrument designed to measure the intensity of light at a given wavelength after its interaction with a sample. A detailed view of spectroscopy and how spectrophotometers work can be found elsewhere \autocite{skoog_fundamentals_2022}. Here is \textbf{a simplified overview} of a typical spectrophotometer, which is enough for the purpose of the protocols in this book:
+
+\begin{itemize}
+\item
+  \textbf{Light Source}: The spectrophotometer contains a light source, such as a tungsten or xenon lamp, that emits a broad spectrum of light.
+\item
+  \textbf{Monochromator}: The emitted light is directed into a monochromator, which is a device that separates the light into its component wavelengths. The monochromator can be a prism, a diffraction grating, or a filter. By selecting a specific wavelength, the monochromator ensures that only light of a narrow wavelength band reaches the sample.
+\item
+  \textbf{Sample Holder}: The light of the selected wavelength passes through the sample holder, which contains the sample to be analyzed. As the light interacts with the sample, some of it is absorbed, and the rest is transmitted or reflected.
+\item
+  \textbf{Detector}: After passing through the sample, the light reaches a detector. The detector measures the intensity of the transmitted light. The detector converts the light into an electrical signal proportional to the light intensity.
+\item
+  \textbf{Data Processing}: The electrical signal is then processed and converted into digital data. The spectrophotometer software calculates the absorbance or transmittance of the sample by comparing the intensity of the light before and after it passes through the sample. The absorbance (\(A\)) is calculated as the logarithm (base 10) of the ratio of the initial intensity (\(I_0\)) to the transmitted intensity (\(I\)):
+\end{itemize}
+
+\[ A = \log\left(\frac{I_0}{I}\right) \]
+
+\[ A = -\log(T) \]
+
+where \(A\) is absorbance, a measure of the amount of light absorbed by the sample; \(I_0\) is the initial intensity of the light before it passes through the sample; \(I\) is the transmitted intensity of the light after it has passed through the sample; \(T\) is transmittance defined as the ratio \(\frac{I_0}{I}\). This relationship indicates how much light is absorbed by the sample at \textbf{a specific wavelength}.
+
+\begin{greybox}[frametitle = Note]
+\emph{Transmittance, the ratio of the transmitted light intensity to the initial light intensity, is dimensionless and is often expressed as a percentage or a fraction is a dimensionless quantity. Despite also being dimensionless, for practical purposes, absorbance is often expressed as absorbance units (AU) and related units such as the milli-absorbance unit (mAU) commonly used in high-performance liquid chromatography with spectrophotometric detectors.}
+
+\end{greybox}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Output}: The final data is displayed on a screen or printed out as a spectrum, which shows the absorbance or transmittance as a function of wavelength. This spectrum provides valuable information about the sample's optical properties and can be used to identify and quantify specific substances within the sample.
+\end{itemize}
+
+\section{Lambert-Beer Law}\label{lambert-beer-law}
+
+The Lambert-Beer Law describes the linear relationship between absorbance and the concentration of an absorbing species in a sample. This allows the determination of the concentration of a species based on the absorbance of sample at a given wavelength. The Lambert-Beer Law is expressed by:
+
+\[ A = \varepsilon \cdot C \cdot l \]
+
+where \(A\) is absorbance; \(\varepsilon\) is the molar absorptivity (also known as molar extinction coefficient), a constant that indicates how strongly the absorbing species absorbs light at a particular wavelength expressed in units of \(\text{mM}^{-1} \cdot \text{cm}^{-1}\); \(C\) is the concentration of the absorbing species in the sample; and \(l\) is path length, the distance that light travels through the sample, usually expressed in centimeters (cm).
+
+The Lambert-Beer Law shows that absorbance (\(A\)) is directly proportional to the concentration (\(c\)) of the absorbing species and the path length (\(l\)) of the sample, which allow us to quantify a given species based on its absorbance by using its \(\varepsilon\) or comparing it to a standard curve.
+
+\section{Commonly Used Reading Modes}\label{commonly-used-reading-modes}
+
+The three commonly used and widely available reading modes are \textbf{endpoint}, \textbf{kinetics}, and \textbf{spectrum/scan}. Each mode provides unique data acquisition methods suited for different types of assays and analyses. Understanding these modes is crucial for effectively designing experiments and interpreting results.
+
+\subsection{Endpoint}\label{endpoint}
+
+In \textbf{endpoint mode}, the spectrophotometer measures the absorbance of a sample at a specific or a set of specific wavelengths, providing a single data point for each wavelength. This mode is ideal for assays where the reaction reaches a stable endpoint, such as determining the concentration of a substance in a sample using a standard curve. It is the simplest of the reading modes.
+
+\subsection{Kinetics}\label{kinetics}
+
+\textbf{Kinetics mode} continuously monitors the change in absorbance over time at a particular or a set of wavelengths, capturing real-time data of the reaction progress. This mode is especially useful for studying reaction rates, enzyme activities, and other time-dependent processes. In practical terms, kinetics mode can be seen as a sequence of endpoint measurements taken at successive time intervals, providing a dynamic view of the reaction. The advantage of using the kinetic mode instead of multiple endpoint measurements is that the device usually summarizes the data in a plot of absorbance versus time and often display the rate of the change in absorbance over time so that you do not have to plot each individual point and make the calculations yourself.
+
+\begin{itemize}
+\tightlist
+\item
+  Add a SOD kinetic reading
+\end{itemize}
+
+\subsection{Spectrum (or Scan)}\label{spectrum-or-scan}
+
+\textbf{Spectrum/scan mode} records absorbance across a range of wavelengths, generating a spectrum for the sample. This mode is useful for identifying and characterizing substances based on their unique absorption profiles and for detecting the presence of multiple components in a sample. Essentially, it is a sequence of endpoint measurements taken at different wavelengths, creating an absorption spectrum. The advantage of using the spectrum mode instead of multiple endpoint measurements is that the device usually summarizes the data in a plot of absorbance versus wavelength so that you do not have to plot each individual point. Also, most devices collect a baseline to zero the readings at the selected wavelength interval that would need to be individually set in multiple endpoint readings.
+
+\begin{itemize}
+\tightlist
+\item
+  Add a Bradford reagent scan reading
+\end{itemize}
+
+\section{Path Length, Cuvettes, and Microplates}\label{path-length-cuvettes-and-microplates}
+
+From the Lambert-Beer Law, it can be concluded that the distance that light travels through a sample (i.e., the path length \(l\)) is a critical parameter and that variations in the path length alter the relationship between absorbance and concentration. Typically measured in centimeters (cm), the path length is an essential factor because it directly influences the amount of light that interacts with the sample.
+
+Because the standard path length for most spectrophotometric measurements is 1 cm (i.e., a 1-cm cuvette) and \(\varepsilon\) values are commonly expressed in \(\text{concentration}^{-1} \cdot \text{cm}^{-1}\), it is often an overlook issue. However, the path length can vary depending on the characteristics of the sample container used and the design of the experiment.
+
+In cuvettes, the path lenght is fixed and delimited by the walls of the cuvette. There are cuvettes of different sizes, volumes and path lenghts, but the path lenght of a given cuvette is fixed. This is not the case of microplates where the pathlenght is determined by the volume of sample in each well and can have multiple values in a single microplate depending on the volume. Thus, when using microplates and \(\varepsilon\) expressed as \(\text{concentration}^{-1} \cdot \text{cm}^{-1}\), the absorbance values must be adjusted for a 1 cm pathlenght prior to the calculations. To do so, you can multiply the absorbance value by 1/path length (cm). For example, an absrobance of 0.2 measured with a pathlengh of 0.5 cm is equivalent to an absrobance of 0.4 with an path lenght of 1 cm.
+
+\begin{greybox}[frametitle = Note]
+\emph{Another factor to consider is the transparency of the material at the wavelenght of the experiment. Not all materials are transparent at all wavelenght. For example, for visible light glass and plastic cuvettes are fine, but for UV measurements quartz cuvettes or specific plastic polymers cuvettes should be used. The same applies for microplates, which should have a flat bottom, and be made of a material that is transparent at the desired wavelenght.}
+
+\end{greybox}
 
 \part{Methodological Approaches}\label{part-methodological-approaches}
 
@@ -1062,7 +1195,7 @@ Converting:
 \[ \text{mM} \cdot \text{min}^{-1} = \text{mmol/L} \cdot \text{min}^{-1} = \mu\text{mol/mL} \cdot \text{min}^{-1} = \text{U/mL} \]
 
 \begin{greybox}[frametitle = Note]
-\emph{Catalase does not follow the usual pattern of Michaelis-Menten kinetics. It is not possible to saturate the enzyme with substrate within a feasible concentration range, and catalase is inactivated by its own substrate at concentrations of H\textsubscript{2}O\textsubscript{2} above 100 mM (\href{https://doi.org/10.1016/S0076-6879(84)05016-3}{Aebi 1984}). Therefore, some authors recommend not using the International Unit to express catalase activity, but rather the rate constant of a first-order reaction (\(k\).}
+\emph{Catalase does not follow the usual pattern of Michaelis-Menten kinetics. It is not possible to saturate the enzyme with substrate within a feasible concentration range, and catalase is inactivated (oxidized) by its own substrate at concentrations of H\textsubscript{2}O\textsubscript{2} above 100 mM. Therefore, some authors recommend not using the International Unit to express catalase activity, but rather the rate constant of a first-order reaction (\(k\).}
 
 \end{greybox}
 
@@ -1132,11 +1265,14 @@ Lastly, to standardize the comparison of enzymatic activity across different sam
 \[ \text{Activity (U/mg prot.) in tissue} = \left( \frac{\ensuremath{6.091371\times 10^{4}}}{99.1} \right)\]
 \[ \text{Activity (U/mg prot.) in tissue} = 614.67 \]
 
-\emph{Note: To normalize enzymatic activity, it is necessary to quantify the protein concentration in the sample using another method (e.g., Bradford assay, BCA, Qubit™, etc.). Quantification should be done using the same homogenate used to measure activity. Refer to protocol CA.002 for protein quantification using the Bradford method.}
+\begin{greybox}[frametitle = Note]
+\emph{To normalize enzymatic activity, it is necessary to quantify the protein concentration in the sample using another method (e.g., Bradford assay, BCA, Qubit™, etc.). Quantification should be done using the same homogenate used to measure activity.}
+
+\end{greybox}
 
 \section{3-Amino-1,2,4-Triazole}\label{amino-124-triazole}
 
-To ensure that the consumption of H\textsubscript{2}O\textsubscript{2} observed in the assay is specifically caused by catalase activity, it is recommended to verify the ability of 3-amino-1,2,4-triazole (ATZ) to reduce the rate of H\textsubscript{2}O\textsubscript{2} consumption caused by the sample. ATZ is an irreversible inhibitor of catalase and is used at a concentration of 20 mM with an exposure time of 0.5 to 2.0 hours to abolish catalase activity (\href{https://doi.org/10.1042\%2Fbj0680468}{Margoliash and Novogrodsky, 1958}; {[}Watanabe and Forman, 2003{]}(https\ldots{}
+To ensure that the consumption of H\textsubscript{2}O\textsubscript{2} observed in the assay is specifically caused by catalase activity, it is recommended to verify the ability of 3-amino-1,2,4-triazole (ATZ) to reduce the rate of H\textsubscript{2}O\textsubscript{2} consumption caused by the sample. ATZ is an irreversible inhibitor of catalase and is used at a concentration of 20 mM with an exposure time of 0.5 to 2.0 hours to abolish catalase activity \autocite{margoliash_study_1958,margoliash_irreversible_1960,watanabe_autoxidation_2003}. Since ATZ acts on Compound I (see \hyperref[intro]{Introduction}), and not directly on catalase, H\textsubscript{2}O\textsubscript{2} should be added to the medium where the sample is incubated with ATZ so that Compound I is formed and inhibition occurs.
 
 \subsection{\texorpdfstring{Catalase Inhibition by ATZ \emph{in vitro}}{Catalase Inhibition by ATZ in vitro}}\label{catalase-inhibition-by-atz-in-vitro}
 
@@ -1158,6 +1294,38 @@ The following result illustrates the effect of incubating a sample with ATZ in t
 \normalsize
 
 In the control treatment, catalase activity remained stable throughout the period, oscillating between -0.050 and -0.052 Abs/min. In the ATZ treatment, catalase activity gradually declined, but after 2.5 hours, the inhibition was only 41.3\% relative to the initial activity. In the sample treated with ATZ + H\textsubscript{2}O\textsubscript{2}, the activity dropped exponentially, being only 1.5\% of the control treatment and the initial activity before the start of the treatment (\hyperref[fig-inhibitor]{Figure 4}). Therefore, for this sample, all consumption of H\textsubscript{2}O\textsubscript{2} can be attributed to catalase activity.
+
+\section{Troubleshooting}\label{troubleshooting}
+
+It has been reported that for some species there is a delay for the onset of h2o2 consumption.
+
+When optimizing the assay or assessing no a sample for the first time it is better to use longer total reading time to better understand what is going on and diagnose potential problems.
+
+\scriptsize
+
+\begin{table}[!h]
+\centering
+\caption{\label{tab:cat-troubleshooting}caption}
+\centering
+\fontsize{7}{9}\selectfont
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{15em}>{\raggedright\arraybackslash}p{10em}>{\raggedright\arraybackslash}p{15em}}
+\toprule
+\textbf{Problem} & \textbf{Possible Cause} & \textbf{Solution}\\
+\midrule
+\cellcolor{gray!10}{Inconsistent results between runs} & \cellcolor{gray!10}{Pipetting errors} & \cellcolor{gray!10}{Calibrate pipettes and ensure consistent technique}\\
+ & Temperature variations & Maintain a consistent temperature environment during the experiment\\
+\cellcolor{gray!10}{} & \cellcolor{gray!10}{Inconsistent incubation times} & \cellcolor{gray!10}{Standardize and carefully monitor incubation times}\\
+No change in absorbance over time & Incorrect wavelength selected & Verify and set the correct wavelength\\
+\cellcolor{gray!10}{} & \cellcolor{gray!10}{Sample not added} & \cellcolor{gray!10}{Ensure the sample is correctly pipetted into the wells}\\
+\addlinespace
+High initial absorbance &  & \\
+\cellcolor{gray!10}{Low initial absorbance} & \cellcolor{gray!10}{} & \cellcolor{gray!10}{}\\
+Non-linear rate &  & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\normalsize
 
 \section{Additional Comments}\label{cat_additional_comments}
 
@@ -1246,24 +1414,6 @@ In the control treatment, catalase activity remained stable throughout the perio
     Lambert-Beer Law: \(A = \varepsilon \cdot C \cdot l\), where \(A\) is absorbance; \(\varepsilon\) is the molar absorption coefficient (M\textsuperscript{-1} cm\textsuperscript{-1}); \(C\) is the concentration of the solution (M); \(l\) is the path length of the optical path (cm).
   \end{itemize}
 \end{itemize}
-
-\section{References}\label{references}
-
-Aebi H. 1984. Catalase in vitro. \emph{Methods in Enzymology} 105 121--126. \url{https://doi.org/10.1016/S0076-6879(84)05016-3}
-
-Bagnyukova, T.V., Vasylkiv, O.Yu., Storey, K.B., Lushchak, V.I., 2005. Catalase inhibition by amino triazole induces oxidative stress in goldfish brain. \emph{Brain Research} 1052, 180--186. \url{https://doi.org/10.1016/j.brainres.2005.06.002}
-
-Ho, Y.-S., Xiong, Y., Ma, W., Spector, A., Ho, D.S., 2004. Mice Lacking Catalase Develop Normally but Show Differential Sensitivity to Oxidant Tissue Injury. \emph{Journal of Biological Chemistry} 279, 32804--32812. \url{https://doi.org/10.1074/jbc.M404800200}
-
-Margoliash, E., Novogrodsky, A., 1958. A study of the inhibition of catalase by 3-amino-1:2:4-triazole. \emph{Biochemical Journal} 68, 468--475. \url{https://doi.org/10.1042/bj0680468}
-
-Robinson, P.K., 2015. Enzymes: principles and biotechnological applications. \emph{Essays in Biochemistry} 59, 1--41. \url{https://doi.org/10.1042/bse0590001}
-
-Spitz, D.R., Adams, D.T., Sherman, C.M., Roberts, R.J., 1992. Mechanisms of cellular resistance to hydrogen peroxide, hyperoxia, and 4-hydroxy-2-nonenal toxicity: The significance of increased catalase activity in H\textsubscript{2}O\textsubscript{2}-resistant fibroblasts. \emph{Archives of Biochemistry and Biophysics} 292, 221--227. \url{https://doi.org/10.1016/0003-9861(92)90071-4}
-
-Watanabe, N., Forman, H.J., 2003. Autoxidation of extracellular hydroquinones is a causative event for the cytotoxicity of menadione and DMNQ in A549-S cells. \emph{Archives of Biochemistry and Biophysics} 411, 145--157. \url{https://doi.org/10.1016/S0003-9861(02)00716-6}
-
-Weydert, C.J., Cullen, J.J., 2010. Measurement of superoxide dismutase, catalase and glutathione peroxidase in cultured cells and tissue. \emph{Nature Protocols} 5, 51--66. \url{https://doi.org/10.1038/nprot.2009.197}
 
 \chapter{Superoxide Dismutase}\label{superoxide-dismutase}
 
