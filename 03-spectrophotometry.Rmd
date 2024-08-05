@@ -1,3 +1,120 @@
 # Spectrophotometry Fundamentals
 
-## Cuvette *versus* microplates
+::: {.Summary data-latex=""}
+Some text for this block.
+:::
+
+\toc{1}
+
+\newpage
+
+## Spectrophotometry
+Spectroscopic methods are those that rely on the interaction between matter and electromagnetic radiation. They encompasses several techniques used to measure how electromagnetic radiation is absorbed, emitted, or scattered by substances. By investigating these interactions, valuable insights into the composition, structure, and properties of different materials are made available. 
+
+Wavelength (\(\lambda\)) is defined as the distance between successive peaks of a wave. It is typically measured in meters (m), centimeters (cm), or nanometers (nm). Wavelength is a crucial parameter in spectroscopy as it determines the energy and type of electromagnetic radiation. The electromagnetic spectrum is classified based on wavelength into different regions, each associated with specific types of electromagnetic radiation:
+
+- **Gamma Rays**: Wavelengths less than \(0.01 \, \text{nm}\)
+- **X-rays**: Wavelengths between \(0.01 \, \text{nm}\) and \(10 \, \text{nm}\)
+- **Ultraviolet (UV)**: Wavelengths between \(10 \, \text{nm}\) and \(400 \, \text{nm}\)
+- **Visible Light**: Wavelengths between \(400 \, \text{nm}\) and \(700 \, \text{nm}\)
+- **Infrared (IR)**: Wavelengths between \(700 \, \text{nm}\) and \(1 \, \text{mm}\)
+- **Microwaves**: Wavelengths between \(1 \, \text{mm}\) and \(1 \, \text{m}\)
+- **Radio Waves**: Wavelengths greater than \(1 \, \text{m}\)
+
+```{r fig-electromagnetic-rad, fig.cap = '(ref:fig-electromagnetic-rad)', fig.dim = c(11.25, 1), out.width = '100%'}
+# Define the data for the electromagnetic spectrum regions
+spectrum_data <- data.frame(
+  Region = c("Gamma Rays", "X-rays", "Ultraviolet", "Visible Light", "Infrared", "Microwaves", "Radio Waves"),
+  Wavelength_Start = c(1e-12, 1e-11, 1e-8, 4e-7, 7e-7, 1e-3, 1),
+  Wavelength_End = c(1e-11, 1e-8, 4e-7, 7e-7, 1e-3, 1, 1e3)
+)
+
+# Create a numeric mapping for the regions
+spectrum_data$Region_Num <- factor(spectrum_data$Region, levels = rev(spectrum_data$Region))
+
+# Create the plot
+ggplot(spectrum_data) +
+  geom_rect(aes(xmin = Wavelength_Start, xmax = Wavelength_End, ymin = as.numeric(Region_Num) - 0.4, ymax = as.numeric(Region_Num) + 0.4, fill = Region)) +
+  scale_x_log10("Wavelength (m)", breaks = c(1e-12, 1e-10, 1e-8, 1e-6, 1e-4, 1e-2, 1, 1e2, 1e4),
+                labels = scales::trans_format("log10", scales::math_format(10^.x))) +
+  scale_y_continuous(name = "", breaks = seq_along(spectrum_data$Region), labels = rev(spectrum_data$Region)) +
+  scale_fill_brewer(palette = "Set3") +
+  theme_minimal() +
+  theme(legend.position = "none") +
+  labs(x = "Wavelength (meters)")
+```
+
+Different regions of the electromagnetic spectrum are utilized in various spectroscopic techniques based on the type of information required and the nature of the sample being analyzed.
+
+Spectrophotometry is a subset of spectroscopy that focuses on measuring the amount of light absorbed by a sample at specific wavelengths. This technique is widely used in biology, chemistry, and various other areas of science and industry to quantify the concentration of substances, monitor chemical reactions, and study molecular interactions. Measuring how much light a sample absorbs (at a given or a set of wavelengths) provides qualitative and quantitative information. The amount of light absorbed by a sample is quantified as absorbance, which is defined as the "logarithm of the ratio of incident to transmitted radiant power through a sample" [@gold_iupac_2019].
+
+### How a Typical Spectrophotometer Functions
+
+A spectrophotometer is an instrument designed to measure the intensity of light at a given wavelength after its interaction with a sample. A detailed view of spectroscopy and how spectrophotometers work can be found elsewhere [@skoog_fundamentals_2022]. Here is **a simplified overview** of a typical spectrophotometer, which is enough for the purpose of the protocols in this book:
+
+* **Light Source**: The spectrophotometer contains a light source, such as a tungsten or xenon lamp, that emits a broad spectrum of light.
+
+* **Monochromator**: The emitted light is directed into a monochromator, which is a device that separates the light into its component wavelengths. The monochromator can be a prism, a diffraction grating, or a filter. By selecting a specific wavelength, the monochromator ensures that only light of a narrow wavelength band reaches the sample.
+
+* **Sample Holder**: The light of the selected wavelength passes through the sample holder, which contains the sample to be analyzed. As the light interacts with the sample, some of it is absorbed, and the rest is transmitted or reflected.
+
+* **Detector**: After passing through the sample, the light reaches a detector. The detector measures the intensity of the transmitted light.  The detector converts the light into an electrical signal proportional to the light intensity.
+
+* **Data Processing**: The electrical signal is then processed and converted into digital data. The spectrophotometer software calculates the absorbance or transmittance of the sample by comparing the intensity of the light before and after it passes through the sample. The absorbance (\( A \)) is calculated as the logarithm (base 10) of the ratio of the initial intensity (\( I_0 \)) to the transmitted intensity (\( I \)):
+
+\[ A = \log\left(\frac{I_0}{I}\right) \]
+
+\[ A = -\log(T) \]
+
+where \( A \) is absorbance, a measure of the amount of light absorbed by the sample; \( I_0 \) is the initial intensity of the light before it passes through the sample; \( I \) is the transmitted intensity of the light after it has passed through the sample; \( T \) is transmittance defined as the ratio \( \frac{I_0}{I} \). This relationship indicates how much light is absorbed by the sample at **a specific wavelength**.
+
+:::{.greybox data-latex='[frametitle = Note]'}
+_Transmittance, the ratio of the transmitted light intensity to the initial light intensity, is dimensionless and is often expressed as a percentage or a fraction is a dimensionless quantity. Despite also being dimensionless, for practical purposes, absorbance is often expressed as absorbance units (AU) and related units such as the milli-absorbance unit (mAU) commonly used in high-performance liquid chromatography with spectrophotometric detectors._
+::: 
+
+* **Output**: The final data is displayed on a screen or printed out as a spectrum, which shows the absorbance or transmittance as a function of wavelength. This spectrum provides valuable information about the sample's optical properties and can be used to identify and quantify specific substances within the sample.
+
+## Lambert-Beer Law
+
+The Lambert-Beer Law describes the linear relationship between absorbance and the concentration of an absorbing species in a sample. This allows the determination of the concentration of a species based on the absorbance of sample at a given wavelength. The Lambert-Beer Law is expressed by:
+
+\[ A = \varepsilon \cdot C \cdot l \]
+
+where \( A \) is absorbance; \( \varepsilon \) is the molar absorptivity (also known as molar extinction coefficient), a constant that indicates how strongly the absorbing species absorbs light at a particular wavelength expressed in units of \(\text{mM}^{-1} \cdot \text{cm}^{-1}\); \( C \) is the concentration of the absorbing species in the sample; and \( l \) is path length, the distance that light travels through the sample, usually expressed in centimeters (cm).
+
+The Lambert-Beer Law shows that absorbance (\( A \)) is directly proportional to the concentration (\( c \)) of the absorbing species and the path length (\( l \)) of the sample, which allow us to quantify a given species based on its absorbance by using its \( \varepsilon \) or comparing it to a standard curve.
+
+## Commonly Used Reading Modes
+
+The three commonly used and widely available reading modes are **endpoint**, **kinetics**, and **spectrum/scan**. Each mode provides unique data acquisition methods suited for different types of assays and analyses. Understanding these modes is crucial for effectively designing experiments and interpreting results.
+
+### Endpoint
+
+In **endpoint mode**, the spectrophotometer measures the absorbance of a sample at a specific or a set of specific wavelengths, providing a single data point for each wavelength. This mode is ideal for assays where the reaction reaches a stable endpoint, such as determining the concentration of a substance in a sample using a standard curve. It is the simplest of the reading modes.
+
+### Kinetics
+
+**Kinetics mode** continuously monitors the change in absorbance over time at a particular or a set of wavelengths, capturing real-time data of the reaction progress. This mode is especially useful for studying reaction rates, enzyme activities, and other time-dependent processes. In practical terms, kinetics mode can be seen as a sequence of endpoint measurements taken at successive time intervals, providing a dynamic view of the reaction. The advantage of using the kinetic mode instead of multiple endpoint measurements is that the device usually summarizes the data in a plot of absorbance versus time and often display the rate of the change in absorbance over time so that you do not have to plot each individual point and make the calculations yourself.
+
+* Add a SOD kinetic reading
+
+### Spectrum (or Scan)
+
+**Spectrum/scan mode** records absorbance across a range of wavelengths, generating a spectrum for the sample. This mode is useful for identifying and characterizing substances based on their unique absorption profiles and for detecting the presence of multiple components in a sample. Essentially, it is a sequence of endpoint measurements taken at different wavelengths, creating an absorption spectrum. The advantage of using the spectrum mode instead of multiple endpoint measurements is that the device usually summarizes the data in a plot of absorbance versus wavelength so that you do not have to plot each individual point. Also, most devices collect a baseline to zero the readings at the selected wavelength interval that would need to be individually set in multiple endpoint readings.
+
+* Add a Bradford reagent scan reading
+
+## Path Length, Cuvettes, and Microplates
+
+From the Lambert-Beer Law, it can be concluded that the distance that light travels through a sample (i.e., the path length \( l \)) is a critical parameter and that variations in the path length alter the relationship between absorbance and concentration. Typically measured in centimeters (cm), the path length is an essential factor because it directly influences the amount of light that interacts with the sample.
+
+Because the standard path length for most spectrophotometric measurements is 1 cm (i.e., a 1-cm cuvette) and \( \varepsilon \) values are commonly expressed in \(\text{concentration}^{-1} \cdot \text{cm}^{-1}\), it is often an overlook issue. However, the path length can vary depending on the characteristics of the sample container used and the design of the experiment.
+
+In cuvettes, the path lenght is fixed and delimited by the walls of the cuvette. There are cuvettes of different sizes, volumes and path lenghts, but the path lenght of a given cuvette is fixed regardless of the volume inside. This is not the case of microplates where the pathlenght is determined by the volume of sample in each well and can have multiple values, even in a single microplate, depending on the volume. Thus, when using microplates and \( \varepsilon \) expressed as \(\text{concentration}^{-1} \cdot \text{cm}^{-1}\), the absorbance values must be adjusted for a 1 cm pathlenght prior to the calculations. To do so, you can multiply the absorbance value by 1/path length (cm). For example, an absrobance of 0.2 measured with a pathlengh of 0.5 cm is equivalent to an absrobance of 0.4 with an path lenght of 1 cm (as can be calculated from the Lambert-Beer equation). 
+
+* Drawing of Cuvettes and microplates.
+* Table of path lenghts for some example microplates.
+
+:::{.greybox data-latex='[frametitle = Note]'}
+_Another factor to consider is the transparency of the material at the wavelenght of the experiment. Not all materials are transparent at all wavelenght. For example, for visible light glass and plastic cuvettes are fine, but for UV measurements quartz cuvettes or specific plastic polymers cuvettes should be used. The same applies for microplates, which should have a flat bottom, and be made of a material that is transparent at the desired wavelenght._
+:::
