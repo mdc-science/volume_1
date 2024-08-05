@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.8.4)  4 AUG 2024 22:33
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.8.4)  5 AUG 2024 09:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2018,59 +2018,57 @@ Underfull \hbox (badness 10000) in paragraph at lines 491--492
 
 [20]
 
-LaTeX Warning: Reference `tab:cat-tab-vol' on page 21 undefined on input line 520.
-
-
-
 [21]
-Package mdframed Info: mdframed works in twoside mode on input line 606.
-Package mdframed Info: mdframed works in twoside mode on input line 645.
+Package mdframed Info: mdframed works in twoside mode on input line 616.
+Package mdframed Info: mdframed works in twoside mode on input line 655.
 
 
 [22]
-Package mdframed Info: mdframed works in twoside mode on input line 674.
-Package mdframed Info: mdframed works in twoside mode on input line 679.
+Package mdframed Info: mdframed works in twoside mode on input line 684.
+Package mdframed Info: mdframed works in twoside mode on input line 689.
 
 
 [23]
-Package mdframed Info: mdframed works in twoside mode on input line 756.
-Package mdframed Info: mdframed works in twoside mode on input line 787.
+Package mdframed Info: mdframed works in twoside mode on input line 766.
+Package mdframed Info: mdframed works in twoside mode on input line 797.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 10.95pt on input line 792.
+(Font)              scaled to size 10.95pt on input line 802.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 8.0pt on input line 792.
+(Font)              scaled to size 8.0pt on input line 802.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 792.
+(Font)              scaled to size 6.0pt on input line 802.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.95099pt on input line 792.
+(Font)              scaled to size 10.95099pt on input line 802.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 8.00073pt on input line 792.
+(Font)              scaled to size 8.00073pt on input line 802.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 6.00055pt on input line 792.
+(Font)              scaled to size 6.00055pt on input line 802.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 10.94882pt on input line 792.
+(Font)              scaled to size 10.94882pt on input line 802.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.99915pt on input line 792.
+(Font)              scaled to size 7.99915pt on input line 802.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.99936pt on input line 792.
+(Font)              scaled to size 5.99936pt on input line 802.
 
 
 [24]
 Missing character: There is no ε (U+03B5) in font [lmroman9-regular]:mapping=tex-text;!
-Package mdframed Info: mdframed works in twoside mode on input line 823.
-Package mdframed Info: mdframed works in twoside mode on input line 845.
+Package mdframed Info: mdframed works in twoside mode on input line 833.
+Package mdframed Info: mdframed works in twoside mode on input line 855.
 
 
 [25]
-Package mdframed Info: mdframed works in twoside mode on input line 888.
+Package mdframed Info: mdframed works in twoside mode on input line 898.
+Package mdframed Info: Not enough space on this page on input line 901.
 
 
 [26]
-Package mdframed Info: mdframed works in twoside mode on input line 917.
+Package mdframed Info: Not enough space on this page on input line 901.
+Package mdframed Info: mdframed works in twoside mode on input line 927.
 
 
 [27]
-Package mdframed Info: mdframed works in twoside mode on input line 978.
+Package mdframed Info: mdframed works in twoside mode on input line 988.
 
 
 [28]
@@ -2083,12 +2081,12 @@ Missing character: There is no ≥ (U+2265) in font [lmroman8-regular]:mapping=t
 File: Volume-1_files/figure-latex/fig-cat-linear-range-1.pdf Graphic file (type pdf)
 <use Volume-1_files/figure-latex/fig-cat-linear-range-1.pdf>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1027--1028
+Underfull \hbox (badness 10000) in paragraph at lines 1037--1038
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1027--1028
+Underfull \hbox (badness 10000) in paragraph at lines 1037--1038
 
  []
 
@@ -2097,32 +2095,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 1027--1028
 [29]
 
 [30]
-Package mdframed Info: mdframed works in twoside mode on input line 1054.
+Package mdframed Info: mdframed works in twoside mode on input line 1064.
 
 
 [31]
-Overfull \hbox (9.08694pt too wide) detected at line 1068
+Overfull \hbox (9.08694pt too wide) detected at line 1078
 [][][][][] [] [] [] []
  []
 
 
-Overfull \hbox (1.09499pt too wide) detected at line 1072
+Overfull \hbox (1.09499pt too wide) detected at line 1082
 [][][][][] [] [] [] []
  []
 
-Package mdframed Info: mdframed works in twoside mode on input line 1080.
+Package mdframed Info: mdframed works in twoside mode on input line 1090.
 Missing character: There is no ε (U+03B5) in font [lmroman9-regular]:mapping=tex-text;!
 
 
 [32]
-Package mdframed Info: mdframed works in twoside mode on input line 1113.
+Package mdframed Info: mdframed works in twoside mode on input line 1123.
 
 
 [33]
 File: Volume-1_files/figure-latex/cat-fig-inhibitor-1.pdf Graphic file (type pdf)
 <use Volume-1_files/figure-latex/cat-fig-inhibitor-1.pdf>
 
-LaTeX Warning: Hyper reference `fig-inhibitor' on page 34 undefined on input line 1150.
+LaTeX Warning: Hyper reference `fig-inhibitor' on page 34 undefined on input line 1160.
 
 
 
@@ -2131,25 +2129,25 @@ File: Volume-1_files/figure-latex/fig-substrate-curves-1.pdf Graphic file (type 
 <use Volume-1_files/figure-latex/fig-substrate-curves-1.pdf>
 Missing character: There is no ≈ (U+2248) in font [lmroman9-regular]:mapping=tex-text;!
 
-LaTeX Warning: Hyper reference `fig-catalase-bubbles' on page 35 undefined on input line 1177.
-
-
 
 [35]
 
-[36]
+LaTeX Warning: Hyper reference `fig-catalase-bubbles' on page 36 undefined on input line 1187.
+
 File: images/catalase/bubbles.png Graphic file (type bmp)
 <images/catalase/bubbles.png>
 
-Overfull \hbox (14.45486pt too wide) in paragraph at lines 1184--1184
+Overfull \hbox (14.45486pt too wide) in paragraph at lines 1194--1194
 [] [][][] 
  []
 
 Missing character: There is no ≤ (U+2264) in font [lmroman9-regular]:mapping=tex-text;!
 
-LaTeX Warning: Reference `fig:fig-catalase-parafilm' on page 37 undefined on input line 1192.
+LaTeX Warning: Reference `fig:fig-catalase-parafilm' on page 36 undefined on input line 1202.
 
 
+
+[36]
 
 [37]
 File: images/catalase/parafilm_droplet.png Graphic file (type bmp)
@@ -2190,17 +2188,8 @@ Sidefootvsep and sidefootheight: 10pt and 346.99997pt
 ******************************************************
 
 
-LaTeX Warning: Empty bibliography on input line 1267.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1287--1287
-
- []
-
-
 
 [43
-
 
 
 ]
@@ -2225,7 +2214,7 @@ Sidefootvsep and sidefootheight: 10pt and 346.99997pt
 ******************************************************
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1299--1301
+Underfull \hbox (badness 10000) in paragraph at lines 1309--1311
 
  []
 
@@ -2237,6 +2226,8 @@ File: images/logo.pdf Graphic file (type pdf)
 
 
 [44
+
+
 
 ]
 \tf@toc=\write8
@@ -2254,18 +2245,18 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `Volume-1.out' has not changed.
-(rerunfilecheck)             Checksum: 4025473D04CBEAC7A8885D4BC030C62E;4410.
+(rerunfilecheck)             Checksum: E48E596A1F0A0F8AC75BE0EF2EA06AF1;4522.
 Package logreq Info: Writing requests to 'Volume-1.run.xml'.
 \openout1 = `Volume-1.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 46312 strings out of 476163
- 914805 string characters out of 5783404
- 1941609 words of memory out of 5000000
- 68103 multiletter control sequences out of 15000+600000
+ 46557 strings out of 476163
+ 920141 string characters out of 5783404
+ 1943609 words of memory out of 5000000
+ 68348 multiletter control sequences out of 15000+600000
  579920 words of font info for 127 fonts, out of 8000000 for 9000
  38 hyphenation exceptions out of 8191
- 99i,15n,123p,1479b,5545s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,16n,123p,1663b,5545s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on Volume-1.pdf (50 pages).
