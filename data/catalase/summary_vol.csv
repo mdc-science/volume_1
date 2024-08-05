@@ -1,0 +1,5 @@
+Assay,KPi + EDTA (7.2),Water,Sample,(ref:hydrogenperoxide)
+Zero,80,720,0,0
+Assay Blank,80,680,0,40
+Sample Assay,80,680 - X*,X*,40
+Sample Blank,80,720 - X*,X*,0

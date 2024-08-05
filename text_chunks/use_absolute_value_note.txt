@@ -1,0 +1,1 @@
+*Note: From this point onward, it is advisable to use the absolute value of the change in absorbance ΔAbs/min (i.e., consider the magnitude without regard to its sign). The sign is negative in this protocol because the molecule being monitored is consumed during the assay, causing a decrease in absorbance over time.*

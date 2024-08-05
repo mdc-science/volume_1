@@ -1,0 +1,39 @@
+### Phosphate Buffer (KPi) + EDTA
+The most convenient way to prepare phosphate buffer containing EDTA at the desired pH is to use concentrated solutions of monobasic potassium phosphate (1 M), dibasic potassium phosphate (1 M), and EDTA (500 mM). Mix them in a suitable ratio to achieve the pH close to the desired level and adjust the pH if necessary, as described below.
+
+#### Monobasic Potassium Phosphate (KH~2~PO~4~)
+* Prepare a 1 M solution of KH~2~PO~4~:
+  + Molecular Weight: 136.09 g/mol
+  + Weigh **13.609 g** of KH~2~PO~4~
+  + Dissolve in approximately 90 mL of deionized water
+  + Top up to **100 mL** with deionized water
+  + No need to measure or adjust the pH. Store in the refrigerator at 4°C
+
+#### Dibasic Potassium Phosphate (K~2~HPO~4~)
+* Prepare a 1 M solution of K~2~HPO~4~:
+  + Molecular Weight: 174.18 g/mol
+  + Weigh **87.09 g** of K~2~HPO~4~
+  + Dissolve in approximately 450 mL of deionized water
+  + Top up to **500 mL** with deionized water
+  + No need to measure or adjust the pH. Store in the refrigerator at 4°C
+
+#### Ethylenediaminetetraacetic Acid (EDTA)
+* Prepare a 500 mM solution of EDTA:
+  + Molecular Weight: 292.24 g/mol
+  + Weigh **7.306 g** of EDTA
+  + Dissolve in approximately 40 mL of deionized water
+  + Adjust the **pH to 8.0** using 1 M NaOH (to increase the pH)
+  + After adjusting the pH, top up to **50 mL** with deionized water
+  + Store in the refrigerator at 4°C
+
+*Note: At this concentration, a considerable portion of the reagent will not dissolve until the pH is made alkaline.*
+
+### Phosphate Buffer (KPi) + EDTA
+* Using the previous solutions, prepare a 500 mM phosphate buffer containing 5 mM EDTA (pH XXX):
+  + Add **28 mL** of 1 M KH~2~PO~4~
+  + Add **97 mL** of 1 M K~2~HPO~4~
+  + Add 80 mL of deionized water
+  + Add **25 mL** of 500 mM EDTA
+  + If necessary, adjust the **pH to XXX** using 1 M HCl (to decrease the pH) or 1 M NaOH (to increase the pH)
+  + Top up to **250 mL** with deionized water
+  + Aliquot into tubes (50 mL) and store in the refrigerator at 4°C

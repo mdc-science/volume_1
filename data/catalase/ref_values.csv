@@ -1,0 +1,6 @@
+﻿Organismo,Espécie,Tecido,Diluição Homog.,Proteína no Homog.,Diluição Ensaio,Taxa (Abs/min)
+Peixe Zebra,*Danio rerio*,Embriões,49 embriões em 400 µL,"1,0 mg/mL","1:12,5 (v/v)",-0.047
+Traça-da-Cera,*Galleria mellonella*,Larva,1:100 (p/v),"0,5 mg/mL",1:400 (v/v),-0.019
+Humano,*Homo sapiens*,Células C20,"1,4 × 10^7^ céls./mL","1,4 mg/mL",1:10 (v/v),-0.027
+Camundongo,*Mus musculus*,Células BV-2,"5,5 × 10^6^ céls./mL","0,5 mg/mL",1:10 (v/v),-0.014
+Rato,*Rattus norvegicus*,Fígado,1:150 (p/v),"0,7 mg/mL",1:800 (v/v),-0.0206

@@ -1,0 +1,217 @@
+--- 
+title: "The Dismutators"
+# subtitle: "Does it work?"
+author: "Daniel Moreira"
+# date: "`r Sys.Date()`"
+indent: false
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+cover-image: images/logo.png
+maintitlepage:
+  epigraph: |
+    “How have living systems, which are based on a common set of biochemical structures and
+    processes and subject to a common set of physical-chemical laws, been able to adapt to
+    the enormously wide spectrum of environmental conditions found in the biosphere?”
+    Peter Hochachka and George Somero – Biochemical Adaptation (2002) 
+  credits: |
+    Daniel Moreira
+    
+    \url{http://www.mdcscience.com}
+    
+    More text here.
+  logo: images/logo.png
+lang: "en-US"
+bibliography: references.bib
+documentclass: memoir
+classoption:
+- extrafontsizes
+- onecolumn
+- openright
+papersize: A5
+fontsize: 9pt
+mainfontoptions:
+- Extension=.otf
+- "UprightFont=*-regular"
+- "BoldFont=*-bold"
+- "BoldItalicFont=*-bolditalic"
+- "ItalicFont=*-italic"
+MemoirChapStyle: daleif1
+MemoirPageStyle: Ruled
+largemargins: false
+smallmargin: 0.75in
+largemargin: 1.5in
+marginnote: 1in
+spinemargin: 0.75in
+uppermargin: 0.75in
+lowermargin: 0.75in
+toc-depth: 1
+secnum-depth: section
+lot: false
+lof: false
+biblatexoptions:
+- backend=biber
+- "style=authoryear-ibid"
+- isbn=false
+- backref=true
+- giveninits=true
+- uniquename=init
+- maxcitenames=2
+- maxbibnames=150
+- sorting=nyt
+- sortcites=false
+longbibliography: false
+chaptersummary:  
+backcover:
+- language: english
+  abstract: |
+    English abstract, on the last page. English abstract, on the last page.English abstract, on the last page.English abstract, on the last page.English abstract, on the last page.English abstract, on the last page.English abstract, on the last page.English abstract, on the last page.English abstract, on the last page.English abstract, on the last page.English abstract, on the last page.English abstract, on the last page.
+  keywords:
+  - Keyword1
+  - Keyword2
+  - Keyword3
+  - Keyword4
+  - Keyword5
+  abstractlabel: Abstract
+  keywordlabel: Keywords
+backcoverfontsize: normalsize
+fig_crop: true
+urlcolor: blue
+site: bookdown::bookdown_site
+always_allow_html: true
+graphics: true
+link-citations: true
+colorlinks: true
+csquotes: true
+description: Protocols for measuring the activities of catalase and SOD
+---
+
+<!-- HTML code necessary for key messages --> 
+<img src="images/trombone.png" alt="image" hidden/>
+
+```{r}
+#| label: DoNotModify
+#| include: FALSE
+### Utilities. Do not modify.
+# Installation of packages if necessary
+InstallPackages <- function(Packages) {
+  InstallPackage <- function(Package) {
+    if (!Package %in% installed.packages()[, 1]) {
+      install.packages(Package, repos = "https://cran.rstudio.com/")
+    }
+  }
+  invisible(sapply(Packages, InstallPackage))
+}
+
+# Basic packages
+InstallPackages(c("bookdown", "formatR", "kableExtra", "magick", "ragg"))
+
+# kableExtra must be loaded 
+if (knitr::opts_knit$get("rmarkdown.pandoc.to") == "docx") {
+  # Word output (https://stackoverflow.com/questions/35144130/in-knitr-how-can-i-test-for-if-the-output-will-be-pdf-or-word)
+  # Do not use autoformat (https://github.com/haozhu233/kableExtra/issues/308)
+  options(kableExtra.auto_format = FALSE)
+}
+library("kableExtra")
+
+# Chunk font size hook: allows size='small' or any valid Latex font size in chunk options
+def.chunk.hook  <- knitr::knit_hooks$get("chunk")
+knitr::knit_hooks$set(chunk = function(x, options) {
+  x <- def.chunk.hook(x, options)
+  ifelse(options$size != "normalsize", paste0("\n \\", options$size,"\n\n", x, "\n\n \\normalsize"), x)
+})
+
+# Output hook for full-width figures
+defOut <- knitr::knit_hooks$get("plot")
+knitr::knit_hooks$set(
+  plot = function(x, options) {
+    # Apply the original hook
+    x <- defOut(x, options)
+    # Only full-width figures
+    if (options$out.width == "\\widthw") {
+      # Modify output of the original hook, see code on:
+      # https://github.com/yihui/knitr/blob/master/R/hooks-latex.R
+      # Modify align1 output with align=center. Original code:
+      # switch(a, left = '\n\n', center = '\n\n{\\centering ', right = '\n\n\\hfill{}', '\n')
+      # replace centering by a minipage
+      x  <- gsub(
+        "\\n\\n\\{\\\\centering",
+        "\\\\setbox0=\\\\hbox\\{\\\\begin\\{minipage\\}\\[h\\]\\{\\\\widthw\\}\\\\centering",
+        x
+      )
+      # Modify align2 output with align=center. Original code:
+      # switch(a, left = '\\hfill{}\n\n', '\n\n}\n\n', right = '\n\n', '')
+      # replace } by the necessary code to place the minipage
+      x  <- gsub(
+        "\\n\\n\\}\\n\\n",
+        "\\\\end\\{minipage\\}\\}\\\\needspace\\{\\\\ht0+\\\\dp0+2\\\\baselineskip\\}\\\\definesHSpace\\\\hspace\\{-\\\\rf\\}\\\\box0",
+        x
+      )
+    }
+    return(x)
+  }
+)
+
+# Figures with side captions
+if (rmarkdown::metadata$largemargins)
+  knitr::opts_chunk$set(fig.env='SCfigure')
+```
+
+```{r}
+#| label: Options
+#| include: false
+### Customized options for this document
+# Add necessary packages here
+Packages <- c("tidyverse")
+# Install them
+InstallPackages(Packages)
+# Create packages.bib file to reference them as @R-package
+knitr::write_bib(Packages, file="packages.bib")
+
+# knitr options
+knitr::opts_chunk$set(
+  cache =   FALSE,    # Cache chunk results
+  include = TRUE,     # Show/Hide chunks
+  echo =    FALSE,     # Show/Hide code
+  warning = FALSE,    # Show/Hide warnings
+  message = FALSE,    # Show/Hide messages
+  # Figure alignment and size
+  fig.align = 'center', out.width = '\\widthw', fig.asp = .75,
+  # Graphic devices (ragg_png is better than standard png)
+  dev = c("ragg_png", "pdf"),
+  # Code chunk format
+  tidy = TRUE, tidy.opts = list(blank = FALSE, width.cutoff = 60),
+  size = "scriptsize", knitr.graphics.auto_pdf = TRUE
+  )
+options(width = 60)
+
+# Random seed
+set.seed(973)
+```
+
+```{r}
+# Load required packages and custom scripts
+library(here)
+source(here('R', 'load_packages.R'))
+source(here('R', 'include_text.R'))
+source(here('R', 'include_preprocessed_text.R'))
+source(here('R', 'ggplot_theme_general.R'))
+source(here('R', 'plot_regression_function.R'))
+```
+
+# Preface to this Book Series {-}
+
+This is a book series of protocol book of methods to measure the activity of antioxidant enzymes, oxidative stress markers, and other related biochemical variables.
+
+More than a decade of experience
+
+The ideia is that each volume is self-contained. To do so, some basic concepts are repeated in each volume so that the readers does not need to refer to another volume while reading / using in the lab bench a protocol.
+
+So far, the plan is to have the following volumes:
+
+Volume 1 - The Dismutators
+
+<!-- The \mainmatter command marks the beginning of the LaTeX document body--> 
+<!-- It must not be deleted-->
+\mainmatter

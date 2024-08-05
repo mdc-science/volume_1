@@ -1,0 +1,5 @@
+* **Useful Formulas**: The following formulas are useful for verifying protocol information or adjusting the quantity/volume of the solution, as needed on a case-by-case basis. For all of them, it is important to pay attention to the units of each variable.
+
+	+ To prepare dilutions from stock solutions: $C_1 \cdot V_1 = C_2 \cdot V_2$
+	+ To prepare a new solution from volume and concentration or mass and concentration: $\text{Mass (g)} = \text{Concentration (M)} \cdot \text{Volume (L)} \cdot \text{Molecular Weight (g/mol)}$
+	+ Lambert-Beer Law: $A = \varepsilon \cdot C \cdot l$, where \( A \) is absorbance; \( \varepsilon \) is the molar absorption coefficient (M^-1^ cm^-1^); \( C \) is the concentration of the solution (M); \( l \) is the path length of the optical path (cm).

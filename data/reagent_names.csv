@@ -1,0 +1,14 @@
+﻿assay,reagent,replacement_PT,replacement,abbr_PT,abbr
+cat,phosphate_edta_7.2,"Tampão Fosfato + EDTA (pH 7,2)",Phosphate Buffer,"KPi + EDTA (7,2)",KPi + EDTA (7.2)
+cat,hydrogen_peroxide,Peróxido de Hidrogênio,Hydrogen Peroxide,H~2~O~2~,H~2~O~2~
+cat,water,Água Deionizada,Water,Água,Water
+cat,sample,Amostra,Sample,Amostra,Sample
+cat,assay_type,Ensaio,Assay,Ensaio,Assay
+thiols,tris_8.0,"Tampão Tris (pH 8,0)",Tris Buffer (pH 8.0),"Tris (8,0)",Tris (8.0)
+thiols,trichloroacetic_acid,Ácido Tricloroacético,Trichloroacetic acid,TCA,TCA
+thiols,dtnb,DTNB,DTNB,DTNB,DTNB
+thiols,edta,EDTA,EDTA,EDTA,EDTA
+thiols,ethanol,Etanol,Ethanol,Etanol,Ethanol
+thiols,water,Água Deionizada,Water,Água,Water
+thiols,sample,Amostra,Sample,Amostra,Sample
+thiols,assay_type,Ensaio,Assay,Ensaio,Assay

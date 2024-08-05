@@ -1,0 +1,2 @@
+﻿category,analyte,analyte_short,analyte_abbr,assay,wavelength,epsilon,ref,ref_link,total_time,interval,shake_first_read,shake_between_reads,final_vol,sample_vol
+AOE,Catalase,Catalase,CAT,cat,240,0.0394,Aebi 1984,https://doi.org/10.1016/S0076-6879(84)05016-3,1,0.1,10,0,800,20

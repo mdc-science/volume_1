@@ -1,0 +1,1 @@
+For this protocol, samples must be **deproteinized** with TCA. This can be done at the time of extract preparation (cell lysate or tissue homogenate) as described in protocol **SP.002** or after cell lysis or tissue homogenization as described in protocol **SP.003**. Before proceeding, ensure that the samples are **deproteinized and contain 10% TCA**.

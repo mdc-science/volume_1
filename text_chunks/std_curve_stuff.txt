@@ -1,0 +1,3 @@
+* The R-squared value (R^2^), or coefficient of determination, is a statistical measure with values between 0 and 1 that indicates the proportion of variance in the dependent data explained by the linear regression model. In other words, R^2^ provides an indication of how well the data points fit the regression line. A high R^2^ suggests that the linear calibration curve is a good fit for the data, indicating that the measurements or observations are well explained by the linear model used.
+
+* See protocol CA.000 for some considerations regarding methods that rely on standard curves (or calibration curves).

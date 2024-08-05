@@ -1,0 +1,17 @@
+Enzymatic activity is often expressed in units per volume (U/mL) or mass (U/mg). An enzyme activity unit (U) is defined as the amount of enzyme that catalyzes the consumption of one micromole of substrate per minute (1 U = µmol/min). In enzymatic assays where the formation of a reaction product is monitored, the unit is defined as the amount of enzyme that catalyzes the production of one micromole of product per minute.
+
+To calculate the activity of `r analyte` in U, we use the formula:
+
+\[ 
+\text{Activity (U/mL)} = \left( \frac{\Delta \text{Abs}_{`r wl`}/\text{min}}{\varepsilon} \right) \times \text{Dilution 1} \times \text{Dilution 2} \times \text{Dilution 3}
+\]
+
+where $\Delta \text{Abs}_{`r wl`}/\text{min}$ is the change in absorbance at `r wl` nm per minute (i.e., the rate); $\varepsilon$ is the molar absorptivity coefficient; $\text{Dilution 1}$ is the dilution factor performed in the assay; $\text{Dilution 2}$ is the dilution factor performed in the sample preparation; and $\text{Dilution 3}$ is the dilution factor of any other dilution performed.
+
+Note that we are using units per milliliter (U/mL), as, considering that absorbance values are unitless (\( \text{Absorbance} = \log_{10} \left( \frac{I_0}{I} \right) \)) and the readings were performed in a cuvette with an optical path of 1 cm, dividing \(\Delta \text{Abs}_{`r wl`}/\text{min}\) by \(\varepsilon\) results in \(\text{U/mL}\):
+
+\[ \frac{\text{cm}^{-1}\text{min}^{-1}}{\text{mM}^{-1}\text{cm}^{-1}} = \text{mM} \cdot \text{min}^{-1} \]
+
+Converting:
+
+\[ \text{mM} \cdot \text{min}^{-1} = \text{mmol/L} \cdot \text{min}^{-1} = \mu\text{mol/mL} \cdot \text{min}^{-1} = \text{U/mL} \]

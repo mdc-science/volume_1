@@ -1,0 +1,3 @@
+﻿assay,reagent,reagent_abbr,stock_conc,stock_conc_unit,final_conc,final_conc_unit,solvent
+cat,phosphate_edta_7.2,buffer,500,mM,50,mM,water
+cat,hydrogen_peroxide,h2o2,200,mM,10,mM,water

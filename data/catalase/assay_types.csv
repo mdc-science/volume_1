@@ -1,0 +1,5 @@
+﻿assay_type,phosphate_edta_7.2,water,sample,hydrogen_peroxide
+zero,T,T,F,F
+assay_blank,T,T,F,T
+sample_assay,T,T,T,T
+sample_blank,T,T,T,F
