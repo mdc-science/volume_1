@@ -84,6 +84,13 @@ where \( A \) is absorbance; \( \varepsilon \) is the molar absorptivity (also k
 
 The Lambert-Beer Law shows that absorbance (\( A \)) is directly proportional to the concentration (\( c \)) of the absorbing species and the path length (\( l \)) of the sample, which allow us to quantify a given species based on its absorbance by using its \( \varepsilon \) or comparing it to a standard curve.
 
+
+## Extinction Coefficients
+
+Extinction Coefficients
+A guide to understanding extinction coefficients, with emphasis on
+spectrophotometric determination of protein concentration
+
 ## Commonly Used Reading Modes
 
 The three commonly used and widely available reading modes are **endpoint**, **kinetics**, and **spectrum/scan**. Each mode provides unique data acquisition methods suited for different types of assays and analyses. Understanding these modes is crucial for effectively designing experiments and interpreting results.
