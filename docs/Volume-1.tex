@@ -72,6 +72,9 @@
 \usepackage{caption}
 \captionsetup[figure]{labelfont=bf, labelsep=period, font=small}
 
+% Custom table captions
+\captionsetup[table]{labelfont=bf, labelsep=period, font=small}
+
 % Prevent overfull lines
 \setlength{\emergencystretch}{3em}  
 \providecommand{\tightlist}{%
@@ -356,7 +359,6 @@
 
 \date{}
 
-
 % Include headers (preamble.tex) here
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Add LaTeX code into the preamble of the document here
@@ -451,16 +453,17 @@ Volume 1 - The Dismutators
 
 \part{Fundamental Concepts}\label{part-fundamental-concepts}
 
-\chapter{Analytical Chemistry}\label{analytical-chemistry}
+\chapter{Analytical Chemistry}\label{chapter1}
 
-\chapter{Terminology}\label{terminology}
+Analytical chemistry is the branch of chemistry dedicated to the qualitative and quantitative analysis of chemical substances. It is instrumental in identifying the composition of materials and understanding their chemical properties and behaviors. Utilizing a variety of techniques and instruments, analytical chemists can detect and measure the levels of specific substances within complex mixtures, such as biological samples.
 
-\chapter{Spectrophotometry Fundamentals}\label{spectrophotometry-fundamentals}
+In the following sections, we will define key concepts and terminology relevant to this book. Some definitions might be simplified to suit the purpose of this text. For a more comprehensive understanding, readers are encouraged to consult other publications. However, the simplified versions provided here will be sufficient for the scope of this book.
 
-\begin{Summary}
-Some text for this block.
+\section{Key Concepts and Terminology}\label{key-concepts-and-terminology}
 
-\end{Summary}
+aaa.
+
+\chapter{Spectrophotometry Fundamentals}\label{chapter2}
 
 \toc{1}
 
@@ -551,6 +554,12 @@ where \(A\) is absorbance; \(\varepsilon\) is the molar absorptivity (also known
 
 The Lambert-Beer Law shows that absorbance (\(A\)) is directly proportional to the concentration (\(c\)) of the absorbing species and the path length (\(l\)) of the sample, which allow us to quantify a given species based on its absorbance by using its \(\varepsilon\) or comparing it to a standard curve.
 
+\section{Extinction Coefficients}\label{extinction-coefficients}
+
+Extinction Coefficients
+A guide to understanding extinction coefficients, with emphasis on
+spectrophotometric determination of protein concentration
+
 \section{Commonly Used Reading Modes}\label{commonly-used-reading-modes}
 
 The three commonly used and widely available reading modes are \textbf{endpoint}, \textbf{kinetics}, and \textbf{spectrum/scan}. Each mode provides unique data acquisition methods suited for different types of assays and analyses. Understanding these modes is crucial for effectively designing experiments and interpreting results.
@@ -585,41 +594,119 @@ From the Lambert-Beer Law, it can be concluded that the distance that light trav
 
 Because the standard path length for most spectrophotometric measurements is 1 cm (i.e., a 1-cm cuvette) and \(\varepsilon\) values are commonly expressed in \(\text{concentration}^{-1} \cdot \text{cm}^{-1}\), it is often an overlook issue. However, the path length can vary depending on the characteristics of the sample container used and the design of the experiment.
 
-In cuvettes, the path lenght is fixed and delimited by the walls of the cuvette. There are cuvettes of different sizes, volumes and path lenghts, but the path lenght of a given cuvette is fixed. This is not the case of microplates where the pathlenght is determined by the volume of sample in each well and can have multiple values in a single microplate depending on the volume. Thus, when using microplates and \(\varepsilon\) expressed as \(\text{concentration}^{-1} \cdot \text{cm}^{-1}\), the absorbance values must be adjusted for a 1 cm pathlenght prior to the calculations. To do so, you can multiply the absorbance value by 1/path length (cm). For example, an absrobance of 0.2 measured with a pathlengh of 0.5 cm is equivalent to an absrobance of 0.4 with an path lenght of 1 cm.
+In cuvettes, the path lenght is fixed and delimited by the walls of the cuvette. There are cuvettes of different sizes, volumes and path lenghts, but the path lenght of a given cuvette is fixed regardless of the volume inside. This is not the case of microplates where the pathlenght is determined by the volume of sample in each well and can have multiple values, even in a single microplate, depending on the volume. Thus, when using microplates and \(\varepsilon\) expressed as \(\text{concentration}^{-1} \cdot \text{cm}^{-1}\), the absorbance values must be adjusted for a 1 cm pathlenght prior to the calculations. To do so, you can multiply the absorbance value by 1/path length (cm). For example, an absrobance of 0.2 measured with a pathlengh of 0.5 cm is equivalent to an absrobance of 0.4 with an path lenght of 1 cm (as can be calculated from the Lambert-Beer equation).
+
+\begin{itemize}
+\tightlist
+\item
+  Drawing of Cuvettes and microplates.
+\item
+  Table of path lenghts for some example microplates.
+\end{itemize}
 
 \begin{greybox}[frametitle = Note]
 \emph{Another factor to consider is the transparency of the material at the wavelenght of the experiment. Not all materials are transparent at all wavelenght. For example, for visible light glass and plastic cuvettes are fine, but for UV measurements quartz cuvettes or specific plastic polymers cuvettes should be used. The same applies for microplates, which should have a flat bottom, and be made of a material that is transparent at the desired wavelenght.}
 
 \end{greybox}
 
-\part{Methodological Approaches}\label{part-methodological-approaches}
+\chapter{Assays for Determining Enzyme Activity}\label{chapter3}
 
-\chapter{Assays for Determining Enzyme Activity}\label{assays-for-determining-enzyme-activity}
+\section{O que é?}\label{o-que-uxe9}
+
+As enzimas são proteínas especializadas que atuam como catalisadores biológicos, acelerando as reações químicas sem serem consumidas no processo. Elas são essenciais para a manutenção da vida, permitindo que reações bioquímicas ocorram em velocidades compatíveis com os processos biológicos. Do ponto de vista bioquímico, as enzimas funcionam diminuindo a energia de ativação necessária para que uma reação química ocorra. Elas se ligam aos substratos, que são as moléculas reagentes, formando um complexo enzima-substrato. Após a reação, os produtos são liberados e a enzima pode ser reutilizada. As enzimas são altamente específicas, ou seja, cada tipo de enzima catalisa uma reação específica ou um conjunto de reações semelhantes.
+
+A atividade enzimática é expressa de várias maneiras, dependendo do contexto da medição. Uma das formas mais comuns é a velocidade da reação, que pode ser medida pela quantidade de produto formado ou pela quantidade de substrato consumido por unidade de tempo. A atividade enzimática é frequentemente expressa em unidades de atividade (U), onde uma unidade é definida como a quantidade de enzima que catalisa a conversão de 1 micromol (µmol) de substrato por minuto sob condições específicas de pH e temperatura.
+
+\section{Por que?}\label{por-que}
+
+Medir a atividade de enzimas é uma forma de medir a quantidade de uma enzima, sendo uma alternativa à análise por imunodetecção (e.g., ELISA e western blot), que medem os níveis de proteínas diretamente com o uso de anticorpos. As análises de atividade enzimática são uma maneira eficaz de comparar os níveis de enzimas entre amostras e são especialmente úteis na comparação entre espécies, onde geralmente não se sabe se existem diferenças em epítopos que podem ser reconhecidos de forma diferente e atrapalhar a interpretação de ensaios de imunodetecção.
+
+Os valores gerados em um ensaio enzimático, quando realizado adequadamente, estão menos sujeitos a problemas quanto à quantificação quando comparados com western blot. No western blot a quantificação depende de métodos de análise de imagem que apresentam muitas limitações. Além disso, enquanto um experimento de western blot costuma levar dias para estimar de forma sem-quantitativa os níveis de uma proteína, os ensaios enzimáticos podem ser realizados em poucos minutos e gerar dados verdadeiramente quantitativos. A medição de atividade enzimática também oferece um nível de reprodutibilidade e possibilidade de execução de réplicas técnicas que não são possíveis com western blot.
+
+\section{Onde?}\label{onde}
+
+A atividade enzimática pode ser medida em uma variedade de amostras biológicas, cada uma exigindo preparos específicos. A atividade enzimática pode ser medida em amostras de tecidos de plantas e animais ou em células cultivadas em laboratório. Para preparar essas amostras, o tecido é geralmente homogeneizado em um tampão adequado, frequentemente contendo inibidores de protease para evitar a degradação enzimática. A homogeneização pode ser seguida de centrifugação para remover detritos celulares, obtendo-se assim um extrato enzimático \enquote{limpo}. Culturas de células, tanto bacterianas quanto de mamíferos, são fontes comuns para medições enzimáticas. As células são colhidas, lavadas e lisadas (geralmente por sonicação, detergentes ou congelamento e descongelamento repetidos) para liberar as enzimas. O lisado celular é então clarificado por centrifugação para obter o extrato enzimático.
+
+Cada tipo de amostra requer um preparo específico para garantir que a atividade enzimática medida seja representativa da atividade in vivo. É essencial otimizar as condições de extração e armazenamento para preservar a integridade das enzimas. Muitas enzimas estão sujeitas a modificações pós-traducionais que podem alterar a cinética enzimática sem necessariamente afetar a quantidade de moléculas da enzima. Para que os valores de atividade enzimática sejam representativos do estado das enzimas in vivo (i.e., antes do processamento), é necessário que a amostra seja tratada de uma maneira que previna modificações pós-traducionais durante o processamento do tecido. Por exemplo, fazer todo o processamento do tecido em baixa temperatura e adicionar inibidores de fosfatases e kinases minimiza a ocorrência de mudanças pós-traducionais ex vivo.
+
+\section{Como?}\label{como}
+
+A maioria dos ensaios enzimáticos é baseada em um sistema reacional onde níveis saturantes de substratos são oferecidos à enzima em condições ótimas de pH, osmolaridade e temperatura. Usando este meio reacional, a atividade catalítica é então medida ao aferir os níveis de substrato consumido ou produto gerado, geralmente por métodos colorimétricos ou de fluorescência. Desta forma, a atividade medida é a velocidade inicial (v\textsubscript{0}) e uma aproximação razoável do V\textsubscript{max}. Para que essa aproximação seja a mais próxima possível do verdadeiro V\textsubscript{max} (que é calculado realizando ensaios enzimáticos com várias concentrações de substrato e medindo a velocidade da reação em cada concentração), é necessário entender o princípio e as limitações de cada ensaio e realizar reações-controle adequadas para cada método. Esse controles geralmente recebem o nome de \enquote{branco do ensaio} e \enquote{branco da amostra} em um protocolo. Um fator principal que deve ser considerado é a garantia de que não haja sinal de atividade enzimática na ausência da amostra ou que essa atividade \enquote{espontânea} seja devidamente medida e descontada no momento da quantificação. Além disso, o uso de inibidores específicos pode auxiliar no diagnóstico de problemas de especificidade do método em relação a uma enzima especifica.
+
+Os ensaios de atividade enzimática podem ser realizados de forma descontínua ou contínua. Métodos descontínuos misturam substrato e enzima, medindo a concentração de produto formado (ou substrato consumido) após um tempo definido, sendo rápidos e fáceis. Nos ensaios contínuos, o aparecimento do produto (ou o desaparecimento do substrato) é constantemente monitorado ao longo do tempo. A atividade enzimática é influenciada por pH e temperatura, que devem ser constantes durante qualquer experimento de atividade enzimática. No ensaio contínuo, a taxa de reação é registrada imediatamente após a adição da enzima ao meio reacional, quando a velocidade inicial (v\textsubscript{0}) é linear. Ao traçar uma reta nos dados de absorbância versus tempo, calcula-se a taxa de reação (i.e., a atividade enzimática). A relação entre a concentração da enzima e a taxa de reação é linear, ou seja, aumentar a quantidade de enzima em 10\% acelera a reação em 10\%, dobrar a concentração dobra a velocidade.
+
+\section{Premissas}\label{premissas}
+
+Saturating concentration so that V0 equals Vmax. Not possible for different reasons, absrobance might be too high or enzyme does not saturate at viable concentration ranges.
+
+The dilution factor must be determined experimentally.
+
+\section{Saiba Mais}\label{saiba-mais}
+
+Saiba mais sobre os princípios básicos de enzimologia em:
+
+Robinson, P.K., 2015. Enzymes: principles and biotechnological applications. Essays in Biochemistry 59, 1--41. \url{https://doi.org/10.1042/bse0590001}
+
+\section{Referências}\label{referuxeancias}
+
+Treberg, J.R., Martyniuk, C.J., Moyes, C.D., 2020. Getting the most out of reductionist approaches in comparative biochemistry and physiology. Comparative Biochemistry and Physiology B 250, 110483. \url{https://doi.org/10.1016/j.cbpb.2020.110483}
+
+Robinson, P.K., 2015. Enzymes: principles and biotechnological applications. Essays in Biochemistry 59, 1--41. \url{https://doi.org/10.1042/bse0590001}
 
 \section{Overview of assay types}\label{overview-of-assay-types}
 
+aaa.
+
 \section{Specific methodologies}\label{specific-methodologies}
 
-\chapter{Sample Preparation}\label{sample-preparation}
+aaa.
+
+\subsection{pH}\label{ph}
+
+Enzymes are sensitive to pH variations and have an optimum pH at which their catalytic activity is maximized. The relationship between enzymatic activity and pH is a bell-shaped curve, with the peak indicating the optimum pH. From the optimum pH, towards alkaline or acidic extremes, the activity of the enzyme decreases as the pH changes until it finally reaches zero at the extremes. This is because pH affects the ionization of charged groups involved in the catalytic mechanism and/or structural stability of the enzyme. Generally, enzymatic assays are conducted at physiological pH for the organism from which the sample originates. However, in some cases, it is convenient to use a pH that differs from the physiological for analytical reasons.
+
+\begin{itemize}
+\item
+  \textbf{Temperature Control}: Like common chemical reactions, temperature significantly affects the speed of enzymatic reactions. For most enzyme-catalyzed reactions, the rate increases 2-3 times with every 10°C increase (temperature coefficient, Q\textsubscript{10} = 2-3). That is, an increase in temperature within a specific range accelerates the reaction. To ensure the comparability of results from different samples and experimental days, readings should be made at the same temperature, preferably one that is physiologically relevant to the organism of origin (e.g., 37°C for human tissues). Microplate readers and spectrophotometers have temperature control systems for this purpose. Additionally, it is recommended to keep the deionized water used in the protocol at the assay temperature (e.g., using a water bath or dry block heaters). As most of the reaction medium volume is composed of water, ensuring the water is at the desired temperature helps stabilize the temperature of the reaction medium more quickly.
+\item
+  \textbf{pH Control}: Enzymes are sensitive to pH variations and have an optimum pH at which their catalytic activity is maximized. The relationship between enzymatic activity and pH is a bell-shaped curve, with the peak indicating the optimum pH. From the optimum pH, towards alkaline or acidic extremes, the activity of the enzyme decreases as the pH changes until it finally reaches zero at the extremes. This is because pH affects the ionization of charged groups involved in the catalytic mechanism and/or structural stability of the enzyme. Generally, enzymatic assays are conducted at physiological pH for the organism from which the sample originates. However, in some cases, it is convenient to use a pH that differs from the physiological for analytical reasons.
+\item
+  \textbf{Substrate Concentration}: Ideally, saturating concentrations of substrates and cofactors should always be used to determine an enzyme's activity (see \hyperref[chapter4]{Chapter 4}). However, factors such as high molar absorptivity and low solubility prevent the assay from being conducted at such concentrations in most cases.
+\item
+  \textbf{Initial Rate vs.~V\textsubscript{max}}: Although some equipment expresses the initial change in absorbance over time (representing the change in substrate or product concentration) in an enzymatic assay as V\textsubscript{max}, this value is actually the initial rate (v\textsubscript{0}). Note that V\textsubscript{max} is a theoretical limit never reached in any experiment, although it is possible to approach it and determine it by extrapolation. This limitation is caused by the fact that complete saturation can only be achieved at infinite concentrations of substrates and cofactors, and, despite using high concentrations of substrates and cofactors, the concentrations cannot be considered as completely saturating.
+\item
+  \textbf{Enzyme Unit}: The enzyme unit, or international unit of enzymatic activity (U, sometimes IU), is a measure of an enzyme's catalytic activity. This unit is defined as the amount of enzyme that catalyzes the conversion of one µmol of substrate per minute (1 U = µmol/min), under conditions specified by the assay method.
+\item
+  \textbf{Expression of Enzymatic Activity}: Measures of enzymatic activity are often expressed as units per milligram of protein (U/mg protein), both in cell lysates or tissue homogenates and in isolated protein preparations. This practice is based on the need to normalize enzymatic activity relative to the amount of protein present in the sample, providing a standardized way to compare enzymatic activity between different samples and experiments.
+\end{itemize}
+
+\chapter{Sample Preparation}\label{chapter4}
+
+aaa.
+
+The technical bulletin contains instructions for Erythrocytes. Whole blood can be processed
+similarly. Plasma can be diluted over a range and then the dilution that gives readings within the
+linear range of the standard curve can be used for the assay.
 
 \section{Collection}\label{collection}
 
+aaa.
+
 \section{Preparation}\label{preparation}
+
+aaa.
 
 \section{Handling and Storage}\label{handling-and-storage}
 
+aaa.
+
 \part{The Dismutators}\label{part-the-dismutators}
 
-\chapter{Background}\label{background}
+\chapter{The Dismutators}\label{chapter5}
 
-Here write some brief background information on antioxidant systems, catalase and SOD.
+Here write some brief background information on antioxidant systems, catalase and SOD. If you are here I assume you have already decided to measure the activity of catalase, SOD or both. Thus, you already know the what, why and where, but seek information on how to do this.
 
-\chapter{Catalase}\label{catalase}
-
-\begin{Summary}
-Some text for this block.
-
-\end{Summary}
+\chapter{Catalase}\label{chapter6}
 
 \toc{1}
 
@@ -627,13 +714,13 @@ Some text for this block.
 
 \section{Introduction}\label{cat_intro}
 
-Catalase is an antioxidant enzyme present in most aerobic organisms. Its function is to catalyze the decomposition of hydrogen peroxide (H\textsubscript{2}O\textsubscript{2}) into oxygen (O\textsubscript{2}). In animals, catalase is a protein composed of four subunits, each containing an Fe(III)-heme group at its active site. Additionally, a molecule of NADPH is tightly bound to each subunit of mammalian catalase.
+Catalase is an antioxidant enzyme present in most aerobic organisms. Its function is to catalyze the decomposition of hydrogen peroxide (H\textsubscript{2}O\textsubscript{2}) into oxygen (O\textsubscript{2}). In animals, catalase is a protein composed of four subunits, each containing an Fe(III)-heme group at its active site, and is present all organs, with the liver and erythrocytes containing particularly high levels \autocite{halliwell_free_2015}. Additionally, a molecule of NADPH is tightly bound to each subunit of mammalian catalase \autocite{halliwell_free_2015}.
 
 \[
 \text{2 H}_2\text{O}_2 \overset{\text{catalase}}{\rightarrow} \text{2 H}_2\text{O} + \text{O}_2
 \]
 
-The reaction catalyzed by catalase is a dismutation (a type of redox reaction in which the same molecular species is simultaneously oxidized and reduced, forming two different products, one with a higher oxidation state and one with a lower). In the case of catalase, this process occurs in two stages, involving the formation of an intermediate known as compound I.
+The reaction catalyzed by catalase is a dismutation (a type of redox reaction in which the same molecular species is simultaneously oxidized and reduced, forming two different products, one with a higher oxidation state and one with a lower \autocite{gold_iupac_2019}). In the case of catalase, this process occurs in two stages, involving the formation of an intermediate known as compound I \autocite{halliwell_free_2015}.
 
 \[
 \text{catalase-Fe(III)} + \text{H}_2\text{O}_2 \rightarrow \text{compound I} + \text{H}_2\text{O}
@@ -644,13 +731,13 @@ The reaction catalyzed by catalase is a dismutation (a type of redox reaction in
 
 Measuring catalase activity is crucial in research investigating antioxidant systems and cellular responses to oxidative stress. This is illustrated by observations that inhibition of catalase activity or expression induces oxidative stress \autocite{bagnyukova_catalase_2005} or increases sensitivity to other stressors \autocite{ho_mice_2004}. Additionally, cells particularly resistant to oxidative stressors show overexpression of catalase \autocite{spitz_mechanisms_1992}.
 
-There are various methods to determine catalase activity, for example, by measuring the production of O\textsubscript{2} with an O\textsubscript{2} sensor, measuring the consumption of H\textsubscript{2}O\textsubscript{2} with a fluorescent probe molecule, or directly measuring the consumption of H\textsubscript{2}O\textsubscript{2} by spectrophotometry. The method for determining catalase activity described in this protocol is one of the most popular and is based on the decomposition of hydrogen peroxide by catalase and the consequent decrease in absorbance at 240 nm \autocite{aebi_catalase_1984}. The procedure involves adding the sample to a buffered reaction medium containing hydrogen peroxide and measuring the decrease in absorbance over time using a spectrophotometer. Enzyme activity is then calculated based on the rate of decrease in absorbance, which is directly proportional to the amount of hydrogen peroxide decomposed. In this protocol, in addition to serving as the substrate for the enzyme, H\textsubscript{2}O\textsubscript{2} acts as the indicator molecule (i.e., the molecule that generates the analytical signal recorded in the assay).
+There are various methods to determine catalase activity, for example, by measuring the production of O\textsubscript{2} with an O\textsubscript{2} sensor, measuring the consumption of H\textsubscript{2}O\textsubscript{2} with a fluorescent probe molecule, or directly measuring the consumption of H\textsubscript{2}O\textsubscript{2} by spectrophotometry. The method for determining catalase activity described in this protocol is one of the most popular and is based on the decomposition of hydrogen peroxide by catalase and the consequent decrease in absorbance at 240 nm \autocite{aebi_catalase_1984}. The procedure involves adding the sample to a buffered reaction medium containing hydrogen peroxide and measuring the decrease in absorbance over time using a spectrophotometer. Enzyme activity is then calculated based on the rate of decrease in absorbance, which is directly proportional to the amount of hydrogen peroxide decomposed. In this protocol, in addition to serving as the substrate for the enzyme, H\textsubscript{2}O\textsubscript{2} acts as the detector molecule (i.e., the molecule that generates the analytical signal recorded in the assay). See \hyperref[chapter1]{Chapter 1}.
 
 \newpage
 
 \section{Quick Reference Protocol}\label{cat-quick-ref}
 
-This section provides a quick reference with stock and final concentrations of the reagents (Table \ref{tab:cat-tab-conc}), volumes to be pipetted (Table \ref{tab:cat-tab-vol}), and equipment settings for the readings. The complete protocol is detailed in the next sections.
+This section provides a quick reference protocol with stock and final concentrations of the reagents (Table \ref{tab:cat-tab-conc}), volumes to be pipetted (Table \ref{tab:cat-tab-vol}), and equipment settings for the readings. The complete protocol is detailed in the next sections.
 
 
 
@@ -721,6 +808,11 @@ Sample Blank & 80 & 720 - X* & X* & 0\\
 \item
   \textbf{Use a sample volume that results in ΔAbs\textsubscript{240}/min between -0.025 and -0.035}
 \end{itemize}
+
+\begin{greybox}[frametitle = Note]
+\emph{The final volume of the assay can be adjusted according to the available cuvette or microplate, as long as the final concentrations of reagents are maintained. Additionally, attention should be paid to the path length and transparency of the cuvette or microplate chosen to ensure accurate and consistent measurements. See \hyperref[chapter2]{Chapter 2}.}
+
+\end{greybox}
 
 \newpage
 
@@ -797,25 +889,25 @@ Sample Blank & 80 & 720 - X* & X* & 0\\
 \begin{itemize}
 \tightlist
 \item
-  Based on the last concentration check of H\textsubscript{2}O\textsubscript{2} (\textbf{14.22 M} on June 13, 2024), prepare 10 mL of H\textsubscript{2}O\textsubscript{2} solution in water:
+  Based on the expected concentration of H\textsubscript{2}O\textsubscript{2} in the stock bottle (\textbf{9.8 M}), prepare 200 mM H\textsubscript{2}O\textsubscript{2}:
 
   \begin{itemize}
   \tightlist
   \item
-    In a tube (15 mL), add \textbf{141 µL} of H\textsubscript{2}O\textsubscript{2} from the stock bottle
+    In a tube (15 mL), add \textbf{204 µL} of H\textsubscript{2}O\textsubscript{2} from the stock bottle.
   \item
-    Fill with deionized water up to a total volume of \textbf{10 mL}
+    Fill with deionized water up to a total volume of \textbf{10 mL}.
   \item
-    Briefly vortex
+    Briefly vortex.
   \item
-    Wrap the tube in aluminum foil to protect the solution from light
+    Wrap the tube in aluminum foil to protect the solution from light.
   \item
-    Store in the refrigerator at 4°C
+    Store in the refrigerator at 4°C.
   \end{itemize}
 \end{itemize}
 
 \begin{greybox}[frametitle = Notes]
-\emph{Commercial solutions of H\textsubscript{2}O\textsubscript{2} are typically found at concentrations of 30\% to 35\% (w/w), which corresponds to a molar concentration of approximately 9.8 to 10.3 M. If you are not sure about the concentration of your H\textsubscript{2}O\textsubscript{2} stock, prepare dilutions in ratios of 1:50, 1:100, and 1:200 and determine the concentration experimentally as described \hyperref[checking_h2o2]{below}.}
+\emph{Commercial solutions of H\textsubscript{2}O\textsubscript{2} are typically 30\% to 35\% (w/w), which corresponds to a molar concentration of approximately 9.8 to 10.3 M. If you are not sure about the concentration of your H\textsubscript{2}O\textsubscript{2} stock, prepare dilutions in ratios of 1:50, 1:100, and 1:200 and determine the concentration experimentally as described in \hyperref[cat_checking_h2o2]{Checking H\textsubscript{2}O\textsubscript{2} Concentration}.}
 
 \end{greybox}
 
@@ -838,15 +930,15 @@ The most convenient way to prepare phosphate buffer containing EDTA at the desir
   \begin{itemize}
   \tightlist
   \item
-    Molecular Weight: 136.09 g/mol
+    Molecular Weight: 136.09 g/mol.
   \item
-    Weigh \textbf{13.609 g} of KH\textsubscript{2}PO\textsubscript{4}
+    Weigh \textbf{13.609 g} of KH\textsubscript{2}PO\textsubscript{4}.
   \item
-    Dissolve in approximately 90 mL of deionized water
+    Dissolve in approximately 90 mL of deionized water.
   \item
-    Top up to \textbf{100 mL} with deionized water
+    Top up to \textbf{100 mL} with deionized water.
   \item
-    No need to measure or adjust the pH. Store in the refrigerator at 4°C
+    No need to measure or adjust the pH. Store in the refrigerator at 4°C.
   \end{itemize}
 \end{itemize}
 
@@ -860,15 +952,15 @@ The most convenient way to prepare phosphate buffer containing EDTA at the desir
   \begin{itemize}
   \tightlist
   \item
-    Molecular Weight: 174.18 g/mol
+    Molecular Weight: 174.18 g/mol.
   \item
-    Weigh \textbf{87.09 g} of K\textsubscript{2}HPO\textsubscript{4}
+    Weigh \textbf{87.09 g} of K\textsubscript{2}HPO\textsubscript{4}.
   \item
-    Dissolve in approximately 450 mL of deionized water
+    Dissolve in approximately 450 mL of deionized water.
   \item
-    Top up to \textbf{500 mL} with deionized water
+    Top up to \textbf{500 mL} with deionized water.
   \item
-    No need to measure or adjust the pH. Store in the refrigerator at 4°C
+    No need to measure or adjust the pH. Store in the refrigerator at 4°C.
   \end{itemize}
 \end{itemize}
 
@@ -882,17 +974,17 @@ The most convenient way to prepare phosphate buffer containing EDTA at the desir
   \begin{itemize}
   \tightlist
   \item
-    Molecular Weight: 292.24 g/mol
+    Molecular Weight: 292.24 g/mol.
   \item
-    Weigh \textbf{7.306 g} of EDTA
+    Weigh \textbf{7.306 g} of EDTA.
   \item
-    Dissolve in approximately 40 mL of deionized water
+    Dissolve in approximately 40 mL of deionized water.
   \item
-    Adjust the \textbf{pH to 8.0} using 1 M NaOH (to increase the pH)
+    Adjust the \textbf{pH to 8.0} using 1 M NaOH (to increase the pH).
   \item
-    After adjusting the pH, top up to \textbf{50 mL} with deionized water
+    After adjusting the pH, top up to \textbf{50 mL} with deionized water.
   \item
-    Store in the refrigerator at 4°C
+    Store in the refrigerator at 4°C.
   \end{itemize}
 \end{itemize}
 
@@ -911,28 +1003,23 @@ The most convenient way to prepare phosphate buffer containing EDTA at the desir
   \begin{itemize}
   \tightlist
   \item
-    Add \textbf{28 mL} of 1 M KH\textsubscript{2}PO\textsubscript{4}
+    Add \textbf{28 mL} of 1 M KH\textsubscript{2}PO\textsubscript{4}.
   \item
-    Add \textbf{97 mL} of 1 M K\textsubscript{2}HPO\textsubscript{4}
+    Add \textbf{97 mL} of 1 M K\textsubscript{2}HPO\textsubscript{4}.
   \item
-    Add 80 mL of deionized water
+    Add 80 mL of deionized water.
   \item
-    Add \textbf{25 mL} of 500 mM EDTA
+    Add \textbf{25 mL} of 500 mM EDTA.
   \item
-    If necessary, adjust the \textbf{pH to 7.2} using 1 M HCl (to decrease the pH) or 1 M NaOH (to increase the pH)
+    If necessary, adjust the \textbf{pH to 7.2} using 1 M HCl (to decrease the pH) or 1 M NaOH (to increase the pH).
   \item
-    Top up to \textbf{250 mL} with deionized water
+    Top up to \textbf{250 mL} with deionized water.
   \item
-    Aliquot into tubes (50 mL) and store in the refrigerator at 4°C
+    Aliquot into tubes (50 mL) and store in the refrigerator at 4°C.
   \end{itemize}
 \end{itemize}
 
-\begin{greybox}[frametitle = Note]
-\emph{With the exception of the tube containing the water that will be used in the assay, all solutions (KPi buffer and H\textsubscript{2}O\textsubscript{2}) and samples should be kept on ice during all procedures.}
-
-\end{greybox}
-
-\section{\texorpdfstring{Checking H\textsubscript{2}O\textsubscript{2} Concentration}{Checking H2O2 Concentration}}\label{checking_h2o2}
+\section{\texorpdfstring{Checking H\textsubscript{2}O\textsubscript{2} Concentration}{Checking H2O2 Concentration}}\label{cat_checking_h2o2}
 
 In a quartz cuvette:
 
@@ -950,7 +1037,7 @@ In a quartz cuvette:
 \item
   Add \textbf{760 µL} of deionized water.
 \item
-  Cap the cuvette with a piece of Parafilm and invert it three times to homogenize the contents.
+  Cap the cuvette (with a cuvette cap or a piece of Parafilm) and invert it three times to homogenize the contents.
 \item
   Place the cuvette in the holder and record the absorbance at \textbf{240 nm}.
 \item
@@ -959,12 +1046,12 @@ In a quartz cuvette:
   Repeat steps 4-8 two more times, obtaining a total of three readings.
 \end{enumerate}
 
-Average the three readings and calculate the concentration of H\textsubscript{2}O\textsubscript{2} using its molar absorptivity coefficient at 240 nm (ε\textsubscript{240} = 0.0394 mM\textsuperscript{-1} cm\textsuperscript{-1}):
+Average the three readings and calculate the concentration of H\textsubscript{2}O\textsubscript{2} using its molar absorptivity coefficient at 240 nm (\(\varepsilon\)\textsubscript{240} = 0.0394 mM\textsuperscript{-1} cm\textsuperscript{-1}):
 
 \[\text{H}_2\text{O}_2 \text{ (mM)} = \left( \frac{\left( \text{Abs}_1 + \text{Abs}_2 + \text{Abs}_3 \right) / 3}{\varepsilon} \right) \times \text{Dilution}\]
 
 \begin{greybox}[frametitle = Note]
-\emph{Since the dilution used to produce the H\textsubscript{2}O\textsubscript{2} solution whose concentration was experimentally determined is known, using the formula} \(C_1 \cdot V_1 = C_2 \cdot V_2\), \emph{it is possible to calculate the concentration in the stock bottle and, from this value, prepare a new solution. This is especially useful when the initially measured concentration is much lower than expected.}
+\emph{Since the dilution used to produce the H\textsubscript{2}O\textsubscript{2} solution whose concentration was experimentally determined is known, using the formula} \(C_1 \cdot V_1 = C_2 \cdot V_2\), \emph{it is possible to calculate the concentration in the stock bottle and, from this value, adjust the volume when preparing a new solution. This is especially useful when the measured concentration is far from the expected concentration.}
 
 \end{greybox}
 
@@ -976,19 +1063,10 @@ Average the three readings and calculate the concentration of H\textsubscript{2}
 
 \normalsize
 
-\begin{itemize}
-\tightlist
-\item
-  Reading 1: 0.412 ; Reading 2: 0.402 ; Reading 3: 0.398
-\end{itemize}
+Assuming that the three readings for checking H\textsubscript{2}O\textsubscript{2} concentration were 0.412, 0.402, and 0.398, and that the dilution factor used was 20 (40 µL of the solution was added to a final volume of 800 µL):
 
 \[\text{H}_2 \text{O}_2 \text{ (mM)} = \left( \frac{\left( 0.412 + 0.402 + 0.398 \right) / 3}{0.0394} \right) \times 20\]
 \[\text{H}_2 \text{O}_2 \text{ (mM)} = 205.08\]
-
-\begin{greybox}[frametitle = Note]
-\emph{The dilution factor is 20, as 40 µL of the solution was added to a final volume of 800 µL (40 in 800 = 1:20).}
-
-\end{greybox}
 
 \subsubsection{Adjusting the Concentration}\label{adjusting-the-concentration}
 
@@ -1000,36 +1078,41 @@ The solution described in the example above is slightly more concentrated than 2
 
 \[V_1 = 4876.2 \text{ µL}\]
 
-Therefore, to produce a solution of H\textsubscript{2}O\textsubscript{2} at 200 mM from a solution whose concentration of 205.08 mM was experimentally verified, it would be necessary to add 4876.2 µL of the solution into a tube and complete to 5000 µL with deionized water.
+Therefore, to produce a solution of H\textsubscript{2}O\textsubscript{2} at 200 mM from a solution whose concentration of 205.08 mM was experimentally verified, it would be necessary to add 4876.2 µL of the solution into a tube and complete to 5000 µL with deionized water. Alternatively, one can calculate the actual concentration in the H\textsubscript{2}O\textsubscript{2} stock bottle and prepare a another solution.
 
 \section{Sample Preparation}\label{sample_prep}
 
-For this protocol, samples must be homogenized in a way that proteins remain in their native conformations. That is, the homogenate should not have been prepared with high concentrations of detergents or salts, in the presence of chaotropic agents, subjected to heating, or deproteinized. Additionally, the homogenate should be prepared at low temperature and in a buffer containing EDTA and protease inhibitors (see Chapter 5).
+For this protocol, samples must be homogenized in a way that proteins remain in their native conformations. That is, the homogenate should not have been prepared with high concentrations of detergents or salts, in the presence of chaotropic agents, subjected to heating, or deproteinized. Additionally, the homogenate should be prepared at low temperature and in a buffer containing EDTA and protease inhibitors (see \hyperref[chapter4]{Chapter 4}).
 
 \section{Assay}\label{assay_general}
 
-For this protocol, we will use the \textbf{kinetic reading mode}, in which the equipment performs multiple readings at one wavelength over a total period of time. The number of readings during this period depends on the time interval between readings set on the equipment. The interval between readings can be adjusted according to the available equipment, but it is recommended that at least five readings are taken during the total time.
+For this protocol, we will use the \textbf{kinetic reading mode}, in which the equipment performs multiple readings at one wavelength over a total period of time. The number of readings during this period depends on the time interval between readings set on the equipment. The interval between readings can be adjusted according to the available equipment, but it is recommended that at least five readings are taken during the total time. Most devices will display the rate of change in absorbance at the selected wavelength per minute at the end of a kinetics reading. This is the number you will need to calculate the activity of catalase. In case the equipment does not display it and provides only the absorbance for each time point, the rate can be obtained by calculating the slope of absorbance versus time in any software.
+
+\begin{greybox}[frametitle = Note]
+\emph{With the exception of the tube containing the water that will be used in the assay, all solutions (KPi buffer and H\textsubscript{2}O\textsubscript{2}) and samples should be kept on ice during all procedures.}
+
+\end{greybox}
 
 \subsection{Zero}\label{cat_zero}
 
-Before starting kinetic readings, the equipment must be \enquote*{zeroed} at \textbf{240 nm}. To zero the equipment, in a quartz cuvette:
+Before starting kinetic readings, the equipment must be \enquote*{zeroed} at \textbf{240 nm}. The procedure to zero (or blank) may differ depending on the device. Some devices make a single endpoint reading at the selected wavelength, whereas others require to perform a kinetics reading and record an absorbance value for each time point set on the configuration of the kinetics reading. To zero the equipment, in a quartz cuvette:
 
 \begin{itemize}
 \tightlist
 \item
-  Add \textbf{80 µL} of 500 mM Phosphate Buffer + 5 mM EDTA (pH 7.2)
+  Add \textbf{80 µL} of 500 mM Phosphate Buffer + 5 mM EDTA (pH 7.2).
 \item
-  Add \textbf{720 µL} of Water
+  Add \textbf{720 µL} of Water.
 \item
-  Cap the cuvette with a piece of Parafilm and invert it three times to homogenize the contents
+  Cap the cuvette and invert it three times to homogenize the contents.
 \item
-  Place the cuvette in the holder and zero the spectrophotometer at \textbf{240 nm}
+  Place the cuvette in the holder and zero the spectrophotometer at \textbf{240 nm}.
 \item
-  Discard the contents of the cuvette and dry it
+  Discard the contents of the cuvette and dry it.
 \end{itemize}
 
 \begin{greybox}[frametitle = Note]
-\emph{At a final concentration of 50 mM, the phosphate buffer, which contains 0.5 mM EDTA, shows an approximate absorbance of 0.155 at 240 nm, using a cuvette with a 1 cm optical path. Therefore, it is crucial to calibrate the equipment with the buffer at the final concentration used in the assay, instead of just with water.}
+\emph{At a final concentration of 50 mM, the phosphate buffer used in this protocol, which also contains 0.5 mM EDTA, shows an approximate absorbance of 0.155 at 240 nm, using a cuvette with a 1 cm optical path. Therefore, it is crucial to zero the equipment with the buffer at the final concentration used in the assay, instead of just with water.}
 
 \end{greybox}
 
@@ -1042,19 +1125,19 @@ For the assay blank, in a quartz cuvette:
 \begin{itemize}
 \tightlist
 \item
-  Add \textbf{80 µL} of 500 mM Phosphate Buffer + 5 mM EDTA (pH 7.2)
+  Add \textbf{80 µL} of 500 mM Phosphate Buffer + 5 mM EDTA (pH 7.2).
 \item
-  Add \textbf{680 µL} of Water
+  Add \textbf{680 µL} of Water.
 \item
-  Add \textbf{40 µL} of 200 mM Hydrogen Peroxide
+  Add \textbf{40 µL} of 200 mM Hydrogen Peroxide.
 \item
-  Cap the cuvette with a piece of Parafilm and invert it three times to homogenize the contents
+  Cap the cuvette and invert it three times to homogenize the contents.
 \item
-  Place the cuvette in the holder and perform the kinetic reading at \textbf{240 nm}
+  Place the cuvette in the holder and perform the kinetic reading at \textbf{240 nm}.
 \item
-  Record the reading
+  Record the reading.
 \item
-  Discard the contents of the cuvette, wash it, and dry it
+  Discard the contents of the cuvette, wash it, and dry it.
 \end{itemize}
 
 \begin{greybox}[frametitle = Note]
@@ -1071,24 +1154,24 @@ For the sample assay, in a quartz cuvette:
 \begin{itemize}
 \tightlist
 \item
-  Add \textbf{80 µL} of Phosphate Buffer + EDTA (pH 7.2)
+  Add \textbf{80 µL} of Phosphate Buffer + EDTA (pH 7.2).
 \item
-  Add \textbf{660 µL} of Water
+  Add \textbf{660 µL} of Water.
 \item
-  Add \textbf{20 µL} of Sample
+  Add \textbf{20 µL} of Sample.
 \item
-  Add \textbf{40 µL} of Hydrogen Peroxide
+  Add \textbf{40 µL} of Hydrogen Peroxide.
 \item
-  Cap the cuvette with a piece of Parafilm and invert it three times to homogenize the contents
+  Cap the cuvette and invert it three times to homogenize the contents.
 \item
-  Place the cuvette in the holder and perform the kinetic reading at \textbf{240 nm}
+  Place the cuvette in the holder and perform the kinetic reading at \textbf{240 nm}.
 \item
-  Record the reading
+  Record the reading.
 \item
-  Discard the contents of the cuvette, wash it, and dry it
+  Discard the contents of the cuvette, wash it, and dry it.
 \end{itemize}
 
-After the first reading, check the rate of change of absorbance per minute (ΔAbs\textsubscript{240}/min; shown as \emph{rate} or \emph{V\textsubscript{max}} depending on the equipment). To avoid abrupt changes in the substrate concentration (H\textsubscript{2}O\textsubscript{2}) during the reading, \textbf{work with rates between -0.025 and -0.035}, which also ensures that the consumption is linear during the reading interval. Therefore, adjust the sample volume to achieve this range, increasing the sample volume if the rate is lower and decreasing it if the rate is higher. Any change in sample volume should be corrected by the water volume to maintain the final volume of 800 µL. For some samples (e.g., rat liver homogenate), it may be necessary to make large dilutions (e.g., 1:2000) and still use a small volume (e.g., 20 µL) to achieve an appropriate rate (between -0.025 and -0.035).
+After the first reading, check the rate of change of absorbance per minute (ΔAbs\textsubscript{240}/min; shown as \emph{rate} or \emph{V\textsubscript{max}} depending on the equipment). To avoid abrupt changes in the substrate concentration (H\textsubscript{2}O\textsubscript{2}) during the reading, \textbf{work with rates between -0.025 and -0.035}, which also ensures that the consumption is linear during the reading interval (see Figures \ref{fig:fig-cat-assay-curves} and \ref{fig:fig-cat-smp-vol-curves}). Therefore, adjust the sample volume to achieve this range, increasing the sample volume if the rate is lower and decreasing it if the rate is higher. Any change in sample volume should be corrected by the water volume to maintain the final volume of 800 µL. For some samples (e.g., rat liver homogenate), it may be necessary to make large dilutions (e.g., 1:2000) and still use a small volume (e.g., 20 µL) to achieve an appropriate rate (between -0.025 and -0.035).
 
 Once the sample volume necessary to achieve a rate of approximately -0.030 has been identified, repeat the reading with this volume two more times, obtaining \textbf{a total of three readings} for this sample volume.
 
@@ -1101,21 +1184,21 @@ For the sample blank, in a quartz cuvette:
 \begin{itemize}
 \tightlist
 \item
-  Add \textbf{80 µL} of 500 mM Phosphate Buffer + 5 mM EDTA (pH 7.2)
+  Add \textbf{80 µL} of 500 mM Phosphate Buffer + 5 mM EDTA (pH 7.2).
 \item
-  Add \textbf{700 µL} of Water
+  Add \textbf{700 µL} of Water.
 \item
-  Add \textbf{20 µL} of Sample
+  Add \textbf{20 µL} of Sample.
 \item
-  Cap the cuvette with a piece of Parafilm and invert the cuvette three times to homogenize the contents
+  Cap the cuvette with a piece of Parafilm and invert the cuvette three times to homogenize the contents.
 \item
-  Place the cuvette in the holder and perform the kinetic reading at \textbf{240 nm}
+  Place the cuvette in the holder and perform the kinetic reading at \textbf{240 nm}.
 \item
-  Record the reading
+  Record the reading.
 \item
-  Discard the contents of the cuvette, wash it, and dry it
+  Discard the contents of the cuvette, wash it, and dry it.
 \item
-  Repeat two more times, obtaining \textbf{a total of three readings} for each sample
+  Repeat two more times, obtaining \textbf{a total of three readings} for each sample.
 \end{itemize}
 
 \begin{greybox}[frametitle = Note]
@@ -1125,7 +1208,7 @@ For the sample blank, in a quartz cuvette:
 
 \section{Expected Results}\label{expected-results}
 
-In this protocol for measuring the activity of catalase, the rates of Abs\textsubscript{240}/min for the Sample Blank and Assay Blank readings are generally equal to 0. That is, there is no consumption of hydrogen peroxide in the absence of the sample and no change in absorbance when the sample is present, but hydrogen peroxide is not (Figure \ref{fig:fig-cat-assay-curves}). On the other hand, in the complete reaction medium, Sample Assay, a decrease in absorbance over time is observed, which corresponds to the consumption of hydrogen peroxide by the catalase present in the sample (Figure \ref{fig:fig-cat-assay-curves}).
+In this protocol for measuring the activity of catalase, the rates of Abs\textsubscript{240}/min for the Sample Blank and Assay Blank readings are generally very close to 0. That is, there is no consumption of hydrogen peroxide in the absence of the sample and no change in absorbance when the sample is present, but hydrogen peroxide is not (Figure \ref{fig:fig-cat-assay-curves}). On the other hand, in the complete reaction medium, Sample Assay, a decrease in absorbance over time is observed, which corresponds to the consumption of hydrogen peroxide by the catalase present in the sample (Figure \ref{fig:fig-cat-assay-curves}).
 
 
 
@@ -1137,7 +1220,7 @@ In this protocol for measuring the activity of catalase, the rates of Abs\textsu
 
 }
 
-\caption{\textbf{Representative Readings}. Readings illustrating the variation profile of absorbance over the reading time for Assay Blank, Sample Assay, and Sample Blank. For both \enquote{blanks,} there is no change in absorbance at 240 nm over time. In the Assay Blank, the absorbance remains at \textasciitilde0.4 (equivalent to 10 mM H\textsubscript{2}O\textsubscript{2}). In the Sample Blank, the absorbance is near zero due to the absence of H\textsubscript{2}O\textsubscript{2}. In the Sample Assay, the absorbance starts near \textasciitilde0.4 (equivalent to 10 mM H\textsubscript{2}O\textsubscript{2}) and falls linearly during the reading time.}\label{fig:fig-cat-assay-curves}
+\caption{\textbf{Representative Readings}. Readings illustrating the variation profile of absorbance over time for Assay Blank, Sample Assay, and Sample Blank. For both \enquote{blanks,} there is no change in absorbance at 240 nm over time. In the Assay Blank, the absorbance remains at \textasciitilde0.4 (equivalent to 10 mM H\textsubscript{2}O\textsubscript{2}). In the Sample Blank, the absorbance is near zero due to the absence of H\textsubscript{2}O\textsubscript{2}. In the Sample Assay, the absorbance starts near \textasciitilde0.4 (equivalent to 10 mM H\textsubscript{2}O\textsubscript{2}) and falls linearly during the reading time.}\label{fig:fig-cat-assay-curves}
 \end{figure}
 
 \normalsize
@@ -1154,7 +1237,7 @@ Using increasing amounts of the sample, it is possible to observe an increase in
 
 }
 
-\caption{\textbf{Sample Assay Readings}. Absorbance decline profiles at 240 nm using different volumes (0.5 - 20 µL) of rat liver homogenate (1:150, w/v). When there is an excess of sample (e.g., ≥ 10 µL), the substrate consumption is so rapid that it causes significant variation in substrate concentration during the reading. This variation affects the enzyme activity during the reading, resulting in a non-linear consumption rate. Note that the initial absorbance differs between the different sample volumes used, as there is consumption of hydrogen peroxide between the time of reagent addition and the start of the reading.}\label{fig:fig-cat-smp-vol-curves}
+\caption{\textbf{Sample Assay Readings}. Absorbance decline profiles at 240 nm using different volumes (0.5 - 20 µL) of rat liver homogenate (1:150, w/v). When there is an excess of sample (e.g., ≥ 10 µL), the substrate consumption is so rapid that it causes significant variation in substrate concentration during the reading. This variation affects the enzyme activity during the reading, resulting in a non-linear consumption rate and breaking one of the assumptions of measuring the initial velocity of an enzyme, which assumes that the concentration of substrates is stable during the assay (see \hyperref[chapter3]{Chapter 3}). Note that the initial absorbance differs between the different sample volumes used, as there is consumption of hydrogen peroxide between the time of reagent addition and the start of the reading.}\label{fig:fig-cat-smp-vol-curves}
 \end{figure}
 
 \normalsize
@@ -1169,7 +1252,7 @@ Therefore, one should avoid homogenate volumes that result in very high consumpt
 
 \includegraphics[width=1\linewidth]{Volume-1_files/figure-latex/fig-cat-linear-range-1} \hfill{}
 
-\caption{\textbf{H\textsubscript{2}O\textsubscript{2} Consumption Rate} \emph{versus} \textbf{Sample Quantity}. Different volumes of rat liver homogenate (1:150, w/v) from 0.5 µL to 40 µL were added in the assay to determine catalase activity. The relationship between Abs/min and sample quantity is linear up to a point where the consumption of H\textsubscript{2}O\textsubscript{2} no longer proportionally corresponds to the amount of sample.}\label{fig:fig-cat-linear-range}
+\caption{\textbf{H\textsubscript{2}O\textsubscript{2} Consumption Rate} \emph{versus} \textbf{Sample Quantity}. Different volumes of rat liver homogenate (1:150, w/v) from 0.5 µL to 40 µL were added in the assay to determine catalase activity. The relationship between Abs/min and sample quantity is linear up to a point (approximately 5 µL in this example) where the consumption of H\textsubscript{2}O\textsubscript{2} no longer proportionally corresponds to the amount of sample.}\label{fig:fig-cat-linear-range}
 \end{figure}
 
 \normalsize
@@ -1184,15 +1267,15 @@ To calculate the activity of catalase in U, we use the formula:
 \text{Activity (U/mL)} = \left( \frac{\Delta \text{Abs}_{240}/\text{min}}{\varepsilon} \right) \times \text{Dilution 1} \times \text{Dilution 2} \times \text{Dilution 3}
 \]
 
-where \(\Delta \text{Abs}_{240}/\text{min}\) is the change in absorbance at 240 nm per minute (i.e., the rate); \(\varepsilon\) is the molar absorptivity coefficient; \(\text{Dilution 1}\) is the dilution factor performed in the assay; \(\text{Dilution 2}\) is the dilution factor performed in the sample preparation; and \(\text{Dilution 3}\) is the dilution factor of any other dilution performed.
+where \(\Delta \text{Abs}_{240}/\text{min}\) is the change in absorbance at 240 nm per minute (i.e., the rate); \(\varepsilon\) is the molar absorptivity coefficient (see \hyperref[chapter2]{Chapter 2}); \(\text{Dilution 1}\) is the dilution factor performed in the assay; \(\text{Dilution 2}\) is the dilution factor performed in the sample preparation; and \(\text{Dilution 3}\) is the dilution factor of any other dilution performed.
 
-Note that we are using units per milliliter (U/mL), as, considering that absorbance values are unitless (\(\text{Absorbance} = \log_{10} \left( \frac{I_0}{I} \right)\)) and the readings were performed in a cuvette with an optical path of 1 cm, dividing \(\Delta \text{Abs}_{240}/\text{min}\) by \(\varepsilon\) results in \(\text{U/mL}\):
+We are using units per milliliter (U/mL), as, considering that absorbance values are unitless (\(\text{Absorbance} = \log_{10} \left( \frac{I_0}{I} \right)\), see \hyperref[chapter2]{Chapter 2}) and the readings were performed in a cuvette with an optical path of 1 cm, dividing \(\Delta \text{Abs}_{240}/\text{min}\) by \(\varepsilon\) results in \(\text{U/mL}\):
 
 \[ \frac{\text{cm}^{-1}\text{min}^{-1}}{\text{mM}^{-1}\text{cm}^{-1}} = \text{mM} \cdot \text{min}^{-1} \]
 
 Converting:
 
-\[ \text{mM} \cdot \text{min}^{-1} = \text{mmol/L} \cdot \text{min}^{-1} = \mu\text{mol/mL} \cdot \text{min}^{-1} = \text{U/mL} \]
+\[ \text{mM} \cdot \text{min}^{-1} = \text{mmol} \cdot \text{L}^{-1} \cdot \text{min}^{-1} = \mu\text{mol} \cdot \text{mL}^{-1} \cdot \text{min}^{-1} = \text{U/mL} \]
 
 \begin{greybox}[frametitle = Note]
 \emph{Catalase does not follow the usual pattern of Michaelis-Menten kinetics. It is not possible to saturate the enzyme with substrate within a feasible concentration range, and catalase is inactivated (oxidized) by its own substrate at concentrations of H\textsubscript{2}O\textsubscript{2} above 100 mM. Therefore, some authors recommend not using the International Unit to express catalase activity, but rather the rate constant of a first-order reaction (\(k\).}
@@ -1201,9 +1284,11 @@ Converting:
 
 \subsection{Example Calculation}\label{example-calculation}
 
-The steps to calculate the enzymatic activity of catalase in U include calculating the average Abs\textsubscript{240}/min from technical replicates of the sample assay, correcting the average Abs\textsubscript{240}/min by the average value from technical replicates of the sample blank, calculating the activity in the reaction medium, adjusting for the dilution performed in the assay, and the final adjustment for the initial dilution of the tissue in the preparation of the homogenate.
+\subsubsection{Tissue Homogenates}\label{tissue-homogenates}
 
-\subsubsection{\texorpdfstring{Mean Abs\textsubscript{240}/min and Correction by Blank}{Mean Abs240/min and Correction by Blank}}\label{mean-abs240min-and-correction-by-blank}
+For a typical measurement where the sample is a tissue homogenate, the steps to calculate the enzymatic activity of catalase in U include calculating the average Abs\textsubscript{240}/min from technical replicates of the sample assay, correcting the average Abs\textsubscript{240}/min by the average value from technical replicates of the sample blank, calculating the activity in the reaction medium, adjusting for the dilution performed in the assay, and the final adjustment for the initial dilution of the tissue in the preparation of the homogenate.
+
+\paragraph{\texorpdfstring{Mean Abs\textsubscript{240}/min and Correction by Blank}{Mean Abs240/min and Correction by Blank}}\label{mean-abs240min-and-correction-by-blank}
 
 First, calculate the mean of the Abs\textsubscript{240}/min values recorded for the sample blank and the sample assay. Then, subtract the average value of the sample blank from the average value of the sample assay:
 
@@ -1225,15 +1310,15 @@ Assuming that a sample resulted in rates of -0.0001, 0.0002, -0.0001 for the sam
 
 \end{greybox}
 
-\subsubsection{Activity in the Reaction Medium}\label{activity-in-the-reaction-medium}
+\paragraph{Activity in the Reaction Medium}\label{activity-in-the-reaction-medium}
 
-The corrected average value is divided by the molar absorptivity coefficient of H\textsubscript{2}O\textsubscript{2} at 240 nm (ε\textsubscript{240} = 0.0394 mM\textsuperscript{-1} cm\textsuperscript{-1}) to calculate the activity of catalase in the assay's reaction medium (i.e., the amount of enzyme in the cuvette):
+The corrected average value is divided by the molar absorptivity coefficient of H\textsubscript{2}O\textsubscript{2} at 240 nm (\(\varepsilon\)\textsubscript{240} = 0.0394 mM\textsuperscript{-1} cm\textsuperscript{-1}) to calculate the activity of catalase in the assay's reaction medium (i.e., the amount of active enzyme in the cuvette):
 
 \[ \text{Activity (U/mL) in cuvette} = \left( \frac{0.03}{0.0394} \right) \]
 
 \[ \text{Activity (U/mL) in cuvette} = 0.761\]
 
-\subsubsection{Activity in the Homogenate}\label{activity-in-the-homogenate}
+\paragraph{Activity in the Homogenate}\label{activity-in-the-homogenate}
 
 To determine the activity of catalase in the homogenate, multiply the activity in the reaction medium by the dilution factor used in the assay (i.e., the final volume of the assay divided by the volume of sample added). For example, if 20 µL of homogenate were added to a final volume of 800 µL, we have a dilution factor of 40:
 
@@ -1241,9 +1326,9 @@ To determine the activity of catalase in the homogenate, multiply the activity i
 \[ \text{Activity (U/mL) in homogenate} = 0.761 \times 40\]
 \[ \text{Activity (U/mL) in homogenate} = 30.46 \]
 
-\subsubsection{Activity in Tissue}\label{activity-in-tissue}
+\paragraph{Activity in Tissue}\label{activity-in-tissue}
 
-To calculate the activity of catalase in the sample, simply multiply the activity value in the homogenate by any dilutions that have been performed up to the point of assay. The preparation of the homogenate always involves an initial dilution at the time of homogenization. Often, after a centrifugation step, the homogenate is diluted again. Therefore, assuming that a homogenate was initially prepared at a ratio of 1:5 (w/v) (e.g., 100 mg of tissue in 500 µL of final volume) and that after homogenization and centrifugation the homogenate was diluted again 1:400 (e.g., 3 µL of supernatant in 1200 µL of final volume), there is a total dilution factor of 2000:
+To calculate the activity of catalase in the sample, simply multiply the activity value in the homogenate by any dilutions that have been performed up to the point of assay. The preparation of the homogenate always involves an initial dilution at the time of homogenization (see \hyperref[chapter4]{Chapter 4}). Often, after a centrifugation step, the homogenate is diluted again. Therefore, assuming that a homogenate was initially prepared at a ratio of 1:5 (w/v) (e.g., 100 mg of tissue in 500 µL of final volume) and that after homogenization and centrifugation the homogenate was diluted again 1:400 (e.g., 3 µL of supernatant in 1200 µL of final volume), there is a total dilution factor of 2000:
 
 \[ \text{Activity (U/mL) in tissue} = 30.46 \times \left( \frac{500}{100} \right) \times \left( \frac{1200}{3} \right)\]
 
@@ -1258,11 +1343,25 @@ To calculate the activity of catalase in the sample, simply multiply the activit
 
 \end{greybox}
 
+\subsubsection{Cell Lysates}\label{cell-lysates}
+
+\paragraph{Activity in the Reaction Medium}\label{activity-in-the-reaction-medium-1}
+
+aaa.
+
+\paragraph{Activity in the Lysate}\label{activity-in-the-lysate}
+
+aaa.
+
+\paragraph{Activity in Cells}\label{activity-in-cells}
+
+aaa.
+
 \subsubsection{Normalization by Protein Concentration}\label{normalization-by-protein-concentration}
 
 Lastly, to standardize the comparison of enzymatic activity across different samples and experiments, enzymatic activity values are commonly normalized by the amount of protein in the sample. This is done by dividing the calculated activity (U/gww) by the protein concentration in the sample (mg prot./gww). Normalization can be done at any previous step if the protein concentration in the reaction medium or homogenate is known. Assuming that the sample has a protein concentration of 99.1 mg/gww, we have:
 
-\[ \text{Activity (U/mg prot.) in tissue} = \left( \frac{\ensuremath{6.091371\times 10^{4}}}{99.1} \right)\]
+\[ \text{Activity (U/mg prot.) in tissue} = \left( \frac{60913.71}{99.1} \right)\]
 \[ \text{Activity (U/mg prot.) in tissue} = 614.67 \]
 
 \begin{greybox}[frametitle = Note]
@@ -1272,7 +1371,7 @@ Lastly, to standardize the comparison of enzymatic activity across different sam
 
 \section{3-Amino-1,2,4-Triazole}\label{amino-124-triazole}
 
-To ensure that the consumption of H\textsubscript{2}O\textsubscript{2} observed in the assay is specifically caused by catalase activity, it is recommended to verify the ability of 3-amino-1,2,4-triazole (ATZ) to reduce the rate of H\textsubscript{2}O\textsubscript{2} consumption caused by the sample. ATZ is an irreversible inhibitor of catalase and is used at a concentration of 20 mM with an exposure time of 0.5 to 2.0 hours to abolish catalase activity \autocite{margoliash_study_1958,margoliash_irreversible_1960,watanabe_autoxidation_2003}. Since ATZ acts on Compound I (see \hyperref[intro]{Introduction}), and not directly on catalase, H\textsubscript{2}O\textsubscript{2} should be added to the medium where the sample is incubated with ATZ so that Compound I is formed and inhibition occurs.
+To ensure that the consumption of H\textsubscript{2}O\textsubscript{2} observed in the assay is specifically caused by catalase activity, it is recommended to verify the ability of 3-amino-1,2,4-triazole (ATZ) to reduce the rate of H\textsubscript{2}O\textsubscript{2} consumption caused by the sample. ATZ is an irreversible inhibitor of catalase and is used at a concentration of 20 mM with an exposure time of 0.5 to 2.0 hours to abolish catalase activity \autocite{margoliash_study_1958,margoliash_irreversible_1960,watanabe_autoxidation_2003}. Since ATZ acts on Compound I (see \hyperref[cat_intro]{Introduction}), and not directly on catalase, H\textsubscript{2}O\textsubscript{2} should be added to the medium where the sample is incubated with ATZ so that Compound I is formed and inhibition occurs.
 
 \subsection{\texorpdfstring{Catalase Inhibition by ATZ \emph{in vitro}}{Catalase Inhibition by ATZ in vitro}}\label{catalase-inhibition-by-atz-in-vitro}
 
@@ -1293,73 +1392,53 @@ The following result illustrates the effect of incubating a sample with ATZ in t
 
 \normalsize
 
-In the control treatment, catalase activity remained stable throughout the period, oscillating between -0.050 and -0.052 Abs/min. In the ATZ treatment, catalase activity gradually declined, but after 2.5 hours, the inhibition was only 41.3\% relative to the initial activity. In the sample treated with ATZ + H\textsubscript{2}O\textsubscript{2}, the activity dropped exponentially, being only 1.5\% of the control treatment and the initial activity before the start of the treatment (\hyperref[fig-inhibitor]{Figure 4}). Therefore, for this sample, all consumption of H\textsubscript{2}O\textsubscript{2} can be attributed to catalase activity.
-
-\section{Troubleshooting}\label{troubleshooting}
-
-It has been reported that for some species there is a delay for the onset of h2o2 consumption.
-
-When optimizing the assay or assessing no a sample for the first time it is better to use longer total reading time to better understand what is going on and diagnose potential problems.
-
-\scriptsize
-
-\begin{table}[!h]
-\centering
-\caption{\label{tab:cat-troubleshooting}caption}
-\centering
-\fontsize{7}{9}\selectfont
-\begin{tabular}[t]{>{\raggedright\arraybackslash}p{15em}>{\raggedright\arraybackslash}p{10em}>{\raggedright\arraybackslash}p{15em}}
-\toprule
-\textbf{Problem} & \textbf{Possible Cause} & \textbf{Solution}\\
-\midrule
-\cellcolor{gray!10}{Inconsistent results between runs} & \cellcolor{gray!10}{Pipetting errors} & \cellcolor{gray!10}{Calibrate pipettes and ensure consistent technique}\\
- & Temperature variations & Maintain a consistent temperature environment during the experiment\\
-\cellcolor{gray!10}{} & \cellcolor{gray!10}{Inconsistent incubation times} & \cellcolor{gray!10}{Standardize and carefully monitor incubation times}\\
-No change in absorbance over time & Incorrect wavelength selected & Verify and set the correct wavelength\\
-\cellcolor{gray!10}{} & \cellcolor{gray!10}{Sample not added} & \cellcolor{gray!10}{Ensure the sample is correctly pipetted into the wells}\\
-\addlinespace
-High initial absorbance &  & \\
-\cellcolor{gray!10}{Low initial absorbance} & \cellcolor{gray!10}{} & \cellcolor{gray!10}{}\\
-Non-linear rate &  & \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\normalsize
+In the control treatment, catalase activity remained stable throughout the period (2.5 h), oscillating between -0.050 and -0.052 Abs/min. In the ATZ treatment, catalase activity gradually declined, but after 2.5 hours, the inhibition was only 41.3\% relative to the initial activity. In the sample treated with ATZ + H\textsubscript{2}O\textsubscript{2}, the activity dropped exponentially, being only 1.5\% of the control treatment and the initial activity before the start of the treatment (Figure \ref{fig:cat-fig-inhibitor}). Therefore, for this sample, all consumption of H\textsubscript{2}O\textsubscript{2} can be attributed to catalase activity.
 
 \section{Additional Comments}\label{cat_additional_comments}
 
 
 
-\subsection{Catalase}\label{catalase-1}
+\subsection{Catalase}\label{catalase}
 
 \begin{itemize}
 \tightlist
 \item
-  \textbf{Hydrogen Peroxide Concentration}: A concentration of 10 mM H\textsubscript{2}O\textsubscript{2} is used to prevent enzyme inactivation during the assay and to minimize the formation of bubbles (O\textsubscript{2}) inside the cuvette. Since the concentration of H\textsubscript{2}O\textsubscript{2} is critical and at 10 mM the enzyme is not saturated (Figure \ref{fig:fig-substrate-curves}), it is essential to always check the stock solution concentration before each assay (see \hyperref[checking_h2o2]{Hydrogen Peroxide (H\textsubscript{2}O\textsubscript{2})}) and ensure that sample readings start with absorbance values close to 0.4.
+  \textbf{Hydrogen Peroxide Concentration}: A concentration of 10 mM H\textsubscript{2}O\textsubscript{2} is used to prevent enzyme inactivation during the assay and to minimize the formation of bubbles (O\textsubscript{2}) inside the cuvette. Since the concentration of H\textsubscript{2}O\textsubscript{2} is critical and at 10 mM the enzyme is not saturated (Figure \ref{fig:fig-substrate-curves}), it is essential to always check the stock solution concentration before each assay (see \hyperref[cat_checking_h2o2]{Checking H\textsubscript{2}O\textsubscript{2} Concentration}) and ensure that sample readings start with absorbance values close to 0.4.
 \end{itemize}
 
 \scriptsize
 
-\begin{figure}\setbox0=\hbox{\begin{minipage}[h]{\widthw}\centering \includegraphics[width=\widthw]{Volume-1_files/figure-latex/fig-substrate-curves-1} \end{minipage}}\needspace{\ht0+\dp0+2\baselineskip}\definesHSpace\hspace{-\rf}\box0\caption{\textbf{Rate of H\textsubscript{2}O\textsubscript{2} Consumption} \emph{versus} \textbf{Substrate Concentration}. Effect of the final concentration of H\textsubscript{2}O\textsubscript{2} on the assay for determining catalase activity. The left panel shows representative readings from assays with final concentrations of 1, 2.5, 5, 10, and 25 mM of H\textsubscript{2}O\textsubscript{2}, in addition to the control in the absence of H\textsubscript{2}O\textsubscript{2}. Note that at the concentration of 25 mM, the absorbance approaches 1 in a cuvette with a 1 cm optical path. The reading time was reduced to 30 seconds to allow comparison between concentrations, as at 25 mM of H\textsubscript{2}O\textsubscript{2}, the Abs/min rate ceases to be linear after 30 seconds under the conditions of the experiment. The right-hand chart shows a linear relationship between substrate concentration and enzymatic activity, indicating that the enzyme is not saturated within this concentration range. The chart displays data from three different readings for each concentration of H\textsubscript{2}O\textsubscript{2}.}\label{fig:fig-substrate-curves}
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{Volume-1_files/figure-latex/fig-substrate-curves-1} 
+
+}
+
+\caption{\textbf{Rate of H\textsubscript{2}O\textsubscript{2} Consumption} \emph{versus} \textbf{Substrate Concentration}. Effect of the final concentration of H\textsubscript{2}O\textsubscript{2} on the assay for determining catalase activity. The left panel shows representative readings from assays with final concentrations of 1, 2.5, 5, 10, and 25 mM of H\textsubscript{2}O\textsubscript{2}, in addition to the control in the absence of H\textsubscript{2}O\textsubscript{2}. Note that at the concentration of 25 mM, the absorbance approaches 1 in a cuvette with a 1 cm optical path. The reading time was reduced to 30 seconds to allow comparison between concentrations, as at 25 mM of H\textsubscript{2}O\textsubscript{2}, the Abs/min rate ceases to be linear after 30 seconds under the conditions of the experiment. The graph on the right shows a linear relationship between substrate concentration and enzymatic activity, indicating that the enzyme is not near saturation within this concentration range. The chart displays data from three different readings for each concentration of H\textsubscript{2}O\textsubscript{2}.}\label{fig:fig-substrate-curves}
 \end{figure}
 
 \normalsize
 
 \begin{itemize}
 \item
-  \textbf{Temperature}: Temperature has a minimal effect on catalase activity (Q\textsubscript{10} ≈ 1.1). Therefore, measurements can be performed over a wide range of temperatures (e.g., 10°C to 37°C) without significant variation (\href{https://doi.org/10.1016/S0076-6879(84)05016-3}{Aebi 1984}). Nonetheless, it is recommended to conduct assays at a consistent temperature (e.g., 25°C or another physiologically relevant temperature for the sample) for samples that will be compared with each other.
+  \textbf{Temperature}: Temperature has a minimal effect on catalase activity (Q\textsubscript{10} \(\approx\) 1.1). Therefore, measurements can be performed over a wide range of temperatures (e.g., 10°C to 37°C) without significant variation \autocite{aebi_catalase_1984}. Nonetheless, it is recommended to conduct assays at a consistent temperature (e.g., 25°C or another physiologically relevant temperature for the sample) for samples that will be compared with each other.
 \item
-  \textbf{Optimal pH}: Catalase has optimal activity in a pH range of 6.8-7.5 (\href{https://doi.org/10.1016/S0076-6879(84)05016-3}{Aebi 1984}).
+  \textbf{Optimal pH}: Catalase has optimal activity in a pH range of 6.8-7.5 \autocite{aebi_catalase_1984}.
 \item
-  \textbf{Bubble Formation}: The formation of bubbles during the assay reading of a sample (\hyperref[fig-catalase-bubbles]{Figure 6}) is an indicator that there is an excess of catalase in the assay and that the reading should be repeated with a smaller sample volume. In addition to indicating excessive substrate consumption, bubbles generate noise in absorbance measurements.
+  \textbf{Bubble Formation}: The excessive formation of bubbles during the assay reading of a sample (Figure \ref{fig:fig-cat-bubbles}) is an indication that there is an excess of catalase in the assay and that the reading should be repeated with a smaller sample volume. In addition to indicating excessive substrate consumption, bubbles generate noise in absorbance measurements.
 \end{itemize}
 
 
 
 \scriptsize
 
-\begin{figure}\setbox0=\hbox{\begin{minipage}[h]{\widthw}\centering \includegraphics[width=\widthw]{images/catalase/bubbles} \end{minipage}}\needspace{\ht0+\dp0+2\baselineskip}\definesHSpace\hspace{-\rf}\box0\caption{\textbf{Bubble Formation}. Formation of bubbles (O\textsubscript{2}) inside the cuvette after a 1-minute reading. The recorded Abs\textsubscript{240}/min value in this reading was -0.150.}\label{fig:fig-cat-bubbles}
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{images/catalase/bubbles} 
+
+}
+
+\caption{\textbf{Bubble Formation}. Formation of bubbles (O\textsubscript{2}) inside the cuvette after a 1-minute reading. The recorded Abs\textsubscript{240}/min value in this reading was -0.150.}\label{fig:fig-cat-bubbles}
 \end{figure}
 
 \normalsize
@@ -1367,7 +1446,7 @@ Non-linear rate &  & \\
 \begin{itemize}
 \tightlist
 \item
-  \textbf{Minimizing Pre-Reading H\textsubscript{2}O\textsubscript{2} Consumption}: A strategy to minimize the consumption of H\textsubscript{2}O\textsubscript{2} between the addition of the sample and the actual start of the reading is to use a piece of Parafilm to position a small volume of sample (≤ 5 µL). Cover the cuvette with the Parafilm without moving the droplet (Figure \ref{fig:fig-catalase-parafilm}), invert the cuvette to homogenize the contents, place it in the cuvette holder, and start the reading. This way, the interval between the first contact of the sample with the reaction medium and the start of the reading is minimized, ensuring that the reading actually begins with the final assay concentration of 10 mM H\textsubscript{2}O\textsubscript{2}.
+  \textbf{Minimizing Pre-Reading H\textsubscript{2}O\textsubscript{2} Consumption}: A strategy to minimize the consumption of H\textsubscript{2}O\textsubscript{2} between the addition of the sample and the actual start of the reading is to use a piece of Parafilm to position a small volume of sample (\(\leq\) 5 µL). Cover the cuvette with the Parafilm without moving the droplet (Figure \ref{fig:fig-cat-parafilm}), invert the cuvette to homogenize the contents, place it in the cuvette holder, and start the reading. This way, the interval between the first contact of the sample with the reaction medium and the start of the reading is minimized, ensuring that the reading actually begins with the final assay concentration of 10 mM H\textsubscript{2}O\textsubscript{2}.
 \end{itemize}
 
 
@@ -1378,23 +1457,6 @@ Non-linear rate &  & \\
 \end{figure}
 
 \normalsize
-
-\subsection{Enzymatic Assays}\label{enzymatic-assays}
-
-\begin{itemize}
-\item
-  \textbf{Temperature Control}: Like common chemical reactions, temperature significantly affects the speed of enzymatic reactions. For most enzyme-catalyzed reactions, the rate increases 2-3 times with every 10°C increase (temperature coefficient, Q\textsubscript{10} = 2-3). That is, an increase in temperature within a specific range accelerates the reaction. To ensure the comparability of results from different samples and experimental days, readings should be made at the same temperature, preferably one that is physiologically relevant to the organism of origin (e.g., 37°C for human tissues). Microplate readers and spectrophotometers have temperature control systems for this purpose. Additionally, it is recommended to keep the deionized water used in the protocol at the assay temperature (e.g., using a water bath or dry block heaters). As most of the reaction medium volume is composed of water, ensuring the water is at the correct temperature helps stabilize the temperature of the reaction medium more quickly.
-\item
-  \textbf{pH Control}: Enzymes are sensitive to pH variations and have an optimum pH at which their catalytic activity is maximized. The relationship between enzymatic activity and pH is a bell-shaped curve, with the peak indicating the optimum pH. From the optimum pH, towards alkaline or acidic extremes, the activity of the enzyme decreases as the pH changes until it finally reaches zero at the extremes. This is because pH affects the ionization of charged groups involved in the catalytic mechanism and/or structural stability of the enzyme. Generally, enzymatic assays are conducted at physiological pH for the organism from which the sample originates. However, in some cases, it is convenient to use a pH that differs from the physiological for analytical reasons.
-\item
-  \textbf{Substrate Concentration}: Ideally, saturating concentrations of substrates and cofactors should always be used to determine an enzyme's activity. However, factors such as high molar absorptivity and low solubility prevent the assay from being conducted at such concentrations in most cases.
-\item
-  \textbf{Initial Rate vs.~V\textsubscript{max}}: Although some equipment expresses the initial change in absorbance over time (representing the change in substrate or product concentration) in an enzymatic assay as V\textsubscript{max}, this value is actually the initial rate (v\textsubscript{0}). Note that V\textsubscript{max} is a theoretical limit never reached in any experiment, although it is possible to approach it and determine it by extrapolation. This limitation is caused by the fact that complete saturation can only be achieved at infinite concentrations of substrates and cofactors, and, despite using high concentrations of substrates and cofactors, the concentrations cannot be considered as completely saturating.
-\item
-  \textbf{Enzyme Unit}: The enzyme unit, or international unit of enzymatic activity (U, sometimes IU), is a measure of an enzyme's catalytic activity. This unit is defined as the amount of enzyme that catalyzes the conversion of one µmol of substrate per minute (1 U = µmol/min), under conditions specified by the assay method.
-\item
-  \textbf{Expression of Enzymatic Activity}: Measures of enzymatic activity are often expressed as units per milligram of protein (U/mg protein), both in cell lysates or tissue homogenates and in isolated protein preparations. This practice is based on the need to normalize enzymatic activity relative to the amount of protein present in the sample, providing a standardized way to compare enzymatic activity between different samples and experiments.
-\end{itemize}
 
 \subsection{General Observations}\label{general-observations}
 
@@ -1415,7 +1477,72 @@ Non-linear rate &  & \\
   \end{itemize}
 \end{itemize}
 
-\chapter{Superoxide Dismutase}\label{superoxide-dismutase}
+\section{Troubleshooting}\label{troubleshooting}
+
+
+
+\scriptsize
+
+\begin{table}[!h]
+\centering
+\caption{\label{tab:cat-troubleshooting}Troubleshooting Guide for Catalase Activity Protocol - Common Issues and Recommended Solutions}
+\centering
+\fontsize{7}{9}\selectfont
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{10em}>{\raggedright\arraybackslash}p{10em}>{\raggedright\arraybackslash}p{20em}}
+\toprule
+\textbf{Problem} & \textbf{Possible Cause} & \textbf{Solution}\\
+\midrule
+\cellcolor{gray!10}{Inconsistent results between runs} & \cellcolor{gray!10}{Inconsistent procedure} & \cellcolor{gray!10}{Standardize procedure, including order of reagent addition, cuvette content homogenization and time between reagent addition and reading.}\\
+ & Omission of step in protocol & Ensure reagents and sample are correctly pipetted and that the cuvette content is homogenized before \vphantom{1} reading.\\
+\cellcolor{gray!10}{} & \cellcolor{gray!10}{Pipetting errors or incorrect volumes} & \cellcolor{gray!10}{Calibrate pipettes,  ensure consistent technique, and ensure that the final volume of the assay is correct. Remember to adjust the volume of water according to the volume of sample.}\\
+ & Temperature variations & Maintain a consistent temperature environment during the experiment.\\
+\cellcolor{gray!10}{No change in absorbance over time} & \cellcolor{gray!10}{Incorrect wavelength selected} & \cellcolor{gray!10}{Verify and set the correct wavelength (240 nm).}\\
+\addlinespace
+ & Low temperature & The water used in the assay must be at the set temperature. If it is left on ice with the other solution the rate will be very low.\\
+\cellcolor{gray!10}{} & \cellcolor{gray!10}{Omission of step in protocol} & \cellcolor{gray!10}{Ensure reagents and sample are correctly pipetted and that the cuvette content is homogenized before reading.}\\
+ & Type of cuvette & The cuvette must be UV-transparent. Quartz is recommended.\\
+\cellcolor{gray!10}{Large absorbance changes in Assay Blank} & \cellcolor{gray!10}{Contaminant in solutions} & \cellcolor{gray!10}{Prepare fresh solutions with ultrapure (type I) water.}\\
+Large absorbance changes in Sample Blank & Interfering substances in sample & Test the assay with another sample.\\
+\addlinespace
+\cellcolor{gray!10}{Non-linear rate in Sample Assay} & \cellcolor{gray!10}{Excessive sample volume} & \cellcolor{gray!10}{Repeat the assay with lower sample volume or higher sample dilution.}\\
+ & High H\textsubscript{2}O\textsubscript{2} concentration & Check H\textsubscript{2}O\textsubscript{2} concentration and make a new solution if needed.\\
+\cellcolor{gray!10}{High initial absorbance in Sample Assay} & \cellcolor{gray!10}{High H\textsubscript{2}O\textsubscript{2} concentration} & \cellcolor{gray!10}{Check H\textsubscript{2}O\textsubscript{2} concentration and make a new solution if needed.}\\
+ & Incorrect blank reference & Spectrophotometer must be zeroed with 50 mM phosphate buffer containing 0.5 mM EDTA at 240 nm.\\
+\cellcolor{gray!10}{} & \cellcolor{gray!10}{High sample absorbance} & \cellcolor{gray!10}{Measure the contribution of sample alone and calculate the contribution of H\textsubscript{2}O\textsubscript{2}. The difference between sample and sample + should be H\textsubscript{2}O\textsubscript{2} \textasciitilde{} 0.4.}\\
+\addlinespace
+Low initial absorbance in Sample Assay & Incorrect blank reference & Spectrophotometer must be zeroed with 50 mM phosphate buffer containing 0.5 mM EDTA at 240 nm.\\
+\cellcolor{gray!10}{} & \cellcolor{gray!10}{Low H\textsubscript{2}O\textsubscript{2} concentration} & \cellcolor{gray!10}{Check H\textsubscript{2}O\textsubscript{2} concentration and make a new solution if needed.}\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\normalsize
+
+\chapter{Superoxide Dismutase}\label{chapter7}
+
+\toc{1}
+
+\newpage
+
+\section{Introduction}\label{sod_intro}
+
+SOD \autocite{halliwell_free_2015}.
+
+Superoxide dismutases (SODs) are a critical group of enzymes that play a fundamental role in protecting cells from oxidative stress. They catalyze the dismutation of superoxide radicals (O2•−) into molecular oxygen (O2) and hydrogen peroxide (H2O2), thereby mitigating the potential damage caused by reactive oxygen species (ROS). This protective mechanism is essential for maintaining cellular homeostasis and preventing oxidative damage to vital biomolecules, such as DNA, proteins, and lipids.
+
+\[
+\text{O}_2^- + \text{O}_2^- + \text{2 H}^+ \overset{\text{SOD}}{\rightarrow} \text{H}_2\text{O}_2 + \text{O}_2
+\]
+
+SODs are metalloenzymes, meaning they require a metal cofactor for their catalytic activity. The most common and well-studied forms of SODs are classified based on their metal cofactors: copper-zinc superoxide dismutase (CuZnSOD) and manganese superoxide dismutase (MnSOD).
+
+CuZnSOD is typically found in the cytosol of eukaryotic cells and in the intermembrane space of mitochondria. The enzyme contains both copper (Cu) and zinc (Zn) ions at its active site. The copper ion is directly involved in the catalytic dismutation of superoxide radicals, while the zinc ion plays a structural role, stabilizing the enzyme's configuration. CuZnSOD is particularly abundant in human cells and is crucial for neutralizing superoxide radicals generated during cellular respiration and other metabolic processes.
+
+MnSOD is predominantly located in the mitochondria, the powerhouse of the cell, where it serves as a primary defense against mitochondrial ROS. The enzyme's active site contains a manganese (Mn) ion, which is essential for its catalytic function. MnSOD is crucial for the survival of aerobic organisms as it protects mitochondrial components from oxidative damage, ensuring efficient energy production and cellular respiration. This form of SOD is inducible, meaning its expression levels can increase in response to oxidative stress, enhancing the cell's defensive capabilities.
+
+Considered the front line of antioxidant defense \autocite{ighodaro_first_2018} or the free-radical first responders \autocite{dawson_free-radical_2015}, SODs XXXXXXX . Measuring SOD activity is crucial XXXXXXXX. This is illustrated by observations that XXXXXX.
+
+There are various methods to determine SOD activity, for example,
 
 
 % Bibliography
