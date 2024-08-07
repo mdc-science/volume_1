@@ -1,4 +1,4 @@
-# Spectrophotometry Fundamentals
+# Spectrophotometry Fundamentals {#chapter3}
 
 ::: {.Summary data-latex=""}
 Some text for this block.
