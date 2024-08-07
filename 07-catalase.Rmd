@@ -6,7 +6,7 @@ metadata <- read_csv(here('data', protocol, 'assay_metadata.csv'))
 # Load custom function to extract assay metadata
 source(here('R', 'extract_assay_metadata.R'))
 ```
-# Catalase
+# Catalase {#chapter7}
 
 ::: {.Summary data-latex=""}
 Some text for this block.
@@ -17,13 +17,13 @@ Some text for this block.
 \newpage
 
 ## Introduction {#cat_intro}
-Catalase is an antioxidant enzyme present in most aerobic organisms. Its function is to catalyze the decomposition of hydrogen peroxide (H~2~O~2~) into oxygen (O~2~). In animals, catalase is a protein composed of four subunits, each containing an Fe(III)-heme group at its active site. Additionally, a molecule of NADPH is tightly bound to each subunit of mammalian catalase.
+Catalase is an antioxidant enzyme present in most aerobic organisms. Its function is to catalyze the decomposition of hydrogen peroxide (H~2~O~2~) into oxygen (O~2~). In animals, catalase is a protein composed of four subunits, each containing an Fe(III)-heme group at its active site. Additionally, a molecule of NADPH is tightly bound to each subunit of mammalian catalase. **Add a REF**
 
 \[
 \text{2 H}_2\text{O}_2 \overset{\text{catalase}}{\rightarrow} \text{2 H}_2\text{O} + \text{O}_2
 \]
 
-The reaction catalyzed by catalase is a dismutation (a type of redox reaction in which the same molecular species is simultaneously oxidized and reduced, forming two different products, one with a higher oxidation state and one with a lower). In the case of catalase, this process occurs in two stages, involving the formation of an intermediate known as compound I.
+The reaction catalyzed by catalase is a dismutation (a type of redox reaction in which the same molecular species is simultaneously oxidized and reduced, forming two different products, one with a higher oxidation state and one with a lower). In the case of catalase, this process occurs in two stages, involving the formation of an intermediate known as compound I. **Add a REF**
 
 \[
 \text{catalase-Fe(III)} + \text{H}_2\text{O}_2 \rightarrow \text{compound I} + \text{H}_2\text{O}
@@ -34,13 +34,13 @@ The reaction catalyzed by catalase is a dismutation (a type of redox reaction in
 
 Measuring catalase activity is crucial in research investigating antioxidant systems and cellular responses to oxidative stress. This is illustrated by observations that inhibition of catalase activity or expression induces oxidative stress [@bagnyukova_catalase_2005] or increases sensitivity to other stressors [@ho_mice_2004]. Additionally, cells particularly resistant to oxidative stressors show overexpression of catalase [@spitz_mechanisms_1992].
 
-There are various methods to determine catalase activity, for example, by measuring the production of O~2~ with an O~2~ sensor, measuring the consumption of H~2~O~2~ with a fluorescent probe molecule, or directly measuring the consumption of H~2~O~2~ by spectrophotometry. The method for determining catalase activity described in this protocol is one of the most popular and is based on the decomposition of hydrogen peroxide by catalase and the consequent decrease in absorbance at `r wl` nm [@aebi_catalase_1984]. The procedure involves adding the sample to a buffered reaction medium containing hydrogen peroxide and measuring the decrease in absorbance over time using a spectrophotometer. Enzyme activity is then calculated based on the rate of decrease in absorbance, which is directly proportional to the amount of hydrogen peroxide decomposed. In this protocol, in addition to serving as the substrate for the enzyme, H~2~O~2~ acts as the indicator molecule (i.e., the molecule that generates the analytical signal recorded in the assay).
+There are various methods to determine catalase activity, for example, by measuring the production of O~2~ with an O~2~ sensor, measuring the consumption of H~2~O~2~ with a fluorescent probe molecule, or directly measuring the consumption of H~2~O~2~ by spectrophotometry. The method for determining catalase activity described in this protocol is one of the most popular and is based on the decomposition of hydrogen peroxide by catalase and the consequent decrease in absorbance at `r wl` nm [@aebi_catalase_1984]. The procedure involves adding the sample to a buffered reaction medium containing hydrogen peroxide and measuring the decrease in absorbance over time using a spectrophotometer. Enzyme activity is then calculated based on the rate of decrease in absorbance, which is directly proportional to the amount of hydrogen peroxide decomposed. In this protocol, in addition to serving as the substrate for the enzyme, H~2~O~2~ acts as the indicator molecule (i.e., the molecule that generates the analytical signal recorded in the assay). See [Chapter 2](#chapter2). 
 
 \newpage
 
 ## Quick Reference Protocol {#cat-quick-ref}
 
-This section provides a quick reference with stock and final concentrations of the reagents (Table \@ref(tab:cat-tab-conc)), volumes to be pipetted (Table \@ref(tab:cat-tab-vol)), and equipment settings for the readings. The complete protocol is detailed in the next sections.
+This section provides a quick reference protocol with stock and final concentrations of the reagents (Table \@ref(tab:cat-tab-conc)), volumes to be pipetted (Table \@ref(tab:cat-tab-vol)), and equipment settings for the readings. The complete protocol is detailed in the next sections.
 
 (ref:cat-tab-conc) Stock and final concentrations of reagents used in the protocol.
 
@@ -88,6 +88,10 @@ kbl(df_vol, caption = '(ref:cat-tab-vol)', booktabs = T, align = align_vec) %>%
   + **Suggested Reading Interval**: 0.1 min
 * **Use a sample volume that results in ΔAbs~`r wl`~/min between -0.025 and -0.035**
 
+:::{.greybox data-latex='[frametitle = Note]'}
+_The final volume of the assay can be adjusted according to the available cuvette or microplate, as long as the final concentrations of reagents are maintained. Additionally, attention should be paid to the path length and transparency of the cuvette or microplate chosen to ensure accurate and consistent measurements. See [Chapter 3](#chapter3)._
+:::
+
 \newpage
 
 ## Material {#cat_detailed_protocol}
@@ -122,15 +126,15 @@ _Turn on the equipment at least 15 min before reading or as specified by the man
 
 ## Solutions
 ### Hydrogen Peroxide (H~2~O~2~)
-* Based on the last concentration check of H~2~O~2~ (**14.22 M** on June 13, 2024), prepare 10 mL of H~2~O~2~ solution in water:
-  + In a tube (15 mL), add **141 µL** of H~2~O~2~ from the stock bottle
-  + Fill with deionized water up to a total volume of **10 mL**
-  + Briefly vortex
-  + Wrap the tube in aluminum foil to protect the solution from light
-  + Store in the refrigerator at 4°C
+* Based on the expected concentration of H~2~O~2~ in the stock bottle (**9.8 M**), prepare 200 mM H~2~O~2~:
+  + In a tube (15 mL), add **204 µL** of H~2~O~2~ from the stock bottle.
+  + Fill with deionized water up to a total volume of **10 mL**.
+  + Briefly vortex.
+  + Wrap the tube in aluminum foil to protect the solution from light.
+  + Store in the refrigerator at 4°C.
 
 :::{.greybox data-latex='[frametitle = Notes]'}
-_Commercial solutions of H~2~O~2~ are typically found at concentrations of 30% to 35% (w/w), which corresponds to a molar concentration of approximately 9.8 to 10.3 M. If you are not sure about the concentration of your H~2~O~2~ stock, prepare dilutions in ratios of 1:50, 1:100, and 1:200 and determine the concentration experimentally as described [below](#checking_h2o2)._
+_Commercial solutions of H~2~O~2~ are typically 30% to 35% (w/w), which corresponds to a molar concentration of approximately 9.8 to 10.3 M. If you are not sure about the concentration of your H~2~O~2~ stock, prepare dilutions in ratios of 1:50, 1:100, and 1:200 and determine the concentration experimentally as described in [Checking H~2~O~2~ Concentration](#cat_checking_h2o2)._
 :::
 
 :::{.greybox data-latex='[frametitle = CAUTION]'}
@@ -142,28 +146,28 @@ The most convenient way to prepare phosphate buffer containing EDTA at the desir
 
 #### Monobasic Potassium Phosphate (KH~2~PO~4~)
 * Prepare a 1 M solution of KH~2~PO~4~:
-  + Molecular Weight: 136.09 g/mol
-  + Weigh **13.609 g** of KH~2~PO~4~
-  + Dissolve in approximately 90 mL of deionized water
-  + Top up to **100 mL** with deionized water
-  + No need to measure or adjust the pH. Store in the refrigerator at 4°C
+  + Molecular Weight: 136.09 g/mol.
+  + Weigh **13.609 g** of KH~2~PO~4~.
+  + Dissolve in approximately 90 mL of deionized water.
+  + Top up to **100 mL** with deionized water.
+  + No need to measure or adjust the pH. Store in the refrigerator at 4°C.
 
 #### Dibasic Potassium Phosphate (K~2~HPO~4~)
 * Prepare a 1 M solution of K~2~HPO~4~:
-  + Molecular Weight: 174.18 g/mol
-  + Weigh **87.09 g** of K~2~HPO~4~
-  + Dissolve in approximately 450 mL of deionized water
-  + Top up to **500 mL** with deionized water
-  + No need to measure or adjust the pH. Store in the refrigerator at 4°C
+  + Molecular Weight: 174.18 g/mol.
+  + Weigh **87.09 g** of K~2~HPO~4~.
+  + Dissolve in approximately 450 mL of deionized water.
+  + Top up to **500 mL** with deionized water.
+  + No need to measure or adjust the pH. Store in the refrigerator at 4°C.
 
 #### Ethylenediaminetetraacetic Acid (EDTA)
 * Prepare a 500 mM solution of EDTA:
-  + Molecular Weight: 292.24 g/mol
-  + Weigh **7.306 g** of EDTA
-  + Dissolve in approximately 40 mL of deionized water
-  + Adjust the **pH to 8.0** using 1 M NaOH (to increase the pH)
-  + After adjusting the pH, top up to **50 mL** with deionized water
-  + Store in the refrigerator at 4°C
+  + Molecular Weight: 292.24 g/mol.
+  + Weigh **7.306 g** of EDTA.
+  + Dissolve in approximately 40 mL of deionized water.
+  + Adjust the **pH to 8.0** using 1 M NaOH (to increase the pH).
+  + After adjusting the pH, top up to **50 mL** with deionized water.
+  + Store in the refrigerator at 4°C.
 
 :::{.greybox data-latex='[frametitle = Note]'}
 _At this concentration, EDTA will not dissolve completely until the pH is made alkaline._
@@ -171,19 +175,15 @@ _At this concentration, EDTA will not dissolve completely until the pH is made a
 
 #### Phosphate Buffer (KPi) + EDTA
 * Using the previous solutions, prepare a 500 mM phosphate buffer containing 5 mM EDTA (pH 7.2):
-  + Add **28 mL** of 1 M KH~2~PO~4~
-  + Add **97 mL** of 1 M K~2~HPO~4~
-  + Add 80 mL of deionized water
-  + Add **25 mL** of 500 mM EDTA
-  + If necessary, adjust the **pH to 7.2** using 1 M HCl (to decrease the pH) or 1 M NaOH (to increase the pH)
-  + Top up to **250 mL** with deionized water
-  + Aliquot into tubes (50 mL) and store in the refrigerator at 4°C
+  + Add **28 mL** of 1 M KH~2~PO~4~.
+  + Add **97 mL** of 1 M K~2~HPO~4~.
+  + Add 80 mL of deionized water.
+  + Add **25 mL** of 500 mM EDTA.
+  + If necessary, adjust the **pH to 7.2** using 1 M HCl (to decrease the pH) or 1 M NaOH (to increase the pH).
+  + Top up to **250 mL** with deionized water.
+  + Aliquot into tubes (50 mL) and store in the refrigerator at 4°C.
 
-:::{.greybox data-latex='[frametitle = Note]'}
-_With the exception of the tube containing the water that will be used in the assay, all solutions (KPi buffer and H~2~O~2~) and samples should be kept on ice during all procedures._
-:::
-
-## Checking H~2~O~2~ Concentration {#checking_h2o2}
+## Checking H~2~O~2~ Concentration {#cat_checking_h2o2}
 In a quartz cuvette:
 
 1. Add **800 µL** of deionized water.
@@ -191,17 +191,17 @@ In a quartz cuvette:
 1. Discard the contents of the cuvette and dry it.
 1. Add **40 µL** of the H~2~O~2~ solution, supposedly at 200 mM.
 1. Add **760 µL** of deionized water.
-1. Cap the cuvette with a piece of Parafilm and invert it three times to homogenize the contents.
+1. Cap the cuvette (with a cuvette cap or a piece of Parafilm) and invert it three times to homogenize the contents.
 1. Place the cuvette in the holder and record the absorbance at **`r wl` nm**.
 1. Discard the contents of the cuvette, wash it, and dry it.
 1. Repeat steps 4-8 two more times, obtaining a total of three readings.
 
-Average the three readings and calculate the concentration of H~2~O~2~ using its molar absorptivity coefficient at `r wl` nm (ε~`r wl`~ = `r molar_coef` mM^-1^ cm^-1^):
+Average the three readings and calculate the concentration of H~2~O~2~ using its molar absorptivity coefficient at `r wl` nm ($\varepsilon$~`r wl`~ = `r molar_coef` mM^-1^ cm^-1^):
 
 \[\text{H}_2\text{O}_2 \text{ (mM)} = \left( \frac{\left( \text{Abs}_1 + \text{Abs}_2 + \text{Abs}_3 \right) / 3}{\varepsilon} \right) \times \text{Dilution}\]
 
 :::{.greybox data-latex='[frametitle = Note]'}
-_Since the dilution used to produce the H~2~O~2~ solution whose concentration was experimentally determined is known, using the formula_ $C_1 \cdot V_1 = C_2 \cdot V_2$, _it is possible to calculate the concentration in the stock bottle and, from this value, prepare a new solution. This is especially useful when the initially measured concentration is much lower than expected._
+_Since the dilution used to produce the H~2~O~2~ solution whose concentration was experimentally determined is known, using the formula_ $C_1 \cdot V_1 = C_2 \cdot V_2$, _it is possible to calculate the concentration in the stock bottle and, from this value, adjust the volume when preparing a new solution. This is especially useful when the measured concentration is far from the expected concentration._
 :::
 
 ### Example
@@ -217,14 +217,10 @@ h2o2_calc_conc <- (h2o2_read_avg / molar_coef) * h2o2_check_dil_factor
 h2o2_vol <- 5000
 ```
 
-* Reading 1: `r h2o2_read[1]` ; Reading 2: `r h2o2_read[2]` ; Reading 3: `r h2o2_read[3]`
+Assuming that the three readings for checking H~2~O~2~ concentration were `r h2o2_read[1]`, `r h2o2_read[2]`, and `r h2o2_read[3]`, and that the dilution factor used was `r h2o2_check_dil_factor` (`r h2o2_check_dil[2]` µL of the solution was added to a final volume of `r h2o2_check_dil[1]` µL):
 
 \[\text{H}_2 \text{O}_2 \text{ (mM)} = \left( \frac{\left( `r h2o2_read[1]` + `r h2o2_read[2]` + `r h2o2_read[3]` \right) / 3}{`r molar_coef`} \right) \times `r h2o2_check_dil_factor`\]
 \[\text{H}_2 \text{O}_2 \text{ (mM)} = `r round(h2o2_calc_conc, digits = 2)`\]
-
-:::{.greybox data-latex='[frametitle = Note]'}
-_The dilution factor is `r h2o2_check_dil_factor`, as `r h2o2_check_dil[2]` µL of the solution was added to a final volume of `r h2o2_check_dil[1]` µL (`r h2o2_check_dil[2]` in `r h2o2_check_dil[1]` = 1:`r h2o2_check_dil_factor`)._
-:::
 
 #### Adjusting the Concentration
 The solution described in the example above is slightly `r paste(ifelse(h2o2_calc_conc > h2o2_conc, 'more', 'less'))` concentrated than `r h2o2_conc` mM. Using the formula $C_1 \cdot V_1 = C_2 \cdot V_2$, one can quickly prepare another solution at the correct concentration:
@@ -235,28 +231,32 @@ The solution described in the example above is slightly `r paste(ifelse(h2o2_cal
 
 \[V_1 = `r round((h2o2_conc/h2o2_calc_conc)*h2o2_vol, digits = 1)` \text{ µL}\]
 
-Therefore, to produce a solution of H~2~O~2~ at `r h2o2_conc` mM from a solution whose concentration of `r round(h2o2_calc_conc, digits = 2)` mM was experimentally verified, it would be necessary to add `r round((h2o2_conc / h2o2_calc_conc) * h2o2_vol, digits = 1)` µL of the solution into a tube and complete to `r h2o2_vol` µL with deionized water.
+Therefore, to produce a solution of H~2~O~2~ at `r h2o2_conc` mM from a solution whose concentration of `r round(h2o2_calc_conc, digits = 2)` mM was experimentally verified, it would be necessary to add `r round((h2o2_conc / h2o2_calc_conc) * h2o2_vol, digits = 1)` µL of the solution into a tube and complete to `r h2o2_vol` µL with deionized water. Alternatively, one can calculate the actual concentration in the H~2~O~2~ stock bottle and prepare a another solution.
 
 ## Sample Preparation {#sample_prep}
 
-For this protocol, samples must be homogenized in a way that proteins remain in their native conformations. That is, the homogenate should not have been prepared with high concentrations of detergents or salts, in the presence of chaotropic agents, subjected to heating, or deproteinized. Additionally, the homogenate should be prepared at low temperature and in a buffer containing EDTA and protease inhibitors (see Chapter 5).
+For this protocol, samples must be homogenized in a way that proteins remain in their native conformations. That is, the homogenate should not have been prepared with high concentrations of detergents or salts, in the presence of chaotropic agents, subjected to heating, or deproteinized. Additionally, the homogenate should be prepared at low temperature and in a buffer containing EDTA and protease inhibitors (see [Chapter 5](#chapter5)).
 
 ## Assay {#assay_general}
 
-For this protocol, we will use the **kinetic reading mode**, in which the equipment performs multiple readings at one wavelength over a total period of time. The number of readings during this period depends on the time interval between readings set on the equipment. The interval between readings can be adjusted according to the available equipment, but it is recommended that at least five readings are taken during the total time.
+For this protocol, we will use the **kinetic reading mode**, in which the equipment performs multiple readings at one wavelength over a total period of time. The number of readings during this period depends on the time interval between readings set on the equipment. The interval between readings can be adjusted according to the available equipment, but it is recommended that at least five readings are taken during the total time. Most devices will display the rate of change in absorbance at the selected wavelength per minute at the end of a kinetics reading. This is the number you will need to calculate the activity of catalase. In case the equipment does not display it and provides only the absorbance for each time point, the rate can be obtained by calculating the slope of absorbance versus time in any software. 
+
+:::{.greybox data-latex='[frametitle = Note]'}
+_With the exception of the tube containing the water that will be used in the assay, all solutions (KPi buffer and H~2~O~2~) and samples should be kept on ice during all procedures._
+:::
 
 ### Zero {#cat_zero}
 
-Before starting kinetic readings, the equipment must be 'zeroed' at **`r wl` nm**. To zero the equipment, in a quartz cuvette:
+Before starting kinetic readings, the equipment must be 'zeroed' at **`r wl` nm**. The procedure to zero (or blank) may differ depending on the device. Some devices make a single endpoint reading at the selected wavelength, whereas others require to perform a kinetics reading and record an absorbance value for each time point set on the configuration of the kinetics reading. To zero the equipment, in a quartz cuvette:
 
-* Add **80 µL** of 500 mM Phosphate Buffer + 5 mM EDTA (pH 7.2)
-* Add **720 µL** of Water
-* Cap the cuvette with a piece of Parafilm and invert it three times to homogenize the contents
-* Place the cuvette in the holder and zero the spectrophotometer at **`r wl` nm**
-* Discard the contents of the cuvette and dry it
+* Add **80 µL** of 500 mM Phosphate Buffer + 5 mM EDTA (pH 7.2).
+* Add **720 µL** of Water.
+* Cap the cuvette and invert it three times to homogenize the contents.
+* Place the cuvette in the holder and zero the spectrophotometer at **`r wl` nm**.
+* Discard the contents of the cuvette and dry it.
 
 :::{.greybox data-latex='[frametitle = Note]'}
-_At a final concentration of 50 mM, the phosphate buffer, which contains 0.5 mM EDTA, shows an approximate absorbance of 0.155 at 240 nm, using a cuvette with a 1 cm optical path. Therefore, it is crucial to calibrate the equipment with the buffer at the final concentration used in the assay, instead of just with water._
+_At a final concentration of 50 mM, the phosphate buffer used in this protocol, which also contains 0.5 mM EDTA, shows an approximate absorbance of 0.155 at 240 nm, using a cuvette with a 1 cm optical path. Therefore, it is crucial to zero the equipment with the buffer at the final concentration used in the assay, instead of just with water._
 :::
 
 ### Assay Blank {#cat_assay_blank}
@@ -265,13 +265,13 @@ The assay blank is conducted to record changes in absorbance that may occur in t
 
 For the assay blank, in a quartz cuvette:
 
-* Add **80 µL** of 500 mM Phosphate Buffer + 5 mM EDTA (pH 7.2)
-* Add **680 µL** of Water
-* Add **40 µL** of 200 mM Hydrogen Peroxide
-* Cap the cuvette with a piece of Parafilm and invert it three times to homogenize the contents
-* Place the cuvette in the holder and perform the kinetic reading at **`r wl` nm**
-* Record the reading
-* Discard the contents of the cuvette, wash it, and dry it
+* Add **80 µL** of 500 mM Phosphate Buffer + 5 mM EDTA (pH 7.2).
+* Add **680 µL** of Water.
+* Add **40 µL** of 200 mM Hydrogen Peroxide.
+* Cap the cuvette and invert it three times to homogenize the contents.
+* Place the cuvette in the holder and perform the kinetic reading at **`r wl` nm**.
+* Record the reading.
+* Discard the contents of the cuvette, wash it, and dry it.
 
 :::{.greybox data-latex='[frametitle = Note]'}
 _For the catalase activity assay, the assay blank should be performed once to diagnose potential issues with the solutions used. Therefore, it is not necessary to repeat the Assay Blank, as long as the initial absorbance is approximately 0.4 and there is no change in absorbance over time._
@@ -282,16 +282,16 @@ _For the catalase activity assay, the assay blank should be performed once to di
 
 For the sample assay, in a quartz cuvette:
 
-* Add **80 µL** of Phosphate Buffer + EDTA (pH 7.2)
-* Add **660 µL** of Water
-* Add **20 µL** of Sample
-* Add **40 µL** of Hydrogen Peroxide
-* Cap the cuvette with a piece of Parafilm and invert it three times to homogenize the contents
-* Place the cuvette in the holder and perform the kinetic reading at **`r wl` nm**
-* Record the reading
-* Discard the contents of the cuvette, wash it, and dry it
+* Add **80 µL** of Phosphate Buffer + EDTA (pH 7.2).
+* Add **660 µL** of Water.
+* Add **20 µL** of Sample.
+* Add **40 µL** of Hydrogen Peroxide.
+* Cap the cuvette and invert it three times to homogenize the contents.
+* Place the cuvette in the holder and perform the kinetic reading at **`r wl` nm**.
+* Record the reading.
+* Discard the contents of the cuvette, wash it, and dry it.
 
-After the first reading, check the rate of change of absorbance per minute (ΔAbs~`r wl`~/min; shown as *rate* or *V~max~* depending on the equipment). To avoid abrupt changes in the substrate concentration (H~2~O~2~) during the reading, **work with rates between -0.025 and -0.035**, which also ensures that the consumption is linear during the reading interval. Therefore, adjust the sample volume to achieve this range, increasing the sample volume if the rate is lower and decreasing it if the rate is higher. Any change in sample volume should be corrected by the water volume to maintain the final volume of `r final_vol` µL. For some samples (e.g., rat liver homogenate), it may be necessary to make large dilutions (e.g., 1:2000) and still use a small volume (e.g., 20 µL) to achieve an appropriate rate (between -0.025 and -0.035).
+After the first reading, check the rate of change of absorbance per minute (ΔAbs~`r wl`~/min; shown as *rate* or *V~max~* depending on the equipment). To avoid abrupt changes in the substrate concentration (H~2~O~2~) during the reading, **work with rates between -0.025 and -0.035**, which also ensures that the consumption is linear during the reading interval (see Figures \@ref(fig:fig-cat-assay-curves) and \@ref(fig:fig-cat-smp-vol-curves)). Therefore, adjust the sample volume to achieve this range, increasing the sample volume if the rate is lower and decreasing it if the rate is higher. Any change in sample volume should be corrected by the water volume to maintain the final volume of `r final_vol` µL. For some samples (e.g., rat liver homogenate), it may be necessary to make large dilutions (e.g., 1:2000) and still use a small volume (e.g., 20 µL) to achieve an appropriate rate (between -0.025 and -0.035).
 
 Once the sample volume necessary to achieve a rate of approximately -0.030 has been identified, repeat the reading with this volume two more times, obtaining **a total of three readings** for this sample volume.
 
@@ -301,23 +301,23 @@ Using the same sample volume identified in the previous section (i.e., the sampl
 
 For the sample blank, in a quartz cuvette:
 
-* Add **80 µL** of 500 mM Phosphate Buffer + 5 mM EDTA (pH 7.2) 
-* Add **700 µL** of Water
-* Add **20 µL** of Sample
-* Cap the cuvette with a piece of Parafilm and invert the cuvette three times to homogenize the contents
-* Place the cuvette in the holder and perform the kinetic reading at **`r wl` nm**
-* Record the reading
-* Discard the contents of the cuvette, wash it, and dry it
-* Repeat two more times, obtaining **a total of three readings** for each sample
+* Add **80 µL** of 500 mM Phosphate Buffer + 5 mM EDTA (pH 7.2).
+* Add **700 µL** of Water.
+* Add **20 µL** of Sample.
+* Cap the cuvette with a piece of Parafilm and invert the cuvette three times to homogenize the contents.
+* Place the cuvette in the holder and perform the kinetic reading at **`r wl` nm**.
+* Record the reading.
+* Discard the contents of the cuvette, wash it, and dry it.
+* Repeat two more times, obtaining **a total of three readings** for each sample.
 
 :::{.greybox data-latex='[frametitle = Note]'}
 _For the catalase activity assay, the sample blank typically shows no variation in absorbance at `r wl` nm over time (i.e., ΔAbs~`r wl`~/min = 0). However, this reading also serves to quantify the contribution of the sample itself to the absorbance at `r wl` nm (i.e., Abs~`r wl`~ at the start of the reading). With this value, it is possible to calculate the exact concentration of H~2~O~2~ at the start of the sample assay reading._
 :::
 
 ## Expected Results
-In this protocol for measuring the activity of `r analyte`, the rates of Abs~`r wl`~/min for the Sample Blank and Assay Blank readings are generally equal to 0. That is, there is no consumption of hydrogen peroxide in the absence of the sample and no change in absorbance when the sample is present, but hydrogen peroxide is not (Figure \@ref(fig:fig-cat-assay-curves)). On the other hand, in the complete reaction medium, Sample Assay, a decrease in absorbance over time is observed, which corresponds to the consumption of hydrogen peroxide by the `r analyte` present in the sample (Figure \@ref(fig:fig-cat-assay-curves)).
+In this protocol for measuring the activity of `r analyte`, the rates of Abs~`r wl`~/min for the Sample Blank and Assay Blank readings are generally very close to 0. That is, there is no consumption of hydrogen peroxide in the absence of the sample and no change in absorbance when the sample is present, but hydrogen peroxide is not (Figure \@ref(fig:fig-cat-assay-curves)). On the other hand, in the complete reaction medium, Sample Assay, a decrease in absorbance over time is observed, which corresponds to the consumption of hydrogen peroxide by the `r analyte` present in the sample (Figure \@ref(fig:fig-cat-assay-curves)).
 
-(ref:fig-cat-assay-curves) **Representative Readings**. Readings illustrating the variation profile of absorbance over the reading time for Assay Blank, Sample Assay, and Sample Blank. For both "blanks," there is no change in absorbance at 240 nm over time. In the Assay Blank, the absorbance remains at ~0.4 (equivalent to 10 mM H~2~O~2~). In the Sample Blank, the absorbance is near zero due to the absence of H~2~O~2~. In the Sample Assay, the absorbance starts near ~0.4 (equivalent to 10 mM H~2~O~2~) and falls linearly during the reading time.
+(ref:fig-cat-assay-curves) **Representative Readings**. Readings illustrating the variation profile of absorbance over time for Assay Blank, Sample Assay, and Sample Blank. For both "blanks," there is no change in absorbance at 240 nm over time. In the Assay Blank, the absorbance remains at ~0.4 (equivalent to 10 mM H~2~O~2~). In the Sample Blank, the absorbance is near zero due to the absence of H~2~O~2~. In the Sample Assay, the absorbance starts near ~0.4 (equivalent to 10 mM H~2~O~2~) and falls linearly during the reading time.
 
 ```{r fig-cat-assay-curves, fig.cap = '(ref:fig-cat-assay-curves)', fig.dim = c(11.25, 4.5), out.width = '100%'}
 
@@ -366,7 +366,7 @@ ggarrange(p1, p1b)
 
 Using increasing amounts of the sample, it is possible to observe an increase in the rate of hydrogen peroxide consumption, corresponding with the increased amount of catalase in the reaction medium (Figure \@ref(fig:fig-cat-smp-vol-curves)). However, beyond a certain sample quantity, the amount of catalase becomes excessive, which is evidenced by the non-linearity of the absorbance decrease at `r wl` nm during the reading. This can be seen in the readings obtained with sample volumes of 10 and 20 µL in the example below (Figure \@ref(fig:fig-cat-smp-vol-curves)).
 
-(ref:fig-cat-smp-vol-curves) **Sample Assay Readings**. Absorbance decline profiles at 240 nm using different volumes (0.5 - 20 µL) of rat liver homogenate (1:150, w/v). When there is an excess of sample (e.g., ≥ 10 µL), the substrate consumption is so rapid that it causes significant variation in substrate concentration during the reading. This variation affects the enzyme activity during the reading, resulting in a non-linear consumption rate. Note that the initial absorbance differs between the different sample volumes used, as there is consumption of hydrogen peroxide between the time of reagent addition and the start of the reading.
+(ref:fig-cat-smp-vol-curves) **Sample Assay Readings**. Absorbance decline profiles at 240 nm using different volumes (0.5 - 20 µL) of rat liver homogenate (1:150, w/v). When there is an excess of sample (e.g., ≥ 10 µL), the substrate consumption is so rapid that it causes significant variation in substrate concentration during the reading. This variation affects the enzyme activity during the reading, resulting in a non-linear consumption rate and breaking one of the assumptions of measuring the initial velocity of an enzyme, which assumes that the concentration of substrates is stable during the assay (see [Chapter 4](#chapter4)). Note that the initial absorbance differs between the different sample volumes used, as there is consumption of hydrogen peroxide between the time of reagent addition and the start of the reading.
 
 ```{r fig-cat-smp-vol-curves, fig.cap = '(ref:fig-cat-smp-vol-curves)', fig.dim = c(11.25, 4.5), out.width = '100%'}
 p2 <- ggplot(subset(df_curves2, assay_type == 'sample_assay'), aes(x = time, y = abs)) + 
@@ -400,7 +400,7 @@ ggarrange(p2, p3, nrow = 1)
 
 Therefore, one should avoid homogenate volumes that result in very high consumption rates, using a sample amount that falls within the linear range of the relationship between rate (Abs/min) and sample quantity. Under the experimental conditions described in this protocol, the rate (Abs/min) *versus* sample quantity relationship is linear up to approximately -0.070 Abs/min (Figure \@ref(fig:fig-cat-linear-range)). Nevertheless, it is recommended to use a sample volume that results in a rate between -0.025 and -0.035 for all samples. That is, the volume of each sample should be experimentally determined and adjusted, on a case-by-case basis, to achieve Abs/min values within this range.
 
-(ref:fig-cat-linear-range) **H~2~O~2~ Consumption Rate** *versus* **Sample Quantity**. Different volumes of rat liver homogenate (1:150, w/v) from 0.5 µL to 40 µL were added in the assay to determine catalase activity. The relationship between Abs/min and sample quantity is linear up to a point where the consumption of H~2~O~2~ no longer proportionally corresponds to the amount of sample.
+(ref:fig-cat-linear-range) **H~2~O~2~ Consumption Rate** *versus* **Sample Quantity**. Different volumes of rat liver homogenate (1:150, w/v) from 0.5 µL to 40 µL were added in the assay to determine catalase activity. The relationship between Abs/min and sample quantity is linear up to a point (approximately 5 µL in this example) where the consumption of H~2~O~2~ no longer proportionally corresponds to the amount of sample.
 
 ```{r fig-cat-linear-range, fig.cap = '(ref:fig-cat-linear-range)', fig.dim = c(11.25, 4.5), out.width = '100%', fig.align = 'left'}
 
@@ -443,15 +443,15 @@ To calculate the activity of `r analyte` in U, we use the formula:
 \text{Activity (U/mL)} = \left( \frac{\Delta \text{Abs}_{`r wl`}/\text{min}}{\varepsilon} \right) \times \text{Dilution 1} \times \text{Dilution 2} \times \text{Dilution 3}
 \]
 
-where $\Delta \text{Abs}_{`r wl`}/\text{min}$ is the change in absorbance at `r wl` nm per minute (i.e., the rate); $\varepsilon$ is the molar absorptivity coefficient; $\text{Dilution 1}$ is the dilution factor performed in the assay; $\text{Dilution 2}$ is the dilution factor performed in the sample preparation; and $\text{Dilution 3}$ is the dilution factor of any other dilution performed.
+where $\Delta \text{Abs}_{`r wl`}/\text{min}$ is the change in absorbance at `r wl` nm per minute (i.e., the rate); $\varepsilon$ is the molar absorptivity coefficient (see [Chapter 3](#chapter3)); $\text{Dilution 1}$ is the dilution factor performed in the assay; $\text{Dilution 2}$ is the dilution factor performed in the sample preparation; and $\text{Dilution 3}$ is the dilution factor of any other dilution performed.
 
-Note that we are using units per milliliter (U/mL), as, considering that absorbance values are unitless (\( \text{Absorbance} = \log_{10} \left( \frac{I_0}{I} \right) \)) and the readings were performed in a cuvette with an optical path of 1 cm, dividing \(\Delta \text{Abs}_{`r wl`}/\text{min}\) by \(\varepsilon\) results in \(\text{U/mL}\):
+We are using units per milliliter (U/mL), as, considering that absorbance values are unitless (\( \text{Absorbance} = \log_{10} \left( \frac{I_0}{I} \right) \), see [Chapter 3](#chapter3)) and the readings were performed in a cuvette with an optical path of 1 cm, dividing \(\Delta \text{Abs}_{`r wl`}/\text{min}\) by \(\varepsilon\) results in \(\text{U/mL}\):
 
 \[ \frac{\text{cm}^{-1}\text{min}^{-1}}{\text{mM}^{-1}\text{cm}^{-1}} = \text{mM} \cdot \text{min}^{-1} \]
 
 Converting:
 
-\[ \text{mM} \cdot \text{min}^{-1} = \text{mmol/L} \cdot \text{min}^{-1} = \mu\text{mol/mL} \cdot \text{min}^{-1} = \text{U/mL} \]
+\[ \text{mM} \cdot \text{min}^{-1} = \text{mmol} \cdot \text{L}^{-1} \cdot \text{min}^{-1} = \mu\text{mol} \cdot \text{mL}^{-1} \cdot \text{min}^{-1} = \text{U/mL} \]
 
 
 :::{.greybox data-latex='[frametitle = Note]'}
@@ -478,9 +478,12 @@ tissue_ptn <- 99.1
 act_mg_ptn <- tissue_act/tissue_ptn
 ```
 
-The steps to calculate the enzymatic activity of `r analyte` in U include calculating the average Abs~`r wl`~/min from technical replicates of the sample assay, correcting the average Abs~`r wl`~/min by the average value from technical replicates of the sample blank, calculating the activity in the reaction medium, adjusting for the dilution performed in the assay, and the final adjustment for the initial dilution of the tissue in the preparation of the homogenate.
+#### Tissue Homogenates
 
-#### Mean Abs~`r wl`~/min and Correction by Blank
+For a typical measurement where the sample is a tissue homogenate, the steps to calculate the enzymatic activity of `r analyte` in U include calculating the average Abs~`r wl`~/min from technical replicates of the sample assay, correcting the average Abs~`r wl`~/min by the average value from technical replicates of the sample blank, calculating the activity in the reaction medium, adjusting for the dilution performed in the assay, and the final adjustment for the initial dilution of the tissue in the preparation of the homogenate.
+
+##### Mean Abs~`r wl`~/min and Correction by Blank
+
 First, calculate the mean of the Abs~`r wl`~/min values recorded for the sample blank and the sample assay. Then, subtract the average value of the sample blank from the average value of the sample assay:
 
 \[ \Delta \text{Abs}_{`r wl`}/\text{min} = \left( \frac{Assay 1 + Assay 2 + Assay 3}{3} \right) - \left( \frac{Blank 1 + Blank 2 + Blank 3}{3} \right)
@@ -500,22 +503,25 @@ Assuming that a sample resulted in rates of `r format(sample_blank, scientific =
 _From this point onward, it is advisable to use the absolute value of the change in absorbance ΔAbs/min (i.e., consider the magnitude without regard to its sign). The sign is negative in this protocol because the molecule being monitored is consumed during the assay, causing a decrease in absorbance over time._
 :::
 
-#### Activity in the Reaction Medium
-The corrected average value is divided by the molar absorptivity coefficient of H~2~O~2~ at `r wl` nm (ε~`r wl`~ = `r molar_coef` mM^-1^ cm^-1^) to calculate the activity of `r analyte` in the assay's reaction medium (i.e., the amount of enzyme in the cuvette):
+##### Activity in the Reaction Medium
+
+The corrected average value is divided by the molar absorptivity coefficient of H~2~O~2~ at `r wl` nm ($\varepsilon$~`r wl`~ = `r molar_coef` mM^-1^ cm^-1^) to calculate the activity of `r analyte` in the assay's reaction medium (i.e., the amount of active enzyme in the cuvette):
 
 \[ \text{Activity (U/mL) in cuvette} = \left( \frac{`r corrected_signal`}{`r molar_coef`} \right) \]
 
 \[ \text{Activity (U/mL) in cuvette} = `r round(assay_act, digits = 3)`\]
 
-#### Activity in the Homogenate
+##### Activity in the Homogenate
+
 To determine the activity of `r analyte` in the homogenate, multiply the activity in the reaction medium by the dilution factor used in the assay (i.e., the final volume of the assay divided by the volume of sample added). For example, if `r assay_dilution[2]` µL of homogenate were added to a final volume of `r assay_dilution[1]` µL, we have a dilution factor of `r round(assay_dil_factor, digits = 2)`:
 
 \[ \text{Activity (U/mL) in homogenate} = `r round(assay_act, digits = 3)` \times \left( \frac{`r assay_dilution[1]`}{`r assay_dilution[2]`} \right)\]
 \[ \text{Activity (U/mL) in homogenate} = `r round(assay_act, digits = 3)` \times `r round(assay_dilution[1]/assay_dilution[2], digits = 2)`\]
 \[ \text{Activity (U/mL) in homogenate} = `r round(homogenate_act, digits = 2)` \]
 
-#### Activity in Tissue
-To calculate the activity of `r analyte` in the sample, simply multiply the activity value in the homogenate by any dilutions that have been performed up to the point of assay. The preparation of the homogenate always involves an initial dilution at the time of homogenization. Often, after a centrifugation step, the homogenate is diluted again. Therefore, assuming that a homogenate was initially prepared at a ratio of 1:`r homog_dil1_factor` (w/v) (e.g., `r homog_dil1[2]` mg of tissue in `r homog_dil1[1]` µL of final volume) and that after homogenization and centrifugation the homogenate was diluted again 1:`r homog_dil2_factor` (e.g., `r homog_dil2[2]` µL of supernatant in `r homog_dil2[1]` µL of final volume), there is a total dilution factor of `r homog_dil1_factor*homog_dil2_factor`:
+##### Activity in Tissue
+
+To calculate the activity of `r analyte` in the sample, simply multiply the activity value in the homogenate by any dilutions that have been performed up to the point of assay. The preparation of the homogenate always involves an initial dilution at the time of homogenization (see [Chapter 5](#chapter5)). Often, after a centrifugation step, the homogenate is diluted again. Therefore, assuming that a homogenate was initially prepared at a ratio of 1:`r homog_dil1_factor` (w/v) (e.g., `r homog_dil1[2]` mg of tissue in `r homog_dil1[1]` µL of final volume) and that after homogenization and centrifugation the homogenate was diluted again 1:`r homog_dil2_factor` (e.g., `r homog_dil2[2]` µL of supernatant in `r homog_dil2[1]` µL of final volume), there is a total dilution factor of `r homog_dil1_factor*homog_dil2_factor`:
 
 \[ \text{Activity (U/mL) in tissue} = `r round(homogenate_act, digits = 2)` \times \left( \frac{`r homog_dil1[1]`}{`r homog_dil1[2]`} \right) \times \left( \frac{`r homog_dil2[1]`}{`r homog_dil2[2]`} \right)\]
 
@@ -529,10 +535,23 @@ To calculate the activity of `r analyte` in the sample, simply multiply the acti
 _Here, catalase activity is expressed in units per gram of wet weight tissue (U/gww). It is assumed that the density of water (1 g/mL) is an acceptable approximation for the density of biological tissues. If this approximation is not suitable for the sample or tissue being analyzed, catalase activity can be normalized by protein concentration at any of the previous steps, whether in the reaction medium activity or in the homogenate._
 :::
 
+#### Cell Lysates
+##### Activity in the Reaction Medium
+
+aaa.
+
+##### Activity in the Lysate
+
+aaa.
+
+##### Activity in Cells
+
+aaa.
+
 #### Normalization by Protein Concentration
 Lastly, to standardize the comparison of enzymatic activity across different samples and experiments, enzymatic activity values are commonly normalized by the amount of protein in the sample. This is done by dividing the calculated activity (U/gww) by the protein concentration in the sample (mg prot./gww). Normalization can be done at any previous step if the protein concentration in the reaction medium or homogenate is known. Assuming that the sample has a protein concentration of `r tissue_ptn` mg/gww, we have:
 
-\[ \text{Activity (U/mg prot.) in tissue} = \left( \frac{`r round(tissue_act, digits = 2)`}{`r tissue_ptn`} \right)\]
+\[ \text{Activity (U/mg prot.) in tissue} = \left( \frac{`r format(round(tissue_act, digits = 2), scientific = F)`}{`r tissue_ptn`} \right)\]
 \[ \text{Activity (U/mg prot.) in tissue} = `r round(act_mg_ptn, digits = 2)` \]
 
 :::{.greybox data-latex='[frametitle = Note]'} 
@@ -540,9 +559,11 @@ _To normalize enzymatic activity, it is necessary to quantify the protein concen
 :::
 
 ## 3-Amino-1,2,4-Triazole
-To ensure that the consumption of H~2~O~2~ observed in the assay is specifically caused by catalase activity, it is recommended to verify the ability of 3-amino-1,2,4-triazole (ATZ) to reduce the rate of H~2~O~2~ consumption caused by the sample. ATZ is an irreversible inhibitor of catalase and is used at a concentration of 20 mM with an exposure time of 0.5 to 2.0 hours to abolish catalase activity [@margoliash_study_1958; @margoliash_irreversible_1960; @watanabe_autoxidation_2003]. Since ATZ acts on Compound I (see [Introduction](#intro)), and not directly on catalase, H~2~O~2~ should be added to the medium where the sample is incubated with ATZ so that Compound I is formed and inhibition occurs.
+
+To ensure that the consumption of H~2~O~2~ observed in the assay is specifically caused by catalase activity, it is recommended to verify the ability of 3-amino-1,2,4-triazole (ATZ) to reduce the rate of H~2~O~2~ consumption caused by the sample. ATZ is an irreversible inhibitor of catalase and is used at a concentration of 20 mM with an exposure time of 0.5 to 2.0 hours to abolish catalase activity [@margoliash_study_1958; @margoliash_irreversible_1960; @watanabe_autoxidation_2003]. Since ATZ acts on Compound I (see [Introduction](#cat_intro)), and not directly on catalase, H~2~O~2~ should be added to the medium where the sample is incubated with ATZ so that Compound I is formed and inhibition occurs.
 
 ### Catalase Inhibition by ATZ *in vitro*
+
 The following result illustrates the effect of incubating a sample with ATZ in the absence and presence of H~2~O~2~. Aliquots of rat liver homogenate were diluted in PBS (resulting in a catalase activity of 40.61 U/mL) and incubated at 22°C for 2.5 hours under three conditions: in the absence of any inhibitor (control), in the presence of 20 mM ATZ (ATZ), and in the presence of 20 mM ATZ + 4 mM H~2~O~2~ (ATZ + H~2~O~2~) (Figure \@ref(fig:cat-fig-inhibitor)). As the catalase present in the sample consumes H~2~O~2~ over time, the reaction medium of the ATZ + H~2~O~2~ treatment was supplemented with H~2~O~2~ at 0.5-hour intervals to maintain a concentration of 4 mM during the incubation. For the control and ATZ groups, the same volumes of PBS were added to ensure the same dilution factor between treatments.
 
 (ref:cat-fig-inhibitor) **Inhibition of catalase activity by 3-amino-1,2,4-triazole (ATZ)**. Effect of incubating samples of rat liver homogenate with 20 mM ATZ in the absence and presence of 4 mM H~2~O~2~ over 2.5 hours. The samples were diluted in PBS, resulting in a catalase activity of 40.61 U/mL, and incubated at 22°C under three different conditions: control (no inhibitors), presence of 20 mM ATZ, and presence of 20 mM ATZ + 4 mM H~2~O~2~. During the incubation, the reaction medium of the ATZ + H~2~O~2~ treatment was supplemented with H~2~O~2~ every 0.5 hours to maintain a constant concentration of 4 mM. In the control and ATZ treatments, equivalent volumes of PBS were added to maintain the same dilution factor.
@@ -568,7 +589,7 @@ p6 <- ggplot(df_inhibitor, aes(x = time, y = rate, fill = group, color = group, 
 p6
 ```
 
-In the control treatment, catalase activity remained stable throughout the period, oscillating between -0.050 and -0.052 Abs/min. In the ATZ treatment, catalase activity gradually declined, but after 2.5 hours, the inhibition was only 41.3% relative to the initial activity. In the sample treated with ATZ + H~2~O~2~, the activity dropped exponentially, being only 1.5% of the control treatment and the initial activity before the start of the treatment ([Figure 4](#fig-inhibitor)). Therefore, for this sample, all consumption of H~2~O~2~ can be attributed to catalase activity.
+In the control treatment, catalase activity remained stable throughout the period (2.5 h), oscillating between -0.050 and -0.052 Abs/min. In the ATZ treatment, catalase activity gradually declined, but after 2.5 hours, the inhibition was only 41.3% relative to the initial activity. In the sample treated with ATZ + H~2~O~2~, the activity dropped exponentially, being only 1.5% of the control treatment and the initial activity before the start of the treatment ([Figure 4](#fig-inhibitor)). Therefore, for this sample, all consumption of H~2~O~2~ can be attributed to catalase activity.
 
 ## Troubleshooting
 
