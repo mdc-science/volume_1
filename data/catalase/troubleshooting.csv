@@ -1,9 +1,18 @@
 Problem,Possible Cause,Solution
-Inconsistent results between runs,Pipetting errors,Calibrate pipettes and ensure consistent technique
-,Temperature variations,Maintain a consistent temperature environment during the experiment
-,Inconsistent incubation times,Standardize and carefully monitor incubation times
-No change in absorbance over time,Incorrect wavelength selected,Verify and set the correct wavelength
-,Sample not added,Ensure the sample is correctly pipetted into the wells
-High initial absorbance,,
-Low initial absorbance,,
-Non-linear rate,,
+Inconsistent results between runs,Inconsistent procedure,"Standardize procedure, including order of reagent addition, cuvette content homogenization and time between reagent addition and reading."
+,Omission of step in protocol,Ensure reagents and sample are correctly pipetted and that the cuvette content is homogenized before reading.
+,Pipetting errors or incorrect volumes,"Calibrate pipettes,  ensure consistent technique, and ensure that the final volume of the assay is correct. Remember to adjust the volume of water according to the volume of sample."
+,Temperature variations,Maintain a consistent temperature environment during the experiment.
+No change in absorbance over time,Incorrect wavelength selected,Verify and set the correct wavelength (240 nm).
+,Low temperature,The water used in the assay must be at the set temperature. If it is left on ice with the other solution the rate will be very low.
+,Omission of step in protocol,Ensure reagents and sample are correctly pipetted and that the cuvette content is homogenized before reading.
+,Type of cuvette,The cuvette must be UV-transparent. Quartz is recommended.
+Large absorbance changes in Assay Blank,Contaminant in solutions,Prepare fresh solutions with ultrapure (type I) water.
+Large absorbance changes in Sample Blank,Interfering substances in sample,Test the assay with another sample.
+Non-linear rate in Sample Assay,Excessive sample volume,Repeat the assay with lower sample volume or higher sample dilution.
+,High (ref:hydrogenperoxide) concentration,Check (ref:hydrogenperoxide) concentration and make a new solution if needed.
+High initial absorbance in Sample Assay,High (ref:hydrogenperoxide) concentration,Check (ref:hydrogenperoxide) concentration and make a new solution if needed.
+,Incorrect blank reference,Spectrophotometer must be zeroed with 50 mM phosphate buffer containing 0.5 mM EDTA at 240 nm.
+,High sample absorbance,Measure the contribution of sample alone and calculate the contribution of (ref:hydrogenperoxide). The difference between sample and sample + should be (ref:hydrogenperoxide) ~ 0.4.
+Low initial absorbance in Sample Assay,Incorrect blank reference,Spectrophotometer must be zeroed with 50 mM phosphate buffer containing 0.5 mM EDTA at 240 nm.
+,Low (ref:hydrogenperoxide) concentration,Check (ref:hydrogenperoxide) concentration and make a new solution if needed.

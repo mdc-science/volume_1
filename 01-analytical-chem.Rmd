@@ -1,6 +1,11 @@
 # (PART) Fundamental Concepts {-}
-
 # Analytical Chemistry {#chapter1}
+
+Analytical chemistry is the branch of chemistry dedicated to the qualitative and quantitative analysis of chemical substances. It is instrumental in identifying the composition of materials and understanding their chemical properties and behaviors. Utilizing a variety of techniques and instruments, analytical chemists can detect and measure the levels of specific substances within complex mixtures, such as biological samples.
+
+In the following sections, we will define key concepts and terminology relevant to this book. Some definitions might be simplified to suit the purpose of this text. For a more comprehensive understanding, readers are encouraged to consult other publications. However, the simplified versions provided here will be sufficient for the scope of this book.
+
+## Key Concepts and Terminology
 
 aaa.
 

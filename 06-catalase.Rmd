@@ -6,24 +6,20 @@ metadata <- read_csv(here('data', protocol, 'assay_metadata.csv'))
 # Load custom function to extract assay metadata
 source(here('R', 'extract_assay_metadata.R'))
 ```
-# Catalase {#chapter7}
-
-::: {.Summary data-latex=""}
-Some text for this block.
-:::
+# Catalase {#chapter6}
 
 \toc{1}
 
 \newpage
 
 ## Introduction {#cat_intro}
-Catalase is an antioxidant enzyme present in most aerobic organisms. Its function is to catalyze the decomposition of hydrogen peroxide (H~2~O~2~) into oxygen (O~2~). In animals, catalase is a protein composed of four subunits, each containing an Fe(III)-heme group at its active site. Additionally, a molecule of NADPH is tightly bound to each subunit of mammalian catalase. **Add a REF**
+Catalase is an antioxidant enzyme present in most aerobic organisms. Its function is to catalyze the decomposition of hydrogen peroxide (H~2~O~2~) into oxygen (O~2~). In animals, catalase is a protein composed of four subunits, each containing an Fe(III)-heme group at its active site, and is present all organs, with the liver and erythrocytes containing particularly high levels [@halliwell_free_2015]. Additionally, a molecule of NADPH is tightly bound to each subunit of mammalian catalase [@halliwell_free_2015]. 
 
 \[
 \text{2 H}_2\text{O}_2 \overset{\text{catalase}}{\rightarrow} \text{2 H}_2\text{O} + \text{O}_2
 \]
 
-The reaction catalyzed by catalase is a dismutation (a type of redox reaction in which the same molecular species is simultaneously oxidized and reduced, forming two different products, one with a higher oxidation state and one with a lower). In the case of catalase, this process occurs in two stages, involving the formation of an intermediate known as compound I. **Add a REF**
+The reaction catalyzed by catalase is a dismutation (a type of redox reaction in which the same molecular species is simultaneously oxidized and reduced, forming two different products, one with a higher oxidation state and one with a lower [@gold_iupac_2019]). In the case of catalase, this process occurs in two stages, involving the formation of an intermediate known as compound I [@halliwell_free_2015].
 
 \[
 \text{catalase-Fe(III)} + \text{H}_2\text{O}_2 \rightarrow \text{compound I} + \text{H}_2\text{O}
@@ -34,7 +30,7 @@ The reaction catalyzed by catalase is a dismutation (a type of redox reaction in
 
 Measuring catalase activity is crucial in research investigating antioxidant systems and cellular responses to oxidative stress. This is illustrated by observations that inhibition of catalase activity or expression induces oxidative stress [@bagnyukova_catalase_2005] or increases sensitivity to other stressors [@ho_mice_2004]. Additionally, cells particularly resistant to oxidative stressors show overexpression of catalase [@spitz_mechanisms_1992].
 
-There are various methods to determine catalase activity, for example, by measuring the production of O~2~ with an O~2~ sensor, measuring the consumption of H~2~O~2~ with a fluorescent probe molecule, or directly measuring the consumption of H~2~O~2~ by spectrophotometry. The method for determining catalase activity described in this protocol is one of the most popular and is based on the decomposition of hydrogen peroxide by catalase and the consequent decrease in absorbance at `r wl` nm [@aebi_catalase_1984]. The procedure involves adding the sample to a buffered reaction medium containing hydrogen peroxide and measuring the decrease in absorbance over time using a spectrophotometer. Enzyme activity is then calculated based on the rate of decrease in absorbance, which is directly proportional to the amount of hydrogen peroxide decomposed. In this protocol, in addition to serving as the substrate for the enzyme, H~2~O~2~ acts as the indicator molecule (i.e., the molecule that generates the analytical signal recorded in the assay). See [Chapter 2](#chapter2). 
+There are various methods to determine catalase activity, for example, by measuring the production of O~2~ with an O~2~ sensor, measuring the consumption of H~2~O~2~ with a fluorescent probe molecule, or directly measuring the consumption of H~2~O~2~ by spectrophotometry. The method for determining catalase activity described in this protocol is one of the most popular and is based on the decomposition of hydrogen peroxide by catalase and the consequent decrease in absorbance at `r wl` nm [@aebi_catalase_1984]. The procedure involves adding the sample to a buffered reaction medium containing hydrogen peroxide and measuring the decrease in absorbance over time using a spectrophotometer. Enzyme activity is then calculated based on the rate of decrease in absorbance, which is directly proportional to the amount of hydrogen peroxide decomposed. In this protocol, in addition to serving as the substrate for the enzyme, H~2~O~2~ acts as the detector molecule (i.e., the molecule that generates the analytical signal recorded in the assay). See [Chapter 1](#chapter1). 
 
 \newpage
 
@@ -89,7 +85,7 @@ kbl(df_vol, caption = '(ref:cat-tab-vol)', booktabs = T, align = align_vec) %>%
 * **Use a sample volume that results in ΔAbs~`r wl`~/min between -0.025 and -0.035**
 
 :::{.greybox data-latex='[frametitle = Note]'}
-_The final volume of the assay can be adjusted according to the available cuvette or microplate, as long as the final concentrations of reagents are maintained. Additionally, attention should be paid to the path length and transparency of the cuvette or microplate chosen to ensure accurate and consistent measurements. See [Chapter 3](#chapter3)._
+_The final volume of the assay can be adjusted according to the available cuvette or microplate, as long as the final concentrations of reagents are maintained. Additionally, attention should be paid to the path length and transparency of the cuvette or microplate chosen to ensure accurate and consistent measurements. See [Chapter 2](#chapter2)._
 :::
 
 \newpage
@@ -235,7 +231,7 @@ Therefore, to produce a solution of H~2~O~2~ at `r h2o2_conc` mM from a solution
 
 ## Sample Preparation {#sample_prep}
 
-For this protocol, samples must be homogenized in a way that proteins remain in their native conformations. That is, the homogenate should not have been prepared with high concentrations of detergents or salts, in the presence of chaotropic agents, subjected to heating, or deproteinized. Additionally, the homogenate should be prepared at low temperature and in a buffer containing EDTA and protease inhibitors (see [Chapter 5](#chapter5)).
+For this protocol, samples must be homogenized in a way that proteins remain in their native conformations. That is, the homogenate should not have been prepared with high concentrations of detergents or salts, in the presence of chaotropic agents, subjected to heating, or deproteinized. Additionally, the homogenate should be prepared at low temperature and in a buffer containing EDTA and protease inhibitors (see [Chapter 4](#chapter4)).
 
 ## Assay {#assay_general}
 
@@ -366,7 +362,7 @@ ggarrange(p1, p1b)
 
 Using increasing amounts of the sample, it is possible to observe an increase in the rate of hydrogen peroxide consumption, corresponding with the increased amount of catalase in the reaction medium (Figure \@ref(fig:fig-cat-smp-vol-curves)). However, beyond a certain sample quantity, the amount of catalase becomes excessive, which is evidenced by the non-linearity of the absorbance decrease at `r wl` nm during the reading. This can be seen in the readings obtained with sample volumes of 10 and 20 µL in the example below (Figure \@ref(fig:fig-cat-smp-vol-curves)).
 
-(ref:fig-cat-smp-vol-curves) **Sample Assay Readings**. Absorbance decline profiles at 240 nm using different volumes (0.5 - 20 µL) of rat liver homogenate (1:150, w/v). When there is an excess of sample (e.g., ≥ 10 µL), the substrate consumption is so rapid that it causes significant variation in substrate concentration during the reading. This variation affects the enzyme activity during the reading, resulting in a non-linear consumption rate and breaking one of the assumptions of measuring the initial velocity of an enzyme, which assumes that the concentration of substrates is stable during the assay (see [Chapter 4](#chapter4)). Note that the initial absorbance differs between the different sample volumes used, as there is consumption of hydrogen peroxide between the time of reagent addition and the start of the reading.
+(ref:fig-cat-smp-vol-curves) **Sample Assay Readings**. Absorbance decline profiles at 240 nm using different volumes (0.5 - 20 µL) of rat liver homogenate (1:150, w/v). When there is an excess of sample (e.g., ≥ 10 µL), the substrate consumption is so rapid that it causes significant variation in substrate concentration during the reading. This variation affects the enzyme activity during the reading, resulting in a non-linear consumption rate and breaking one of the assumptions of measuring the initial velocity of an enzyme, which assumes that the concentration of substrates is stable during the assay (see [Chapter 3](#chapter3)). Note that the initial absorbance differs between the different sample volumes used, as there is consumption of hydrogen peroxide between the time of reagent addition and the start of the reading.
 
 ```{r fig-cat-smp-vol-curves, fig.cap = '(ref:fig-cat-smp-vol-curves)', fig.dim = c(11.25, 4.5), out.width = '100%'}
 p2 <- ggplot(subset(df_curves2, assay_type == 'sample_assay'), aes(x = time, y = abs)) + 
@@ -395,7 +391,7 @@ p3 <- ggplot(subset(df_curves2, assay_type == 'sample_assay'), aes(x = time, y =
   theme(strip.background = element_blank(),
         strip.text.x = element_blank())
 
-ggarrange(p2, p3, nrow = 1)
+ggarrange(p2, p3, nrow = 1, widths = c(0.75, 1))
 ```
 
 Therefore, one should avoid homogenate volumes that result in very high consumption rates, using a sample amount that falls within the linear range of the relationship between rate (Abs/min) and sample quantity. Under the experimental conditions described in this protocol, the rate (Abs/min) *versus* sample quantity relationship is linear up to approximately -0.070 Abs/min (Figure \@ref(fig:fig-cat-linear-range)). Nevertheless, it is recommended to use a sample volume that results in a rate between -0.025 and -0.035 for all samples. That is, the volume of each sample should be experimentally determined and adjusted, on a case-by-case basis, to achieve Abs/min values within this range.
@@ -420,17 +416,18 @@ p5 <- ggplot(df_linear_range, aes(x = sample_vol, y = value)) +
   scale_fill_brewer(palette = "Spectral") +
   facet_wrap(~group, scales = 'free') +
   stat_regline_equation(aes(label = paste(after_stat(rr.label))), 
-                        label.x.npc = 'right', label.y.npc = 0.05, 
+                        label.x.npc = 'right', label.y.npc = 0.2, 
                         formula = y ~ x, hjust = 1) +
   geom_lm(se = F) +
   geom_text_npc(data = volumes, aes(npcx = 'left', npcy = 0.95, label = paste0('Vol. = ', min_vol, '-', max_vol)), hjust = 0) +
+  geom_text_npc(data = max_rates, aes(npcx = 'right', npcy = 0.05, label = paste0('Max. rate = ', round(max_rate, digits = 3))), hjust = 1) +
   labs(x = 'Homogenate (µL)',
        y = 'Rate (Abs/min)') +
   theme_general +
   theme(strip.background = element_blank(),
         strip.text.x = element_blank())
 
-ggarrange(p4, p5, nrow = 1)
+ggarrange(p4, p5, nrow = 1, widths = c(0.5, 1))
 ```
 
 ## Calculations
@@ -443,9 +440,9 @@ To calculate the activity of `r analyte` in U, we use the formula:
 \text{Activity (U/mL)} = \left( \frac{\Delta \text{Abs}_{`r wl`}/\text{min}}{\varepsilon} \right) \times \text{Dilution 1} \times \text{Dilution 2} \times \text{Dilution 3}
 \]
 
-where $\Delta \text{Abs}_{`r wl`}/\text{min}$ is the change in absorbance at `r wl` nm per minute (i.e., the rate); $\varepsilon$ is the molar absorptivity coefficient (see [Chapter 3](#chapter3)); $\text{Dilution 1}$ is the dilution factor performed in the assay; $\text{Dilution 2}$ is the dilution factor performed in the sample preparation; and $\text{Dilution 3}$ is the dilution factor of any other dilution performed.
+where $\Delta \text{Abs}_{`r wl`}/\text{min}$ is the change in absorbance at `r wl` nm per minute (i.e., the rate); $\varepsilon$ is the molar absorptivity coefficient (see [Chapter 2](#chapter2)); $\text{Dilution 1}$ is the dilution factor performed in the assay; $\text{Dilution 2}$ is the dilution factor performed in the sample preparation; and $\text{Dilution 3}$ is the dilution factor of any other dilution performed.
 
-We are using units per milliliter (U/mL), as, considering that absorbance values are unitless (\( \text{Absorbance} = \log_{10} \left( \frac{I_0}{I} \right) \), see [Chapter 3](#chapter3)) and the readings were performed in a cuvette with an optical path of 1 cm, dividing \(\Delta \text{Abs}_{`r wl`}/\text{min}\) by \(\varepsilon\) results in \(\text{U/mL}\):
+We are using units per milliliter (U/mL), as, considering that absorbance values are unitless (\( \text{Absorbance} = \log_{10} \left( \frac{I_0}{I} \right) \), see [Chapter 2](#chapter2)) and the readings were performed in a cuvette with an optical path of 1 cm, dividing \(\Delta \text{Abs}_{`r wl`}/\text{min}\) by \(\varepsilon\) results in \(\text{U/mL}\):
 
 \[ \frac{\text{cm}^{-1}\text{min}^{-1}}{\text{mM}^{-1}\text{cm}^{-1}} = \text{mM} \cdot \text{min}^{-1} \]
 
@@ -521,7 +518,7 @@ To determine the activity of `r analyte` in the homogenate, multiply the activit
 
 ##### Activity in Tissue
 
-To calculate the activity of `r analyte` in the sample, simply multiply the activity value in the homogenate by any dilutions that have been performed up to the point of assay. The preparation of the homogenate always involves an initial dilution at the time of homogenization (see [Chapter 5](#chapter5)). Often, after a centrifugation step, the homogenate is diluted again. Therefore, assuming that a homogenate was initially prepared at a ratio of 1:`r homog_dil1_factor` (w/v) (e.g., `r homog_dil1[2]` mg of tissue in `r homog_dil1[1]` µL of final volume) and that after homogenization and centrifugation the homogenate was diluted again 1:`r homog_dil2_factor` (e.g., `r homog_dil2[2]` µL of supernatant in `r homog_dil2[1]` µL of final volume), there is a total dilution factor of `r homog_dil1_factor*homog_dil2_factor`:
+To calculate the activity of `r analyte` in the sample, simply multiply the activity value in the homogenate by any dilutions that have been performed up to the point of assay. The preparation of the homogenate always involves an initial dilution at the time of homogenization (see [Chapter 4](#chapter4)). Often, after a centrifugation step, the homogenate is diluted again. Therefore, assuming that a homogenate was initially prepared at a ratio of 1:`r homog_dil1_factor` (w/v) (e.g., `r homog_dil1[2]` mg of tissue in `r homog_dil1[1]` µL of final volume) and that after homogenization and centrifugation the homogenate was diluted again 1:`r homog_dil2_factor` (e.g., `r homog_dil2[2]` µL of supernatant in `r homog_dil2[1]` µL of final volume), there is a total dilution factor of `r homog_dil1_factor*homog_dil2_factor`:
 
 \[ \text{Activity (U/mL) in tissue} = `r round(homogenate_act, digits = 2)` \times \left( \frac{`r homog_dil1[1]`}{`r homog_dil1[2]`} \right) \times \left( \frac{`r homog_dil2[1]`}{`r homog_dil2[2]`} \right)\]
 
@@ -589,41 +586,16 @@ p6 <- ggplot(df_inhibitor, aes(x = time, y = rate, fill = group, color = group, 
 p6
 ```
 
-In the control treatment, catalase activity remained stable throughout the period (2.5 h), oscillating between -0.050 and -0.052 Abs/min. In the ATZ treatment, catalase activity gradually declined, but after 2.5 hours, the inhibition was only 41.3% relative to the initial activity. In the sample treated with ATZ + H~2~O~2~, the activity dropped exponentially, being only 1.5% of the control treatment and the initial activity before the start of the treatment ([Figure 4](#fig-inhibitor)). Therefore, for this sample, all consumption of H~2~O~2~ can be attributed to catalase activity.
-
-## Troubleshooting
-
-It has been reported that for some species there is a delay for the onset of h2o2 consumption. 
-
-When optimizing the assay or assessing no a sample for the first time it is better to use longer total reading time to better understand what is going on and diagnose potential problems.
-
-```{r cat-troubleshooting, results = 'asis'}
-options(knitr.kable.NA = '')
-# Calculate the volume needed for each reagent
-df_trouble <- read_csv(here('data', protocol, 'troubleshooting.csv'))
-
-# Specify alignment for table columns
-align_vec <- c('l', rep('l', ncol(df_trouble) - 1))
-
-# Output the concentrations table
-kbl(df_trouble, caption = 'caption', booktabs = T, align = align_vec) %>%
-  kable_styling(latex_options = c('striped', 'condensed', 'hold_position'),
-                bootstrap_options = c('striped', 'hover', 'condensed'), 
-                full_width = F,  font_size = 7) %>%
-  row_spec(0, bold = TRUE) %>%
-  column_spec(1, width = "15em") %>%  # adjust width as needed
-  column_spec(2, width = "10em") %>% # adjust width as needed
-  column_spec(3, width = "15em")     # adjust width as needed
-```
+In the control treatment, catalase activity remained stable throughout the period (2.5 h), oscillating between -0.050 and -0.052 Abs/min. In the ATZ treatment, catalase activity gradually declined, but after 2.5 hours, the inhibition was only 41.3% relative to the initial activity. In the sample treated with ATZ + H~2~O~2~, the activity dropped exponentially, being only 1.5% of the control treatment and the initial activity before the start of the treatment (Figure \@ref(fig:cat-fig-inhibitor)). Therefore, for this sample, all consumption of H~2~O~2~ can be attributed to catalase activity.
 
 ## Additional Comments {#cat_additional_comments}
 
-(ref:fig-substrate-curves) **Rate of H~2~O~2~ Consumption** *versus* **Substrate Concentration**. Effect of the final concentration of H~2~O~2~ on the assay for determining catalase activity. The left panel shows representative readings from assays with final concentrations of 1, 2.5, 5, 10, and 25 mM of H~2~O~2~, in addition to the control in the absence of H~2~O~2~. Note that at the concentration of 25 mM, the absorbance approaches 1 in a cuvette with a 1 cm optical path. The reading time was reduced to 30 seconds to allow comparison between concentrations, as at 25 mM of H~2~O~2~, the Abs/min rate ceases to be linear after 30 seconds under the conditions of the experiment. The right-hand chart shows a linear relationship between substrate concentration and enzymatic activity, indicating that the enzyme is not saturated within this concentration range. The chart displays data from three different readings for each concentration of H~2~O~2~.
+(ref:fig-substrate-curves) **Rate of H~2~O~2~ Consumption** *versus* **Substrate Concentration**. Effect of the final concentration of H~2~O~2~ on the assay for determining catalase activity. The left panel shows representative readings from assays with final concentrations of 1, 2.5, 5, 10, and 25 mM of H~2~O~2~, in addition to the control in the absence of H~2~O~2~. Note that at the concentration of 25 mM, the absorbance approaches 1 in a cuvette with a 1 cm optical path. The reading time was reduced to 30 seconds to allow comparison between concentrations, as at 25 mM of H~2~O~2~, the Abs/min rate ceases to be linear after 30 seconds under the conditions of the experiment. The graph on the right shows a linear relationship between substrate concentration and enzymatic activity, indicating that the enzyme is not near saturation within this concentration range. The chart displays data from three different readings for each concentration of H~2~O~2~.
 
 ### Catalase
-* **Hydrogen Peroxide Concentration**: A concentration of 10 mM H~2~O~2~ is used to prevent enzyme inactivation during the assay and to minimize the formation of bubbles (O~2~) inside the cuvette. Since the concentration of H~2~O~2~ is critical and at 10 mM the enzyme is not saturated (Figure \@ref(fig:fig-substrate-curves)), it is essential to always check the stock solution concentration before each assay (see [Hydrogen Peroxide (H~2~O~2~)](#checking_h2o2)) and ensure that sample readings start with absorbance values close to 0.4.
+* **Hydrogen Peroxide Concentration**: A concentration of 10 mM H~2~O~2~ is used to prevent enzyme inactivation during the assay and to minimize the formation of bubbles (O~2~) inside the cuvette. Since the concentration of H~2~O~2~ is critical and at 10 mM the enzyme is not saturated (Figure \@ref(fig:fig-substrate-curves)), it is essential to always check the stock solution concentration before each assay (see [Checking H~2~O~2~ Concentration](#cat_checking_h2o2)) and ensure that sample readings start with absorbance values close to 0.4.
 
-```{r fig-substrate-curves, fig.cap = '(ref:fig-substrate-curves)'}
+```{r fig-substrate-curves, fig.cap = '(ref:fig-substrate-curves)', fig.dim = c(12.5, 5), out.width = '100%'}
 df_curves_substrate <- read_csv(here('data', protocol, 'substrate_curves.csv'))
 slopes_substrate <- df_curves_substrate %>%
   group_by(h2o2_conc) %>%
@@ -660,38 +632,25 @@ p8 <- ggplot(df_rates_substrate, aes(x = h2o2_conc, y = rate)) +
 ggarrange(p7, p8, nrow = 1, widths = c(1, 0.5))
 ```
 
-* **Temperature**: Temperature has a minimal effect on catalase activity (Q~10~ ≈ 1.1). Therefore, measurements can be performed over a wide range of temperatures (e.g., 10°C to 37°C) without significant variation ([Aebi 1984](https://doi.org/10.1016/S0076-6879(84)05016-3)). Nonetheless, it is recommended to conduct assays at a consistent temperature (e.g., 25°C or another physiologically relevant temperature for the sample) for samples that will be compared with each other.
+* **Temperature**: Temperature has a minimal effect on catalase activity (Q~10~ $\approx$ 1.1). Therefore, measurements can be performed over a wide range of temperatures (e.g., 10°C to 37°C) without significant variation [@aebi_catalase_1984]. Nonetheless, it is recommended to conduct assays at a consistent temperature (e.g., 25°C or another physiologically relevant temperature for the sample) for samples that will be compared with each other.
 
-* **Optimal pH**: Catalase has optimal activity in a pH range of 6.8-7.5 ([Aebi 1984](https://doi.org/10.1016/S0076-6879(84)05016-3)).
+* **Optimal pH**: Catalase has optimal activity in a pH range of 6.8-7.5 [@aebi_catalase_1984].
 
-* **Bubble Formation**: The formation of bubbles during the assay reading of a sample ([Figure 6](#fig-catalase-bubbles)) is an indicator that there is an excess of catalase in the assay and that the reading should be repeated with a smaller sample volume. In addition to indicating excessive substrate consumption, bubbles generate noise in absorbance measurements.
+* **Bubble Formation**: The excessive formation of bubbles during the assay reading of a sample (Figure \@ref(fig:fig-cat-bubbles)) is an indication that there is an excess of catalase in the assay and that the reading should be repeated with a smaller sample volume. In addition to indicating excessive substrate consumption, bubbles generate noise in absorbance measurements.
 
 (ref:fig-cat-bubbles) **Bubble Formation**. Formation of bubbles (O~2~) inside the cuvette after a 1-minute reading. The recorded Abs~240~/min value in this reading was -0.150.
 
-```{r fig-cat-bubbles, fig.cap = '(ref:fig-cat-bubbles)'}
+```{r fig-cat-bubbles, fig.cap = '(ref:fig-cat-bubbles)', out.width = '50%'}
 knitr::include_graphics(here('images', protocol, 'bubbles.png'))
 ```
 
-* **Minimizing Pre-Reading H~2~O~2~ Consumption**: A strategy to minimize the consumption of H~2~O~2~ between the addition of the sample and the actual start of the reading is to use a piece of Parafilm to position a small volume of sample (≤ 5 µL). Cover the cuvette with the Parafilm without moving the droplet (Figure \@ref(fig:fig-catalase-parafilm)), invert the cuvette to homogenize the contents, place it in the cuvette holder, and start the reading. This way, the interval between the first contact of the sample with the reaction medium and the start of the reading is minimized, ensuring that the reading actually begins with the final assay concentration of 10 mM H~2~O~2~.
+* **Minimizing Pre-Reading H~2~O~2~ Consumption**: A strategy to minimize the consumption of H~2~O~2~ between the addition of the sample and the actual start of the reading is to use a piece of Parafilm to position a small volume of sample ($\leq$ 5 µL). Cover the cuvette with the Parafilm without moving the droplet (Figure \@ref(fig:fig-cat-parafilm)), invert the cuvette to homogenize the contents, place it in the cuvette holder, and start the reading. This way, the interval between the first contact of the sample with the reaction medium and the start of the reading is minimized, ensuring that the reading actually begins with the final assay concentration of 10 mM H~2~O~2~.
 
 (ref:fig-cat-parafilm) **Minimizing Pre-Reading H~2~O~2~ Consumption**. Steps to ensure rapid initiation of the reading after the sample contacts the reaction medium of the assay. This procedure minimizes the consumption of H~2~O~2~ before the start of the reading, which is crucial in the absence of automatic injection and mixing systems. Add a volume of up to 5 µL of sample on a piece of Parafilm; carefully cover the cuvette containing buffer, water, and H~2~O~2~; invert the cuvette to homogenize the contents; place it in the holder and start the reading.
 
 ```{r fig-cat-parafilm, fig.cap = '(ref:fig-cat-parafilm)'}
 knitr::include_graphics(here('images', protocol, 'parafilm_droplet.png'))
 ```
-
-### Enzymatic Assays
-* **Temperature Control**: Like common chemical reactions, temperature significantly affects the speed of enzymatic reactions. For most enzyme-catalyzed reactions, the rate increases 2-3 times with every 10°C increase (temperature coefficient, Q~10~ = 2-3). That is, an increase in temperature within a specific range accelerates the reaction. To ensure the comparability of results from different samples and experimental days, readings should be made at the same temperature, preferably one that is physiologically relevant to the organism of origin (e.g., 37°C for human tissues). Microplate readers and spectrophotometers have temperature control systems for this purpose. Additionally, it is recommended to keep the deionized water used in the protocol at the assay temperature (e.g., using a water bath or dry block heaters). As most of the reaction medium volume is composed of water, ensuring the water is at the correct temperature helps stabilize the temperature of the reaction medium more quickly.
-
-* **pH Control**: Enzymes are sensitive to pH variations and have an optimum pH at which their catalytic activity is maximized. The relationship between enzymatic activity and pH is a bell-shaped curve, with the peak indicating the optimum pH. From the optimum pH, towards alkaline or acidic extremes, the activity of the enzyme decreases as the pH changes until it finally reaches zero at the extremes. This is because pH affects the ionization of charged groups involved in the catalytic mechanism and/or structural stability of the enzyme. Generally, enzymatic assays are conducted at physiological pH for the organism from which the sample originates. However, in some cases, it is convenient to use a pH that differs from the physiological for analytical reasons.
-
-* **Substrate Concentration**: Ideally, saturating concentrations of substrates and cofactors should always be used to determine an enzyme's activity. However, factors such as high molar absorptivity and low solubility prevent the assay from being conducted at such concentrations in most cases.
-
-* **Initial Rate vs. V~max~**: Although some equipment expresses the initial change in absorbance over time (representing the change in substrate or product concentration) in an enzymatic assay as V~max~, this value is actually the initial rate (v~0~). Note that V~max~ is a theoretical limit never reached in any experiment, although it is possible to approach it and determine it by extrapolation. This limitation is caused by the fact that complete saturation can only be achieved at infinite concentrations of substrates and cofactors, and, despite using high concentrations of substrates and cofactors, the concentrations cannot be considered as completely saturating.
-
-* **Enzyme Unit**: The enzyme unit, or international unit of enzymatic activity (U, sometimes IU), is a measure of an enzyme's catalytic activity. This unit is defined as the amount of enzyme that catalyzes the conversion of one µmol of substrate per minute (1 U = µmol/min), under conditions specified by the assay method.
-
-* **Expression of Enzymatic Activity**: Measures of enzymatic activity are often expressed as units per milligram of protein (U/mg protein), both in cell lysates or tissue homogenates and in isolated protein preparations. This practice is based on the need to normalize enzymatic activity relative to the amount of protein present in the sample, providing a standardized way to compare enzymatic activity between different samples and experiments.
 
 ### General Observations
 
@@ -701,4 +660,27 @@ knitr::include_graphics(here('images', protocol, 'parafilm_droplet.png'))
 
 	+ To prepare dilutions from stock solutions: $C_1 \cdot V_1 = C_2 \cdot V_2$
 	+ To prepare a new solution from volume and concentration or mass and concentration: $\text{Mass (g)} = \text{Concentration (M)} \cdot \text{Volume (L)} \cdot \text{Molecular Weight (g/mol)}$
-	+ Lambert-Beer Law: $A = \varepsilon \cdot C \cdot l$, where \( A \) is absorbance; \( \varepsilon \) is the molar absorption coefficient (M^-1^ cm^-1^); \( C \) is the concentration of the solution (M); \( l \) is the path length of the optical path (cm).
+	+ Lambert-Beer Law: $A = \varepsilon \cdot C \cdot l$, where $A$ is absorbance; $\varepsilon$ is the molar absorption coefficient (M^-1^ cm^-1^); $C$ is the concentration of the solution (M); $l$ is the path length of the optical path (cm).
+
+## Troubleshooting
+
+(ref:cat-troubleshooting) Troubleshooting Guide for Catalase Activity Protocol - Common Issues and Recommended Solutions
+
+```{r cat-troubleshooting, results = 'asis'}
+options(knitr.kable.NA = '')
+
+df_trouble <- read_csv(here('data', protocol, 'troubleshooting.csv'))
+
+# Specify alignment for table columns
+align_vec <- c('l', rep('l', ncol(df_trouble) - 1))
+
+kbl(df_trouble, caption = '(ref:cat-troubleshooting)', booktabs = T, align = align_vec) %>%
+  kable_styling(latex_options = c('striped', 'condensed', 'hold_position', 'longtable', 'repeat_header', 'HT'),
+                bootstrap_options = c('striped', 'hover', 'condensed'), 
+                full_width = F,  font_size = 7) %>%
+  row_spec(0, bold = TRUE) %>%
+  column_spec(1, width = "10em") %>%  # adjust width as needed
+  column_spec(2, width = "10em") %>% # adjust width as needed
+  column_spec(3, width = "20em")
+```
+

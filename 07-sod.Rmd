@@ -1,0 +1,27 @@
+# Superoxide Dismutase {#chapter7}
+
+\toc{1}
+
+\newpage
+
+## Introduction {#sod_intro}
+SOD [@halliwell_free_2015]. 
+
+Superoxide dismutases (SODs) are a critical group of enzymes that play a fundamental role in protecting cells from oxidative stress. They catalyze the dismutation of superoxide radicals (O2•−) into molecular oxygen (O2) and hydrogen peroxide (H2O2), thereby mitigating the potential damage caused by reactive oxygen species (ROS). This protective mechanism is essential for maintaining cellular homeostasis and preventing oxidative damage to vital biomolecules, such as DNA, proteins, and lipids.
+
+\[
+\text{O}_2^- + \text{O}_2^- + \text{2 H}^+ \overset{\text{SOD}}{\rightarrow} \text{H}_2\text{O}_2 + \text{O}_2
+\]
+
+SODs are metalloenzymes, meaning they require a metal cofactor for their catalytic activity. The most common and well-studied forms of SODs are classified based on their metal cofactors: copper-zinc superoxide dismutase (CuZnSOD) and manganese superoxide dismutase (MnSOD).
+
+CuZnSOD is typically found in the cytosol of eukaryotic cells and in the intermembrane space of mitochondria. The enzyme contains both copper (Cu) and zinc (Zn) ions at its active site. The copper ion is directly involved in the catalytic dismutation of superoxide radicals, while the zinc ion plays a structural role, stabilizing the enzyme's configuration. CuZnSOD is particularly abundant in human cells and is crucial for neutralizing superoxide radicals generated during cellular respiration and other metabolic processes.
+
+MnSOD is predominantly located in the mitochondria, the powerhouse of the cell, where it serves as a primary defense against mitochondrial ROS. The enzyme's active site contains a manganese (Mn) ion, which is essential for its catalytic function. MnSOD is crucial for the survival of aerobic organisms as it protects mitochondrial components from oxidative damage, ensuring efficient energy production and cellular respiration. This form of SOD is inducible, meaning its expression levels can increase in response to oxidative stress, enhancing the cell's defensive capabilities.
+
+
+
+Considered the front line of antioxidant defense [@ighodaro_first_2018] or the free-radical first responders [@dawson_free-radical_2015], SODs XXXXXXX . Measuring SOD activity is crucial XXXXXXXX. This is illustrated by observations that XXXXXX.
+
+There are various methods to determine SOD activity, for example, 
+

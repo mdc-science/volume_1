@@ -1,4 +1,0 @@
-# (PART) The Dismutators {-}
-# Background
-
-Here write some brief background information on antioxidant systems, catalase and SOD.

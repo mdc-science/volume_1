@@ -1,8 +1,4 @@
-# Spectrophotometry Fundamentals {#chapter3}
-
-::: {.Summary data-latex=""}
-Some text for this block.
-:::
+# Spectrophotometry Fundamentals {#chapter2}
 
 \toc{1}
 
@@ -125,3 +121,4 @@ In cuvettes, the path lenght is fixed and delimited by the walls of the cuvette.
 :::{.greybox data-latex='[frametitle = Note]'}
 _Another factor to consider is the transparency of the material at the wavelenght of the experiment. Not all materials are transparent at all wavelenght. For example, for visible light glass and plastic cuvettes are fine, but for UV measurements quartz cuvettes or specific plastic polymers cuvettes should be used. The same applies for microplates, which should have a flat bottom, and be made of a material that is transparent at the desired wavelenght._
 :::
+
